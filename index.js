@@ -22,10 +22,10 @@ mongoose.connect('mongodb+srv://meera:12class34@cluster0.f34xz2a.mongodb.net/qat
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'uploads/'); // Specify the destination folder
+        cb(null, 'uploads/'); 
     },
     filename: function (req, file, cb) {
-        // Generate a unique filename (you can use a library like `uuid`)
+        
         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
         cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
     },
@@ -33,7 +33,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-// Serve static files from the 'uploads' folder
+
 app.use('/uploads', express.static('uploads'));
 
 const verifyUser = (req, res, next) => {
