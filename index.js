@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const cookieParser = require('cookie-parser')
 const UserModel = require('./models/Users')
+const Events = require('./models/Events')
 const multer = require('multer');
 const path = require('path');
 const { errorMonitor } = require("events")
@@ -49,23 +50,35 @@ app.use('/uploads', express.static('uploads'));
 
 const verifyUser = (req, res, next) => {
     const token = req.cookies.token;
-    if (!token) {
-        return res.json("Token is missing")
+    console.log("this is token:", token)
+    if (!token || token === "undefined") {
+        console.log("here 1")
+        return res.status(401).json("Token is missing");
     } else {
+        console.log("here 2")
         jwt.verify(token, "jwt-secret-key", (err, decoded) => {
             if (err) {
-                return res.json("Error with token")
+                console.log("here 3")
+                console.error("Error with token verification:", err);
+                return res.status(401).json("Error with token");
             } else {
+                console.log("here 4")
                 req.decoded = decoded;
-                next()
 
+                next();
             }
-        })
+        });
     }
 }
-
+//
 app.get('/dashboard', verifyUser, (req, res) => {
-    res.json("Success")
+    Events.find().then(events => {
+        console.log(events);
+        res.json(events);
+    }).catch(err => {
+        console.error("Error fetching events:", err);
+        res.status(500).json(err);
+    });
 })
 
 app.get('/all', (req, res) => {
@@ -92,6 +105,8 @@ app.post('/test', verifyUser, (req, res) => {
     res.send(email)
 
 })
+
+
 function check(email) {
     UserModel.findOne({ Email: email })
         .then(user => {
