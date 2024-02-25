@@ -12,8 +12,8 @@ const path = require('path');
 const { errorMonitor } = require("events")
 const bodyParser = require("body-parser")
 const dotenv = require("dotenv")
-
-//const chatRoutes = require("./routes/chatRoutes")
+const { exec } = require('child_process');
+const cron = require('node-cron');
 
 const app = express()
 app.use(express.json())
@@ -38,15 +38,13 @@ const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, 'uploads/'); 
     },
-    filename: function (req, file, cb) {
-        
+    filename: function (req, file, cb) {        
         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
         cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
     },
 });
 
 const upload = multer({ storage: storage });
-
 
 app.use('/uploads', express.static('uploads'));
 
@@ -72,6 +70,29 @@ const verifyUser = (req, res, next) => {
         });
     }
 }
+
+const pythonScriptPath = './scraping/scraping.py';
+const command = `python ${pythonScriptPath}`;
+
+cron.schedule('0 * * * *', () => {
+    console.log('Running Python script...');
+    
+    // Execute the Python script
+    exec(command, (error, stdout, stderr) => {
+        if (error) {
+            console.error(`Error executing Python script: ${error}`);
+        }
+        if (stderr) {
+            console.error(`Python script STDERR: ${stderr}`);
+        }
+        console.log(`Python script STDOUT: ${stdout}`);
+    });
+}, 
+{
+    scheduled: true,
+    timezone: 'Asia/Qatar'
+    });
+
 //
 app.get('/dashboard', verifyUser, (req, res) => {
     Events.find().then(events => {
@@ -114,9 +135,7 @@ app.post('/test', verifyUser, (req, res) => {
     const email = req.decoded.Email;
     //console.log(email)
     res.send(email)
-
 })
-
 
 function check(email) {
     UserModel.findOne({ Email: email })
@@ -129,15 +148,12 @@ function check(email) {
 }
 
 app.post('/complete', upload.single('ProfilePicture'), async (req, res) => {
-
     try {
         //getting email from token
         const token = req.cookies.token
         const decoded = jwt.verify(token, "jwt-secret-key");
         const userEmail = decoded.Email;
 
-
-        
         const ProfilePicture = req.file ? req.file.filename : null;
 
         const { DOB, selectedPreferences } = req.body;
@@ -166,8 +182,6 @@ app.post('/complete', upload.single('ProfilePicture'), async (req, res) => {
         console.error("Error:", error);
         return res.status(401).json("Invalid token");
     }
-
-
 })
 
 app.post('/login', (req, res) => {
@@ -207,7 +221,7 @@ app.get('/comments/:eventId', async (req, res) => {
       console.error(err.message);
       
     }
-  });
+});
 
 app.get('/logout', (req, res) => {
     res.clearCookie('token')

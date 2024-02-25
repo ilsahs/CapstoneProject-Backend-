@@ -1,0 +1,3 @@
+{   
+    "ignore": ["./scraping/events_data.json"]
+}
