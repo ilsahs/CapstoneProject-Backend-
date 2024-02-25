@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken')
 const cookieParser = require('cookie-parser')
 const UserModel = require('./models/Users')
 const Events = require('./models/Events')
+const Comments = require('./models/Comments')
 const multer = require('multer');
 const path = require('path');
 const { errorMonitor } = require("events")
@@ -27,6 +28,7 @@ app.use(bodyParser.json());
 dotenv.config()
 
 const {OpenAIClient, AzureKeyCredential} = require("@azure/openai");
+const CommentsModel = require("./models/Comments")
 const endpoint = process.env["ENDPOINT"] || "<endpoint>";
 const azureApiKey = process.env["AZURE_API_KEY"] || "<api key>";
 
@@ -73,7 +75,7 @@ const verifyUser = (req, res, next) => {
 //
 app.get('/dashboard', verifyUser, (req, res) => {
     Events.find().then(events => {
-        console.log(events);
+        //console.log(events);
         res.json(events);
     }).catch(err => {
         console.error("Error fetching events:", err);
@@ -82,7 +84,16 @@ app.get('/dashboard', verifyUser, (req, res) => {
 })
 
 app.get('/all', (req, res) => {
+    //console.log("testing log")
     UserModel.find().then((result) => {
+        res.send(result);
+    }).catch((err) => {
+        res.send(err)
+    })
+})
+
+app.get('/allcomments', (req, res) => {
+    Comments.find().then((result) => {
         res.send(result);
     }).catch((err) => {
         res.send(err)
@@ -101,7 +112,7 @@ app.post('/Register', (req, res) => {
 
 app.post('/test', verifyUser, (req, res) => {
     const email = req.decoded.Email;
-    console.log(email)
+    //console.log(email)
     res.send(email)
 
 })
@@ -180,6 +191,23 @@ app.post('/login', (req, res) => {
             }
         })
 })
+
+app.get('/comments/:eventId', async (req, res) => {
+    const eventId = req.params.eventId;
+    try {
+        Comments.find({ Eventid: eventId }).then((result) => {
+         
+            //console.log("this is result of comments", result)
+            res.send(result);
+        }).catch((err) => {
+            res.send(err)
+        })
+
+    } catch (err) {
+      console.error(err.message);
+      
+    }
+  });
 
 app.get('/logout', (req, res) => {
     res.clearCookie('token')

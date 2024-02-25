@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
+const { Schema, Types } = mongoose;
 
 const EventSchema = new mongoose.Schema({
-   
+    _id:  { type: Types.ObjectId },
     title: String,
     date:String,
     location:String,
@@ -14,5 +15,5 @@ const EventSchema = new mongoose.Schema({
 },{ collection: 'Events' })
 
 
-const EventModal = mongoose.model("Events", EventSchema)
-module.exports = EventModal
+const EventModel = mongoose.model("Events", EventSchema)
+module.exports = EventModel
