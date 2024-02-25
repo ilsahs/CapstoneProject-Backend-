@@ -181,6 +181,11 @@ app.post('/login', (req, res) => {
         })
 })
 
+app.get('/logout', (req, res) => {
+    res.clearCookie('token')
+    return res.json({logout : true})
+})
+
 app.post("/chat", async(req, res) => {
     const {prompt} = req.body
     try{
