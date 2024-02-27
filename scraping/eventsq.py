@@ -38,7 +38,7 @@ def scrape_events_page(page_url):
             page = fetch_page(page_url+event_page)        
             e = page.find("div", class_="inr-sec1-det-rgt")
             title = e.find('h1').text
-            print(title)
+            # print(title)
             description = page.find("div", class_="row").find_all('p')[0].text.strip()
             location = page.find("div", class_="mve-cat").find('ul').find_all('li')[2].text.strip()
             date = page.find("div", class_="mve-cat").find('ul').find_all('li')[0].text.replace("to", "-")
@@ -56,7 +56,7 @@ def scrape_events_page(page_url):
             }) 
        
     except:
-        print("error")    
+        print("done")    
     
     return events_data
 

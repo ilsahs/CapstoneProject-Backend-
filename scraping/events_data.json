@@ -1,11 +1,56 @@
 [
     {
+        "name": "2024 Longines Global Champions Tour",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/2024-longines-global-champions-tour-event-doha/_680x450_clip_center-center_100_none/2024-longines-global-champions-tour-event-doha-event-cover.jpg",
+        "location": "Al Shaqab",
+        "description": "This tour will host top horses and riders from around the world, who compete to be champions in the series.",
+        "date": "29 February 2024 - 2 March 2024",
+        "time": "09:00 am - 09:00 pm",
+        "category": "Sports"
+    },
+    {
+        "name": "Yes2Malaysia: The Biggest Education Malaysia Information Day 2024",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/yes2malaysia-education-malaysia-information-day-2024-doha-qatar/_680x450_clip_center-center_100_none/Yes2Malaysia-Education-Malaysia-Information-Day-2024.jpg",
+        "location": "City Centre Rotana Doha",
+        "description": "﻿Calling all Qatari residents and expats! If you are seeking a high-quality education at an affordable cost, check this out!",
+        "date": "1 March 2024 - 2 March 2024",
+        "time": "04:00 pm - 08:00 pm",
+        "category": "Education"
+    },
+    {
+        "name": "2nd Souq Waqif International Dates Exhibition 2024",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/2nd-souq-waqif-international-dates-exhibition-event-doha-2024/_680x450_clip_center-center_100_none/2nd-souq-waqif-international-dates-exhibition-event-doha-2024-cover.jpg",
+        "location": "Eastern Square, Souq Waqif",
+        "description": "Visit the 2nd Souq Waqif International Dates exhibition and savor dates from around the Middle East!",
+        "date": "25 February 2024 - 5 March 2024",
+        "time": "09:00 am - 10:00 pm",
+        "category": "Food & Dining"
+    },
+    {
+        "name": "International Women's Day breakfast 2024",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/international-womens-day-breakfast-2024/_680x450_clip_center-center_100_none/international-womens-day-breakfast-2024.jpg",
+        "location": "W Doha Hotels & Residences",
+        "description": "There will be a panel of Inspiring Women Leaders discussing this year's theme of Inspire Inclusion.",
+        "date": "7 March 2024 - 7 March 2024",
+        "time": "07:30 am - 10:30 am",
+        "category": "Community"
+    },
+    {
+        "name": "Festival of Cultures, Spring Market",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/festival-of-cultures-spring-market-doha/_680x450_clip_center-center_100_none/Free-entry.png",
+        "location": "Dusit Doha Hotel, Near Qatar Financial Centre, Diplomatic Street, Doha, Qatar",
+        "description": "Visit and support local small businesses, attend workshops, and lots of fun activities for everyone! Entry is free!",
+        "date": "2 March 2024 - 2 March 2024",
+        "time": "11:00 am - 08:00 pm",
+        "category": "Community"
+    },
+    {
         "name": "The Pearl Food Festival",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/the-pearl-food-festival/_680x450_clip_center-center_100_none/the-pearl-food-festival-2024.png",
-        "location": "The Pearl Island",
+        "location": "Porto Arabia (18-22 La Croisette), Doha",
         "description": "Enjoy an outdoor culinary and entertainment experience at The Pearl Food Festival.",
         "date": "27 February 2024 - 5 March 2024",
-        "time": "12:00 am - 12:00 am",
+        "time": "04:00 pm - 02:00 am",
         "category": "Entertainment"
     },
     {
@@ -18,6 +63,24 @@
         "category": "Entertainment"
     },
     {
+        "name": "Is your birthday on 29 February? Celebrate with Rawabi Hypermarket (FREE!!!)",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/birthday-on-feb-29th-celeberate-with-rawabi-hypermarket-free/_680x450_clip_center-center_100_none/WhatsApp-Image-2024-02-26-at-4.29.26-PM.jpeg",
+        "location": "Cafe Lovella, Rawabi hypermarket, Ar-Rayyan, Qatar",
+        "description": "Celebrate Your Once-in-Four-Years Birthday at Rawabi Hypermarket Izghawa!",
+        "date": "29 February 2024 - 29 February 2024",
+        "time": "07:00 pm - 08:00 pm",
+        "category": "Other"
+    },
+    {
+        "name": "Plant and Seed Swap - Community Event",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/plant-seed-swap-hadiqaa-qatar/_680x450_clip_center-center_100_none/ILQ-Posters.png",
+        "location": "Education City Micro-Farm, Ar-Rayyan, Qatar",
+        "description": "Calling all gardening enthusiasts!",
+        "date": "2 March 2024 - 2 March 2024",
+        "time": "12:30 pm - 02:30 pm",
+        "category": "Community"
+    },
+    {
         "name": "World Aquatics Masters Championships Doha 2024",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/world-aquatics-masters-championships-doha-2024/_680x450_clip_center-center_100_none/world-aquatics-masters-championships-doha-2024.jpg",
         "location": "Multiple locations across Doha",
@@ -25,6 +88,15 @@
         "date": "23 February 2024 - 3 March 2024",
         "time": "12:00 am - 12:00 am",
         "category": "Sports"
+    },
+    {
+        "name": "TedXYouth@NIA",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/tedxyouth-nia-doha/_680x450_clip_center-center_100_none/645A43C3-B3C5-47AD-A551-7146F239D64B-2.png",
+        "location": "Bin Jelmood House - Msheireb Museums, Doha, Qatar",
+        "description": "Join us now and enjoy the experiences of multiple different speakers talking about their escape from the echo chambers!",
+        "date": "27 April 2024 - 27 April 2024",
+        "time": "12:00 pm - 06:00 pm",
+        "category": "Education"
     },
     {
         "name": "Electric Idyll Exhibition by Pipilotti Rist",
@@ -225,15 +297,6 @@
         "category": "Other"
     },
     {
-        "name": "AgriteQ 2024",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/agriteq-2024-11th-edition-of-qatar-international-agricultural-exhibition/_680x450_clip_center-center_100_none/agriteq-2024.jpg",
-        "location": "Expo 2023 - Cultural Zone, Al Bidda Park",
-        "description": "The 11th edition of Qatar’s International Agricultural Exhibition, AgriteQ 2024, will be held from 21 to 27 February 2024 in Expo Doha.",
-        "date": "21 February 2024 - 27 February 2024",
-        "time": "10:00 am - 09:00 pm",
-        "category": "Community"
-    },
-    {
         "name": "2024 MotoGP™ Qatar Airways Grand Prix of Qatar",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/2024-motogp-qatar-airways-grand-prix-of-qatar/_680x450_clip_center-center_100_none/2024-motogp-qatar-airways-grand-prix-of-qatar-cover-image.jpg",
         "location": "Lusail International Circuit",
@@ -286,15 +349,6 @@
         "date": "1 March 2024 - 1 March 2024",
         "time": "03:30 pm - 07:30 pm",
         "category": "Sports"
-    },
-    {
-        "name": "Design Doha Biennial",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/design-doha-biennial-2024/_680x450_clip_center-center_100_none/design-doha-biennial-2024.jpeg",
-        "location": "Multiple locations",
-        "description": "A landmark biennial to celebrate design excellence in the MENA region.",
-        "date": "24 February 2024 - 28 February 2024",
-        "time": "12:00 am - 12:00 am",
-        "category": "Arts & Culture"
     },
     {
         "name": "Meryal Waterpark",
@@ -419,7 +473,7 @@
         "location": "Doha Exhibition & Convention Center",
         "description": "The summit ﻿will help connect a new generation of founders in the Middle East to investors, journalists, customers, partners from around the world.",
         "date": "26 February 2024 - 29 February 2024",
-        "time": "12:00 am - 12:00 am",
+        "time": "05:00 pm - 05:00 pm",
         "category": "Other"
     },
     {
@@ -448,6 +502,15 @@
         "date": "21 March 2022 - 30 April 2024",
         "time": "09:00 am - 09:00 pm",
         "category": "Education"
+    },
+    {
+        "name": "FILMS IN CONCERT - The Lion King (Arabic)",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_1920x700_webp133529852522373287.webp",
+        "location": "Al MAYASSA THEATRE at QNCC",
+        "description": "The Lion King (show is in Arabic):",
+        "date": " 12-04-2024",
+        "time": " 06:00 PM Onwards",
+        "category": "Other"
     },
     {
         "name": "Longines Global Champions Tour - Doha",
@@ -483,6 +546,15 @@
         "description": "Hilton Salwa’s long awaited beach festival is back, promising you lots of family fun with a special Kite Festival edition and great kids’ games at the beach.",
         "date": " 08-03-2024",
         "time": " 10:00 AM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "HAYYA RUN 2024",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Hayya_Run133535023520455197.webp",
+        "location": "Al Janoub Stadium Park",
+        "description": "The 2nd edition of HAYYA RUN will take place at Al Janoub Stadium Park on Friday 8 March 2024 and comprise of distances ranging from 800M to 10K.  All events will be run on accurately measured short courses with multiple laps and will be restricted to a maximum of 400 participants.",
+        "date": " 08-03-2024",
+        "time": " 07:00 AM Onwards",
         "category": "Other"
     },
     {
@@ -717,51 +789,6 @@
         "description": "Dhow Cruise (Shared Basis)",
         "date": " 07-08-2023 - 31-08-2024",
         "time": " 02:30 PM Onwards",
-        "category": "Other"
-    },
-    {
-        "name": "VIP Dhow Cruise",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_VIP_Dhow_Cruise_2_WEBP133502369537254418.webp",
-        "location": "Marina A (Sheraton)",
-        "description": "Private Dhow",
-        "date": " 07-08-2023 - 31-08-2024",
-        "time": " 02:30 PM Onwards",
-        "category": "Other"
-    },
-    {
-        "name": "Swim and Jump",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_SWIM_webp133502370660322408.webp",
-        "location": "Box Park Corniche",
-        "description": "Escape the hustle and bustle of city life and soak up the sights aboard a dhow. What better way to spend your weekend. Leave your worries behind and create a moment to remember on-board National Cruise",
-        "date": " 04-08-2023 - 02-08-2024",
-        "time": " 02:30 PM Onwards",
-        "category": "Other"
-    },
-    {
-        "name": "See Doha from Sea - Sunset Cruise",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_SEE_DOHA_webp133502370900747895.webp",
-        "location": "Box Park - Pearl (Back & Front)",
-        "description": "A Touch of heritage meets modern architecture during this Two-Hours Mid Day or Evening cruise on an Arabic dhow, a traditional wooden sailing vessel, through the waters of the Arabian Gulf. Be amazed by the stunning views of Doha’s major tourist spots while having Refreshments ( water. Tea, and coffee )",
-        "date": " 01-08-2023 - 01-08-2024",
-        "time": " 04:00 PM Onwards",
-        "category": "Other"
-    },
-    {
-        "name": "30 Minutes Arabic",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_30_Minutes_Arabic_Dhow_Ride_banner__WEBP133502372600929365.webp",
-        "location": "Mina Port – Pick up and drop Marina Gate 3",
-        "description": "Enjoy 30 Min Arabic Dhow ride with your family and friends refreshments on board in the Majlis set up on the Upper Deck",
-        "date": " 01-08-2023 - 01-08-2024",
-        "time": " 05:00 PM Onwards",
-        "category": "Other"
-    },
-    {
-        "name": "Wooden Dhow Boat Cruise",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_3_WEBP133502373724039144.webp",
-        "location": "Corniche Dhow Harbor",
-        "description": "Gate Rules:ARRIVE 15 MINUTES BEFORE THE CHOSEN TIME SLOT",
-        "date": " 01-08-2023 - 31-07-2024",
-        "time": " 08:00 AM Onwards",
         "category": "Other"
     }
 ]

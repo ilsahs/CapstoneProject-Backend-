@@ -4,16 +4,19 @@ const cors = require("cors")
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const cookieParser = require('cookie-parser')
-const UserModel = require('./models/Users')
-const Events = require('./models/Events')
 const Comments = require('./models/Comments')
 const multer = require('multer');
 const path = require('path');
 const { errorMonitor } = require("events")
 const bodyParser = require("body-parser")
 const dotenv = require("dotenv")
-const { exec } = require('child_process');
 const cron = require('node-cron');
+const fs = require('fs');
+const { promisify } = require('util');
+const exec = promisify(require('child_process').exec);
+//Models
+const UserModel = require('./models/Users')
+const EventModel = require('./models/Events')
 
 const app = express()
 app.use(express.json())
@@ -72,30 +75,58 @@ const verifyUser = (req, res, next) => {
 }
 
 const pythonScriptPath = './scraping/scraping.py';
+const jsonFilePath = './scraping/events_data.json';
 const command = `python ${pythonScriptPath}`;
+const readFile = promisify(fs.readFile);
 
-cron.schedule('0 * * * *', () => {
+//Schedule web scraping for every hour: 0 * * * *
+//every 5 minutes: */5 * * * *
+cron.schedule('0 * * * *', async () => {
+// const scrape = async () => {
     console.log('Running Python script...');
-    
-    // Execute the Python script
-    exec(command, (error, stdout, stderr) => {
-        if (error) {
-            console.error(`Error executing Python script: ${error}`);
-        }
+        // Execute the Python script
+    try {
+        const { stdout, stderr } = await exec(command);
         if (stderr) {
             console.error(`Python script STDERR: ${stderr}`);
         }
         console.log(`Python script STDOUT: ${stdout}`);
-    });
+        
+        // Read the JSON file
+        const data = await readFile(jsonFilePath, 'utf8');
+        const scrapedEvents = JSON.parse(data);
+        // Assuming updateEvents is an async function
+        await updateEvents(scrapedEvents);
+    } catch (error) {
+        console.error(`Error: ${error}`);
+    }
 }, 
 {
     scheduled: true,
     timezone: 'Asia/Qatar'
-    });
+});
+
+const updateEvents = (scrapedEvents) => {
+    scrapedEvents.forEach (async e => {
+    await EventModel.findOneAndUpdate(
+        //check if the event exists based on the name
+        {title: e.name},
+        //if it exists, u update it by replacing it completely
+        e,
+        //else you insert a new event to the db
+        {upsert: true, new: true})
+        .then(() => {
+            console.log(`Event ${e.name} updated/added successfully`);
+        })
+        .catch(error => {
+            console.error(`Error updating/adding event: ${error}`);
+        });
+    })
+}
 
 //
 app.get('/dashboard', verifyUser, (req, res) => {
-    Events.find().then(events => {
+    EventModel.find().then(events => {
         //console.log(events);
         res.json(events);
     }).catch(err => {
