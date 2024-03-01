@@ -1,5 +1,68 @@
 [
     {
+        "name": "Web Summit Qatar 2025",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/web-summit-qatar-2025/_680x450_clip_center-center_100_none/web-summit-qatar-2025.jpg",
+        "location": "Doha Exhibition & Convention Center",
+        "description": "The summit ﻿will help connect a new generation of founders in the Middle East to investors, journalists, customers, partners from around the world.",
+        "date": "23 February 2025 - 26 February 2025",
+        "time": "12:00 am - 12:00 am",
+        "category": "Other"
+    },
+    {
+        "name": "The Sixth Dimension",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/the-sixth-dimension-geekdom/_680x450_clip_center-center_100_none/the-sixth-dimension-geekdom.jpg",
+        "location": "Geekdom Building, Lusail Boulevard",
+        "description": "Enter an enigmatic zone of imagination and interactive fun at Geekdom!",
+        "date": "15 February 2024 - 14 March 2024",
+        "time": "03:00 pm - 11:00 pm",
+        "category": "Entertainment"
+    },
+    {
+        "name": "Error 404!",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/error-404-escape-room-geekdom/_680x450_clip_center-center_100_none/error-404-escape-room-geekdom.jpg",
+        "location": "Geekdom Building, Lusail Boulevard",
+        "description": "Prepare for a journey of puzzles, mystery, and teamwork at Error 404 escape room!",
+        "date": "14 February 2024 - 14 March 2024",
+        "time": "03:00 pm - 11:00 pm",
+        "category": "Entertainment"
+    },
+    {
+        "name": "The Smurf – Tastic Science Fair",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/the-smurf-tastic-science-fair/_680x450_clip_center-center_100_none/the-smurf-tastic-science-fair-qatar.jpg",
+        "location": "Family Amphitheater - Family Zone, Expo 2023 Doha, Al Bidda Park",
+        "description": "Kids will be invited to team up and create the most Smurf-tastic invention ever and participate in this fun free event!",
+        "date": "29 February 2024 - 8 March 2024",
+        "time": "04:00 pm - 10:00 pm",
+        "category": "Entertainment"
+    },
+    {
+        "name": "Monkey Tale Anniversary with Satori",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/monkey-tale-anniversary-satori-event-2024/_680x450_clip_center-center_100_none/monkey-anniversary-satori-event-2024-cover-image.jpg",
+        "location": "Grand Hyatt Doha Hotel & Villas",
+        "description": "Prepare for an unforgettable experience filled with captivating shows, dazzling props, and endless blends of trance and mind-altering earthy tones.",
+        "date": "1 March 2024 - 1 March 2024",
+        "time": "07:00 pm - 11:59 pm",
+        "category": "Entertainment"
+    },
+    {
+        "name": "Films In Concert – The Lion King Live In Concert (Arabic)",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/films-in-concert-the-lion-king-live-arabic/_680x450_clip_center-center_100_none/films-in-concert-the-lion-king-live-arabic.jpg",
+        "location": "Al Mayassa Theater, Qatar National Convention Center",
+        "description": "The concert will be taking place on 12 April 2024, at the Al Mayassa Theater, Qatar National Convention Center.",
+        "date": "12 April 2024 - 12 April 2024",
+        "time": "06:00 pm - 09:00 pm",
+        "category": "Entertainment"
+    },
+    {
+        "name": "SHOWTIME! by Qatar Foundation",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/showtime-qatar-foundation-2024/_680x450_clip_center-center_100_none/671685/theater-showtime-arabic-music-tickets-event.jpg",
+        "location": "PUE-Theater QATAR FOUNDATION",
+        "description": "This year is unique as up to 30% of the songs will be performed in Arabic.﻿﻿",
+        "date": "6 March 2024 - 8 March 2024",
+        "time": "07:30 pm - 09:30 pm",
+        "category": "Entertainment"
+    },
+    {
         "name": "2024 Longines Global Champions Tour",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/2024-longines-global-champions-tour-event-doha/_680x450_clip_center-center_100_none/2024-longines-global-champions-tour-event-doha-event-cover.jpg",
         "location": "Al Shaqab",
@@ -63,15 +126,6 @@
         "category": "Entertainment"
     },
     {
-        "name": "Is your birthday on 29 February? Celebrate with Rawabi Hypermarket (FREE!!!)",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/birthday-on-feb-29th-celeberate-with-rawabi-hypermarket-free/_680x450_clip_center-center_100_none/WhatsApp-Image-2024-02-26-at-4.29.26-PM.jpeg",
-        "location": "Cafe Lovella, Rawabi hypermarket, Ar-Rayyan, Qatar",
-        "description": "Celebrate Your Once-in-Four-Years Birthday at Rawabi Hypermarket Izghawa!",
-        "date": "29 February 2024 - 29 February 2024",
-        "time": "07:00 pm - 08:00 pm",
-        "category": "Other"
-    },
-    {
         "name": "Plant and Seed Swap - Community Event",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/plant-seed-swap-hadiqaa-qatar/_680x450_clip_center-center_100_none/ILQ-Posters.png",
         "location": "Education City Micro-Farm, Ar-Rayyan, Qatar",
@@ -108,15 +162,6 @@
         "category": "Arts & Culture"
     },
     {
-        "name": "Amir Grand Prix Lusail Shotgun 2024",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/amir-grand-prix-lusail-shotgun-2024/_680x450_clip_center-center_100_none/Amir-Grand-Prix-Lusail-Shotgun-2024.jpg",
-        "location": "Lusail Shooting Complex, Doha Qatar",
-        "description": "290 archers from 36 countries will meet in the shooting competition at Lusail Shooting Complex.",
-        "date": "23 February 2024 - 29 February 2024",
-        "time": "09:00 am - 03:00 pm",
-        "category": "Sports"
-    },
-    {
         "name": "Wellbeing Festival at Sequences Wellness Centre",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/wellbeing-festival-1-2-march-2024-doha/_680x450_clip_center-center_100_none/The-Wellbeing-Festival.jpg",
         "location": "Sequences Wellness Centre, Burj Marina Tower, Lusail, Qatar",
@@ -124,33 +169,6 @@
         "date": "1 March 2024 - 2 March 2024",
         "time": "04:00 pm - 06:00 pm",
         "category": "Community"
-    },
-    {
-        "name": "Good Finds Market",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/good-finds-market-torba-fire-station-events-2024/_680x450_clip_center-center_100_none/good-finds-market-torba-fire-station-events-2024-cover-image.jpg",
-        "location": "Fire Station",
-        "description": "Immerse yourself in an exciting array of vintage and secondhand stall-holders, handmade ceramics, art pieces, unique jewellery, craft and stationery.",
-        "date": "22 February 2024 - 29 February 2024",
-        "time": "04:00 pm - 09:00 pm",
-        "category": "Other"
-    },
-    {
-        "name": "Gigi De Lana & The Gigi Vibes live in Qatar",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/harana-2024-gigi-de-lana-the-gigi-vibes-doha-qatar/_680x450_clip_center-center_100_none/GIGI.jpeg",
-        "location": "Sharq Village & Spa, a Ritz-Carlton Hotel Doha, Qatar",
-        "description": "Harana 2024 is a night of enchanting melodies featuring the sensational Gigi De Lana and The Gigi Vibes, live in Doha!",
-        "date": "1 March 2024 - 1 March 2024",
-        "time": "07:00 pm - 09:00 pm",
-        "category": "Entertainment"
-    },
-    {
-        "name": "Into The Blues Season 2: Benny Dayal & Jonita Gandhi Live in Qatar",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/into-the-blues-season-2-benny-dayal-jonita-gandhi-live-musical-event-qatar/_680x450_clip_center-center_100_none/into-the-blues-season-2-benny-dayal-jonita-gandhi-live-musical-event-qatar-cover-image.jpg",
-        "location": "Qatar National Convention Center",
-        "description": "The event features Jonita Gandhi and Benny Dayal for a 7-hour musical experience.",
-        "date": "29 February 2024 - 29 February 2024",
-        "time": "07:00 pm - 11:59 pm",
-        "category": "Entertainment"
     },
     {
         "name": "Women in Leadership Session at Pullman Doha",
@@ -198,30 +216,12 @@
         "category": "Arts & Culture"
     },
     {
-        "name": "Ladies Night at Oxygen Park",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/ladies-night-oxygen-park-education-city-qatar/_680x450_clip_center-center_100_none/Ladies-Night-at-Oxygen-Park.jpg",
-        "location": "Oxygen Park, Education City",
-        "description": "An event for ladies only, with a variety of health and fitness activities on offer.",
-        "date": "1 February 2024 - 29 February 2024",
-        "time": "06:00 pm - 10:00 pm",
-        "category": "Sports"
-    },
-    {
         "name": "Qatar Collegiate Sports Federation (QCSF) Football League",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/qatar-collegiate-sports-federation-qcsf-football-league-2024/_680x450_clip_center-center_100_none/Qatar-Foundation.jpg",
         "location": "Qatar Foundation",
         "description": "Every Monday and Wednesday until 9 March 2024 from 7:30 pm to 10:30 pm.",
         "date": "1 February 2024 - 9 March 2024",
         "time": "07:30 pm - 10:30 pm",
-        "category": "Sports"
-    },
-    {
-        "name": "In-House Health Fitness by Education City",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/in-house-health-fitness-events-education-city-qatar/_680x450_clip_center-center_100_none/in-house-fitness.jpg",
-        "location": "Different locations in Qatar (Check below)",
-        "description": "Know more here!",
-        "date": "1 February 2024 - 29 February 2024",
-        "time": "04:15 pm - 08:30 pm",
         "category": "Sports"
     },
     {
@@ -243,15 +243,6 @@
         "category": "Arts & Culture"
     },
     {
-        "name": "DSP Sunset Market",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/dsp-sunset-market-doha/_680x450_clip_center-center_100_none/dsp-sunset-market.png",
-        "location": "Doha Sports Park",
-        "description": "Explore DSP Sunset Market and shop from local small businesses.",
-        "date": "29 February 2024 - 29 February 2024",
-        "time": "04:00 pm - 10:00 pm",
-        "category": "Community"
-    },
-    {
         "name": "Project Qatar 2024",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/project-qatar-2024/_680x450_clip_center-center_100_none/Project-Qatar-2024.jpg",
         "location": "Doha Exhibition & Convention Center (DECC)، West Bay",
@@ -259,15 +250,6 @@
         "date": "27 May 2024 - 30 May 2024",
         "time": "12:00 pm - 09:00 pm",
         "category": "Other"
-    },
-    {
-        "name": "Beethoven’s Symphony No. 9",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/beethovens-symphony-no-9-qatar-philharmonic-orchestra/_680x450_clip_center-center_100_none/Feb28-Beethoven.jpg",
-        "location": "Qatar National Convention Centre (QNCC), Al Mayassa Theatre (Ground Floor)",
-        "description": "Join the Qatar Philharmonic for a transcendent musical experience on February 28, 2024.",
-        "date": "28 February 2024 - 28 February 2024",
-        "time": "07:30 pm - 09:30 pm",
-        "category": "Arts & Culture"
     },
     {
         "name": "Qatar-UAE Super Cup",
@@ -320,7 +302,7 @@
         "location": "Lusail International Circuit",
         "description": "The championship is expected to witness exciting Hypercar races along with the new GT3 category at Lusail International Circuit.",
         "date": "29 February 2024 - 2 March 2024",
-        "time": "12:00 am - 12:00 am",
+        "time": "09:00 am - 08:00 pm",
         "category": "Sports"
     },
     {
@@ -340,15 +322,6 @@
         "date": "4 March 2024 - 6 March 2024",
         "time": "09:00 am - 05:00 pm",
         "category": "Other"
-    },
-    {
-        "name": "ONE 166: Qatar - ONE Championship at Lusail Sports Arena",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/one-166-championship-martial-arts-lusail-sports-arena/_680x450_clip_center-center_100_none/ONE166-One-Championship-doha-qatar-2024.jpg",
-        "location": "Lusail Sports Arena",
-        "description": "ONE Championship makes its Qatar debut on 1 March 2024, with three World Title fights at the Lusail Sports Arena!",
-        "date": "1 March 2024 - 1 March 2024",
-        "time": "03:30 pm - 07:30 pm",
-        "category": "Sports"
     },
     {
         "name": "Meryal Waterpark",
@@ -468,15 +441,6 @@
         "category": "Other"
     },
     {
-        "name": "Web Summit Qatar 2024",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/web-summit-qatar-2024/_680x450_clip_center-center_100_none/web-summit-qatar-2024.jpeg",
-        "location": "Doha Exhibition & Convention Center",
-        "description": "The summit ﻿will help connect a new generation of founders in the Middle East to investors, journalists, customers, partners from around the world.",
-        "date": "26 February 2024 - 29 February 2024",
-        "time": "05:00 pm - 05:00 pm",
-        "category": "Other"
-    },
-    {
         "name": "Expo 2023 Doha Qatar",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/expo-2023-doha-qatar/_680x450_clip_center-center_100_none/International-Horticultural-Doha-Expo-2023.jpeg",
         "location": "Al Bidda Park",
@@ -504,7 +468,7 @@
         "category": "Education"
     },
     {
-        "name": "FILMS IN CONCERT - The Lion King (Arabic)",
+        "name": "FILMS IN CONCERT - THE LION KING LIVE IN CONCERT (ARABIC)",
         "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_1920x700_webp133529852522373287.webp",
         "location": "Al MAYASSA THEATRE at QNCC",
         "description": "The Lion King (show is in Arabic):",
@@ -531,12 +495,12 @@
         "category": "Other"
     },
     {
-        "name": "INTO THE BLUES SEASON 2 - BENNY DAYAL & JONITA GANDHI LIVE IN QATAR",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_1920x700_webp133515026451019622.webp",
-        "location": "QATAR NATIONAL CONVENTION CENTER",
-        "description": "Into the Blues Season 2\" is a one-of-a-kind multiband music festival, 2 bands \nback to back line up that celebrates the richness and diversity of music. The \nevent aims to provide attendees with a memorable 7 hours musical \nexperience, combining the energetic performance by Jonita Gandhi and the \nvibrant foot-tapping performance by Benny Dayal\n\"Into the Blues” caters to a potential audience of at least 980K+ Asians in \nQatar, being its largest expat community covering roughly 35% of the country’s \npopulation. Needless to mention that Asian/Indian music is globally welcomed \nby people of diverse nationalities including Qataris.",
-        "date": " 29-02-2024",
-        "time": " 07:00 PM Onwards",
+        "name": "ONE 166: Qatar",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_BANNER133533425510003207.webp",
+        "location": "Lusail Sports Arena",
+        "description": "ONE Championship is coming to Qatar for the first time ever on Friday, March 1 with ONE 166: Qatar! See the world’s greatest fighters in action across MMA, Muay Thai, kickboxing, boxing, and submission grappling as they electrify the Lusail Sports Arena.",
+        "date": " 01-03-2024",
+        "time": "  3:30pm",
         "category": "Other"
     },
     {
@@ -558,15 +522,6 @@
         "category": "Other"
     },
     {
-        "name": "Screen on The Green",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Banner133529678610028265.webp",
-        "location": "The Hamilton International School",
-        "description": "Join us for a delightful movie night at The Hamilton International school! Screen on The Green.. It's a perfect outing for the whole family to enjoy together. Bring your blankets, cushions, bean bags and smiles as we gather to watch the heart warming LEO. Get ready for an evening filled with laughter, popcorn, and cherished memories.",
-        "date": " 01-03-2024",
-        "time": " 06:00 PM Onwards",
-        "category": "Other"
-    },
-    {
         "name": "Showtime! 2024",
         "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Showtime_Q-tickets_1920x700133517670208234120.webp",
         "location": "PUE-Theater QATAR FOUNDATION",
@@ -577,7 +532,7 @@
     },
     {
         "name": "Holi Reloaded (Season 4)",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_1920x720xcx_webp133529868826038672.webp",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Web_banner133536704431501882.webp",
         "location": "Doha Sport park ( Golf Club ) Near katara Village",
         "description": "WiroHub Events is back with (Desi Swag Holi), Holi Reloaded ( Season 4 )  Get reloaded with fun, music, food, and colors. This time it's bigger, better than before, and a lot crazier. Bring your family to the ultimate Holi destination at Doha Sports Park. It’s more than your imagination!",
         "date": " 08-03-2024",
@@ -600,24 +555,6 @@
         "description": "MAIN GRANDSTAND \nTicket inclusions:",
         "date": " 29-11-2024 - 01-12-2024",
         "time": " 02:30 PM Onwards",
-        "category": "Other"
-    },
-    {
-        "name": "LUSAIL SPEED FEST 2024",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_1920x700133528888259840370.webp",
-        "location": "Lusail International Circuit",
-        "description": "Lusail Speed Fest is set to take over Lusail International Circuit, offering a breathtaking line up of two and four-wheel racing giving you the chance to get trackside for two exhilarating motorsport events. With fast paced wheel-to-wheel action and stunning fireworks display bringing each race weekend to a crescendo, there’s something for fans of all ages to enjoy.",
-        "date": " Six Days Pass",
-        "time": " 02:30 PM Onwards",
-        "category": "Other"
-    },
-    {
-        "name": "Beethoven's Symphony No. 9",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Feb28_Beethoven_1920x700-01133505612276727232.webp",
-        "location": "Qatar National Convention Centre, Al Mayassa Theatre (Ground Floor)",
-        "description": "Join the Qatar Philharmonic for a transcendent musical experience, led by accomplished German conductor Elias Grandy. The pinnacle of the evening is the awe-inspiring performance of Beethoven's majestic Symphony No. 9, a composition considered by many leading musicologists as one of the greatest works in Western music. In this momentous event the Qatar Concert Choir will join forces with the orchestra for the powerful final movement. Accompany the Philharmonic for this unforgettable musical event where each note resonates with the profound significance of Beethoven's masterpiece.",
-        "date": " 28-02-2024",
-        "time": " 07:30 PM Onwards",
         "category": "Other"
     },
     {
@@ -738,29 +675,11 @@
         "category": "Other"
     },
     {
-        "name": "Full Moon Kayaking",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_FM_Kayaking_WEBP133474577905029627.webp",
-        "location": "Al- Thakhira",
-        "description": "The sensation of paddling out on the ocean during a full moon, with the moon's reflection dancing on the waves, is something you will never forget. Glide out over the water to a secluded bay with the other paddlers. We can go for a swim in the moonlight if you're feeling adventurous.",
-        "date": " 22-02-2024 - 01-03-2024",
-        "time": " 04:00 PM Onwards",
-        "category": "Other"
-    },
-    {
         "name": "Arabian Shuwa Beach Experience",
         "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_1920x700_webp133498679001539779.webp",
         "location": "Banana Island Resort Doha",
         "description": "A favourite Omani recipe, 'shuwa' is a dish of slow–cooked marinated lamb. The meat is coated in a flavourful rub of spices, garlic and oil, although exact recipes and spices used vary from region to region. It is traditionally cooked, wrapped and buried in a pit of hot coals for several hours –producing the most tasty dishes owing to the resting stage when the marination of the meat allows the juices to properly absorb and thereafter cook perfectly.",
         "date": " 22-11-2023 - 31-12-2024",
-        "time": " 02:30 PM Onwards",
-        "category": "Other"
-    },
-    {
-        "name": "Swing into Golf",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_SWING_INTO_GOLF_banner_Updated133506466235800014.webp",
-        "location": "Education City Golf Club",
-        "description": "Swing Into Golf",
-        "date": " 19-11-2023 - 28-02-2024",
         "time": " 02:30 PM Onwards",
         "category": "Other"
     },
@@ -789,6 +708,51 @@
         "description": "Dhow Cruise (Shared Basis)",
         "date": " 07-08-2023 - 31-08-2024",
         "time": " 02:30 PM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "VIP Dhow Cruise",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_VIP_Dhow_Cruise_2_WEBP133502369537254418.webp",
+        "location": "Marina A (Sheraton)",
+        "description": "Private Dhow",
+        "date": " 07-08-2023 - 31-08-2024",
+        "time": " 02:30 PM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "Swim and Jump",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_SWIM_webp133502370660322408.webp",
+        "location": "Box Park Corniche",
+        "description": "Escape the hustle and bustle of city life and soak up the sights aboard a dhow. What better way to spend your weekend. Leave your worries behind and create a moment to remember on-board National Cruise",
+        "date": " 04-08-2023 - 02-08-2024",
+        "time": " 02:30 PM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "See Doha from Sea - Sunset Cruise",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_SEE_DOHA_webp133502370900747895.webp",
+        "location": "Box Park - Pearl (Back & Front)",
+        "description": "A Touch of heritage meets modern architecture during this Two-Hours Mid Day or Evening cruise on an Arabic dhow, a traditional wooden sailing vessel, through the waters of the Arabian Gulf. Be amazed by the stunning views of Doha’s major tourist spots while having Refreshments ( water. Tea, and coffee )",
+        "date": " 01-08-2023 - 01-08-2024",
+        "time": " 04:00 PM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "30 Minutes Arabic",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_30_Minutes_Arabic_Dhow_Ride_banner__WEBP133502372600929365.webp",
+        "location": "Mina Port – Pick up and drop Marina Gate 3",
+        "description": "Enjoy 30 Min Arabic Dhow ride with your family and friends refreshments on board in the Majlis set up on the Upper Deck",
+        "date": " 01-08-2023 - 01-08-2024",
+        "time": " 05:00 PM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "Wooden Dhow Boat Cruise",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_3_WEBP133502373724039144.webp",
+        "location": "Corniche Dhow Harbor",
+        "description": "Gate Rules:ARRIVE 15 MINUTES BEFORE THE CHOSEN TIME SLOT",
+        "date": " 01-08-2023 - 31-07-2024",
+        "time": " 08:00 AM Onwards",
         "category": "Other"
     }
 ]
