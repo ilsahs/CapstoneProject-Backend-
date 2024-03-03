@@ -14,10 +14,13 @@ const cron = require('node-cron');
 const fs = require('fs');
 const { promisify } = require('util');
 const exec = promisify(require('child_process').exec);
+const {OpenAIClient, AzureKeyCredential} = require("@azure/openai");
+const mime = require('mime-types');
 
 //Models
 const UserModel = require('./models/Users')
 const EventModel = require('./models/Events')
+const CommentsModel = require("./models/Comments")
 
 const app = express()
 app.use(express.json())
@@ -31,16 +34,25 @@ app.use(bodyParser.json());
 
 dotenv.config()
 
-const {OpenAIClient, AzureKeyCredential} = require("@azure/openai");
-const CommentsModel = require("./models/Comments")
+//Environment Variables
 const endpoint = process.env["ENDPOINT"] || "<endpoint>";
-const azureApiKey = process.env["AZURE_API_KEY"] || "<api key>";
+const azureApiKey = process.env["AZURE_API_KEY"] || "<api_key>";
+const deploymentName = process.env["DEPLOYMENT_NAME"] || "<deployment_name";
+const whisperEndpoint = process.env["WHIPER_ENDPOINT"] || "<whisper_endpoint>";
+const whisperAzureApiKey = process.env["WHISPER_API_KEY"] || "<whisper_api_key>";
+const whisperDeploymentName = process.env["WHISPER_DEPLOYMENT_NAME"] || "<whisper_deployment_name";
+const visionDeploymentName = process.env["VISION_DEPLOYMENT_NAME"] || "<vision_deployment_name";
 
 mongoose.connect('mongodb+srv://meera:12class34@cluster0.f34xz2a.mongodb.net/qatarEvents');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'uploads/'); 
+        const folder = file.mimetype.startsWith('image/') ? 'images'
+                    : file.mimetype.startsWith('audio/') ? 'audios'
+                    : 'others';
+        const destPath = path.join(__dirname, 'uploads', folder);
+        fs.mkdirSync(destPath, { recursive: true });
+        cb(null, destPath); 
     },
     filename: function (req, file, cb) {        
         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
@@ -74,6 +86,19 @@ const verifyUser = (req, res, next) => {
         });
     }
 }
+
+// function localImageToDataUrl(imagePath){
+//     const mimeType = mime.lookup(imagePath) || 'application/octet-stream';
+//     // Extract file name from the image path
+//     const fileName = path.basename(imagePath);
+    
+//     // Construct the desired file path
+//     const filePath = `./uploads/images/${fileName}`;
+//     //const base64EncodedData = fs.readFileSync(filePath).toString('base64');  
+//     //console.log(mimeType)
+//     //encodedImage = `data:${mimeType};base64,{${base64EncodedData}}`;
+//     return filePath;
+//   }
 
 const pythonScriptPath = './scraping/scraping.py';
 const jsonFilePath = './scraping/events_data.json';
@@ -270,28 +295,80 @@ app.get('/comments/:eventId', async (req, res) => {
 });
 
 //Chatbot
-app.post("/chat", async(req, res) => {
-    const {prompt} = req.body
-    try{
-    const client = new OpenAIClient(endpoint, new AzureKeyCredential(azureApiKey));
-    const deploymentId = "events-hub";
-    jsonFile = "./prompts.json"
-    const fileData = await readFile(jsonFile, 'utf8');
-    const prompts = JSON.parse(fileData);
-    prompts[prompts.length -1]['content'] = prompt;
+app.post("/chat", upload.single('file'), async(req, res) => {
+    try {
+        if (req.file) {
+            const filePath = req.file.path;
+            const mimeType = req.file.mimetype;
+            const fileName = path.basename(filePath);
+            console.log(fileName)
+            
+            //Image doesn't work yet
+            if (mimeType.startsWith('image/')) { 
+                console.log("Uploaded file is an image")        
+                const fileP = `images/${fileName}`;
+                const imageUrl = `${req.protocol}://${req.get('host')}/uploads/${fileP}`
+                console.log(imageUrl)    
+                console.log("Start image analysis")
 
-    const result = await client.getChatCompletions(deploymentId, prompts,
-    {
-      temperature: 1,
-      max_tokens: 256,
-      top_p: 1,
-      frequency_penalty: 0,
-      presence_penalty: 0 
-    },
-    );
-    for (const choice of result.choices) {
-       res.send(choice.message.content);
-     }
+                const client2 = new OpenAIClient(endpoint, new AzureKeyCredential(azureApiKey));
+                console.log("Start 2 image analysis")
+                const result = await client2.getChatCompletions(visionDeploymentName, [
+                    { role: "system", content: "You are a helpful assistant." },
+                    {
+                        role: "user",
+                        content: [
+                            { type: "text", text: "Describe this picture:" },
+                            { type: "image_url", image_url: { url: imageUrl } }
+                        ]
+                    }
+                ],
+                {
+                    temperature: 1,
+                    max_tokens: 256, 
+                    top_p: 1 
+                });
+                
+                for (const choice of result.choices) {
+                    console.log(choice.message.content);
+                }    
+            }
+
+            else if (mimeType.startsWith('audio/')) {
+                console.log("Uploaded file is an audio");
+                const fileP = `./uploads/audios/${fileName}`;
+                console.log("== Transcribe Audio Sample ==");
+                const client1 = new OpenAIClient(whisperEndpoint, new AzureKeyCredential(whisperAzureApiKey));
+                const audio = await readFile(fileP);
+                const result1 = await client1.getAudioTranscription(whisperDeploymentName, audio);
+                res.send(result1.text);
+            }
+        }
+
+        else if (req.body) {
+            const {prompt} = req.body
+            // Here you can handle text messages
+            //Chat Completions
+            const client = new OpenAIClient(endpoint, new AzureKeyCredential(azureApiKey));
+            const jsonFile = "./prompts.json"
+            const fileData = await readFile(jsonFile, 'utf8');
+            const prompts = JSON.parse(fileData);
+            prompts[prompts.length -1]['content'] = prompt;
+
+            const result = await client.getChatCompletions(deploymentName, prompts,
+            {
+                temperature: 1,
+                max_tokens: 256,
+                top_p: 1,
+                frequency_penalty: 0,
+                presence_penalty: 0 
+            },
+            );
+            
+            for (const choice of result.choices) {
+                res.send(choice.message.content);
+            }
+        }    
     }
     catch(err){
         res.status(500).send(err)
