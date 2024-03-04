@@ -1,0 +1,668 @@
+[
+    {
+        "name": "First edition of LEGO® Shows Qatar this Eid Al Fitr 2024",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/lego-shows-2024-event-doha/_680x450_clip_center-center_100_none/lego-shows-2024-event-doha-cover-image.jpg",
+        "location": "Hall 8 and 9, Qatar National Convention Center",
+        "description": "The attraction will offer family-friendly activities, life-size Minifigures, food options, hospitality, and 26 themed areas with engaging activities.",
+        "date": "10 April 2024 - 25 April 2024",
+        "time": "01:00 pm - 11:00 pm",
+        "category": "Entertainment"
+    },
+    {
+        "name": "Passage to India 2024",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/passage-to-india-2024-event-doha/_680x450_clip_center-center_100_none/passage-to-india-2024-event-doha-cover-image.jpg",
+        "location": "Museum of Islamic Arts",
+        "description": "Experience a three-day celebration of Indian culture in Doha, featuring arts, music, dance, food, and a bazaar!",
+        "date": "7 March 2024 - 9 March 2024",
+        "time": "04:00 pm - 11:00 pm",
+        "category": "Arts & Culture"
+    },
+    {
+        "name": "Fusion Fair",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/fusion-fair-2024-doha/_680x450_clip_center-center_100_none/INSTA14-1.jpeg",
+        "location": "Crowne Plaza Doha - the Business Park, an IHG Hotel, Airport Street, Doha, Qatar",
+        "description": "Explore a wide range of discounted products from various sectors including perfume, footwear, clothing & accessories.",
+        "date": "6 March 2024 - 8 March 2024",
+        "time": "10:00 am - 08:00 pm",
+        "category": "Food & Dining"
+    },
+    {
+        "name": "Web Summit Qatar 2025",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/web-summit-qatar-2025/_680x450_clip_center-center_100_none/web-summit-qatar-2025.jpg",
+        "location": "Doha Exhibition & Convention Center",
+        "description": "The summit ﻿will help connect a new generation of founders in the Middle East to investors, journalists, customers, partners from around the world.",
+        "date": "23 February 2025 - 26 February 2025",
+        "time": "12:00 am - 12:00 am",
+        "category": "Other"
+    },
+    {
+        "name": "The Sixth Dimension",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/the-sixth-dimension-geekdom/_680x450_clip_center-center_100_none/the-sixth-dimension-geekdom.jpg",
+        "location": "Geekdom Building, Lusail Boulevard",
+        "description": "Enter an enigmatic zone of imagination and interactive fun at Geekdom!",
+        "date": "15 February 2024 - 14 March 2024",
+        "time": "03:00 pm - 11:00 pm",
+        "category": "Entertainment"
+    },
+    {
+        "name": "Error 404!",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/error-404-escape-room-geekdom/_680x450_clip_center-center_100_none/error-404-escape-room-geekdom.jpg",
+        "location": "Geekdom Building, Lusail Boulevard",
+        "description": "Prepare for a journey of puzzles, mystery, and teamwork at Error 404 escape room!",
+        "date": "14 February 2024 - 14 March 2024",
+        "time": "03:00 pm - 11:00 pm",
+        "category": "Entertainment"
+    },
+    {
+        "name": "The Smurf – Tastic Science Fair",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/the-smurf-tastic-science-fair/_680x450_clip_center-center_100_none/the-smurf-tastic-science-fair-qatar.jpg",
+        "location": "Family Amphitheater - Family Zone, Expo 2023 Doha, Al Bidda Park",
+        "description": "Kids will be invited to team up and create the most Smurf-tastic invention ever and participate in this fun free event!",
+        "date": "29 February 2024 - 8 March 2024",
+        "time": "04:00 pm - 10:00 pm",
+        "category": "Entertainment"
+    },
+    {
+        "name": "Films In Concert – The Lion King Live In Concert (Arabic)",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/films-in-concert-the-lion-king-live-arabic/_680x450_clip_center-center_100_none/films-in-concert-the-lion-king-live-arabic.jpg",
+        "location": "Al Mayassa Theater, Qatar National Convention Center",
+        "description": "The concert will be taking place on 12 April 2024, at the Al Mayassa Theater, Qatar National Convention Center.",
+        "date": "12 April 2024 - 12 April 2024",
+        "time": "06:00 pm - 09:00 pm",
+        "category": "Entertainment"
+    },
+    {
+        "name": "SHOWTIME! by Qatar Foundation",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/showtime-qatar-foundation-2024/_680x450_clip_center-center_100_none/671685/theater-showtime-arabic-music-tickets-event.jpg",
+        "location": "PUE-Theater QATAR FOUNDATION",
+        "description": "This year is unique as up to 30% of the songs will be performed in Arabic.﻿﻿",
+        "date": "6 March 2024 - 8 March 2024",
+        "time": "07:30 pm - 09:30 pm",
+        "category": "Entertainment"
+    },
+    {
+        "name": "2nd Souq Waqif International Dates Exhibition 2024",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/2nd-souq-waqif-international-dates-exhibition-event-doha-2024/_680x450_clip_center-center_100_none/2nd-souq-waqif-international-dates-exhibition-event-doha-2024-cover.jpg",
+        "location": "Eastern Square, Souq Waqif",
+        "description": "Visit the 2nd Souq Waqif International Dates exhibition and savor dates from around the Middle East!",
+        "date": "25 February 2024 - 5 March 2024",
+        "time": "09:00 am - 10:00 pm",
+        "category": "Food & Dining"
+    },
+    {
+        "name": "International Women's Day breakfast 2024",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/international-womens-day-breakfast-2024/_680x450_clip_center-center_100_none/international-womens-day-breakfast-2024.jpg",
+        "location": "W Doha Hotels & Residences",
+        "description": "There will be a panel of Inspiring Women Leaders discussing this year's theme of Inspire Inclusion.",
+        "date": "7 March 2024 - 7 March 2024",
+        "time": "07:30 am - 10:30 am",
+        "category": "Community"
+    },
+    {
+        "name": "The Pearl Food Festival",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/the-pearl-food-festival/_680x450_clip_center-center_100_none/the-pearl-food-festival-2024.png",
+        "location": "Porto Arabia (18-22 La Croisette), Doha",
+        "description": "Enjoy an outdoor culinary and entertainment experience at The Pearl Food Festival.",
+        "date": "27 February 2024 - 5 March 2024",
+        "time": "04:00 pm - 02:00 am",
+        "category": "Entertainment"
+    },
+    {
+        "name": "TedXYouth@NIA",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/tedxyouth-nia-doha/_680x450_clip_center-center_100_none/645A43C3-B3C5-47AD-A551-7146F239D64B-2.png",
+        "location": "Bin Jelmood House - Msheireb Museums, Doha, Qatar",
+        "description": "Join us now and enjoy the experiences of multiple different speakers talking about their escape from the echo chambers!",
+        "date": "27 April 2024 - 27 April 2024",
+        "time": "12:00 pm - 06:00 pm",
+        "category": "Education"
+    },
+    {
+        "name": "Electric Idyll Exhibition by Pipilotti Rist",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/electric-idyll-exhibition-pipilotti-rist-doha/_680x450_clip_center-center_100_none/669654/electric-idyll-exhibition-pipilotti-rist_2024-02-22-102923_cgtk.jpg",
+        "location": "Doha Fire Station",
+        "description": "Electric Idyll is the first survey exhibition dedicated to renowned contemporary Swiss artist Pipilotti Rist in the MENA region.",
+        "date": "23 February 2024 - 1 June 2024",
+        "time": "09:00 am - 07:00 pm",
+        "category": "Arts & Culture"
+    },
+    {
+        "name": "Women in Leadership Session at Pullman Doha",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/women-in-leadership-session-pullman-doha-qatar/_680x450_clip_center-center_100_none/13-feb-i-lv-qatar-ad-NEW.jpg",
+        "location": "Pullman Doha West Bay, Al Shatt Street, Doha, Qatar",
+        "description": "Looking to become an inspirational leader? Then join us on the 9 March 2024.",
+        "date": "9 March 2024 - 9 March 2024",
+        "time": "09:00 am - 03:00 pm",
+        "category": "Other"
+    },
+    {
+        "name": "The Pearl Island Ramadan Football Tournament 2024",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/the-pearl-island-ramadan-football-tournament-2024/_680x450_clip_center-center_100_none/the-pearl-island-ramadan-football-tournament-2024.jpg",
+        "location": "Temba Arena, The Pearl Island",
+        "description": "Witness football fun at The Pearl Island Ramadan Football Tournament 2024.",
+        "date": "12 March 2024 - 24 March 2024",
+        "time": "12:00 am - 12:00 am",
+        "category": "Sports"
+    },
+    {
+        "name": "Lusail Speed ​​Fest 2024",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/lusail-speed-fest-2024-racing-event-inetrnational-circuit/_680x450_clip_center-center_100_none/lusail-speed-fest-2024-racing-event-inetrnational-circuit-COVER-IMAGE.jpg",
+        "location": "Lusail International Circuit",
+        "description": "Lusail Speed ​​Fest tickets cost only QR 200 and give access to both events for three days, including the main grandstand and general admission areas.",
+        "date": "29 February 2024 - 10 March 2024",
+        "time": "09:00 am - 08:00 pm",
+        "category": "Sports"
+    },
+    {
+        "name": "Art Portfolio - Art Walk at Education City",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/art-portfolio-art-walk-education-city-qatar/_680x450_clip_center-center_100_none/art-work.jpg",
+        "location": "Education City",
+        "description": "The Art Walk highlights & activates two public art pieces within Education City, every Saturday between 10 February to 30 March 2024.",
+        "date": "10 February 2024 - 30 March 2024",
+        "time": "10:00 am - 05:00 pm",
+        "category": "Arts & Culture"
+    },
+    {
+        "name": "Qatar Collegiate Sports Federation (QCSF) Football League",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/qatar-collegiate-sports-federation-qcsf-football-league-2024/_680x450_clip_center-center_100_none/Qatar-Foundation.jpg",
+        "location": "Qatar Foundation",
+        "description": "Every Monday and Wednesday until 9 March 2024 from 7:30 pm to 10:30 pm.",
+        "date": "1 February 2024 - 9 March 2024",
+        "time": "07:30 pm - 10:30 pm",
+        "category": "Sports"
+    },
+    {
+        "name": "Qumra 2024",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/doha-film-institute-qumra-2024/_680x450_clip_center-center_100_none/Qumra2024.png",
+        "location": "Museum of Islamic Art",
+        "description": "Don't miss the chance to attend 5 inspiring masterclasses and watch 8 incredible, globally acclaimed films with their filmmakers in attendance.",
+        "date": "1 March 2024 - 6 March 2024",
+        "time": "04:00 pm - 08:00 pm",
+        "category": "Arts & Culture"
+    },
+    {
+        "name": "Project Qatar 2024",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/project-qatar-2024/_680x450_clip_center-center_100_none/Project-Qatar-2024.jpg",
+        "location": "Doha Exhibition & Convention Center (DECC)، West Bay",
+        "description": "Visit and meet hundreds of local, regional, and international exhibitors.",
+        "date": "27 May 2024 - 30 May 2024",
+        "time": "12:00 pm - 09:00 pm",
+        "category": "Other"
+    },
+    {
+        "name": "Qatar-UAE Super Cup",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/qatar-uae-super-cup-2024/_680x450_clip_center-center_100_none/first-qatar-uae-super-cup-doha-april-2024.jpeg",
+        "location": "Qatar",
+        "description": "The inaugural match will witness Qatar's Amir Cup champions Al Arabi and UAE's President’s Cup winners Sharjah.",
+        "date": "12 April 2024",
+        "time": "12:00 am",
+        "category": "Sports"
+    },
+    {
+        "name": "8th Edition of Mahaseel Festival 2024",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/mahaseel-festival-doha-2024/_680x450_clip_center-center_100_none/mahaseel-festival-doha-2024.jpg",
+        "location": "Katara's Southern Area",
+        "description": "Visit and enjoy checking out and buying the local fresh farm produce, colourful plants and more!",
+        "date": "17 February 2024 - 17 April 2024",
+        "time": "09:00 am - 09:00 pm",
+        "category": "Community"
+    },
+    {
+        "name": "Future of Metaverse Exhibition - 'MetaWhat?'",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/future-metaverse-exhibition-metawhat-august-2023-doha/_680x450_clip_center-center_100_none/future-metaverse-exhibition-metawhat-august-2023-doha.jpeg",
+        "location": "Main Exhibition Space- Media Majlis, Northwestern University in Qatar",
+        "description": "Save the date! Get introduced to five specially created avatar personalities with tools such as digital screens, holograms, NFT displays, VR, and AR!",
+        "date": "22 January 2024 - 9 May 2024",
+        "time": "10:00 am - 08:00 pm",
+        "category": "Other"
+    },
+    {
+        "name": "2024 MotoGP™ Qatar Airways Grand Prix of Qatar",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/2024-motogp-qatar-airways-grand-prix-of-qatar/_680x450_clip_center-center_100_none/2024-motogp-qatar-airways-grand-prix-of-qatar-cover-image.jpg",
+        "location": "Lusail International Circuit",
+        "description": "The races will occur from 8th to 10th March 2024 and be held under the floodlights.",
+        "date": "8 March 2024 - 10 March 2024",
+        "time": "04:00 pm - 09:00 pm",
+        "category": "Sports"
+    },
+    {
+        "name": "2nd Souq Waqif International Dates Exhibition",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/2nd-souq-waqif-international-dates-exhibition-2024/_680x450_clip_center-center_100_none/2nd-souq-waqif-international-dates-exhibition-2024-cover-image.jpg",
+        "location": "Souq Waqif",
+        "description": "Souq Waqif returns with the International Dates Exhibition from 25 February 2024 until 5 March 2024.",
+        "date": "25 January 2024 - 5 March 2024",
+        "time": "09:00 am - 10:00 pm",
+        "category": "Food & Dining"
+    },
+    {
+        "name": "Qatar Superstock Championship 2024",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/Qatar-Superstock-Championship-2024/_680x450_clip_center-center_100_none/Qatar-Superstock-Championship-2024.jpg",
+        "location": "Losail International Circuit",
+        "description": "Experience the thrill firsthand at the Qatar Superstock Championship 2024. Don't miss out, come and be part of the excitement!",
+        "date": "11 January 2024 - 9 November 2024",
+        "time": "12:00 am - 12:00 am",
+        "category": "Sports"
+    },
+    {
+        "name": "DIMDEX 2024 (Doha International Maritime Defence Exhibition & Conference)",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/dimdex-2024-doha-international-maritime-defence-exhibition-conference/_680x450_clip_center-center_100_none/DIMDEX-2024-Doha-International-Maritime-Defence-Exhibition-Conference.jpg",
+        "location": "Qatar National Convention Centre (QNCC)",
+        "description": "At DIMDEX, exhibitors to showcase their latest, state-of-the-art technologies & products to high-quality industry personnel.",
+        "date": "4 March 2024 - 6 March 2024",
+        "time": "09:00 am - 05:00 pm",
+        "category": "Other"
+    },
+    {
+        "name": "Meryal Waterpark",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/meryal-waterpark-qatar-qetaifan-island-north-doha/_680x450_clip_center-center_100_none/qetaifan-projects-reveal-meryal-name-waterpark.jpg",
+        "location": "Qetaifan Island North, Doha Qatar",
+        "description": "Splash into a world of excitement and adventure at Qatar's tallest water slide!",
+        "date": "29 November 2023 - 31 March 2024",
+        "time": "10:00 am - 05:00 pm",
+        "category": "Entertainment"
+    },
+    {
+        "name": "AFC U23 Asian Cup 2024™",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/afc-u23-asian-cup-2024-doha/_680x450_clip_center-center_100_none/afc-u23-asian-cup-2024-doha.jpg",
+        "location": "To be announced",
+        "description": "16 U23 teams will be battling for the champion title at the tournament, which will take place in Qatar from 15 April - 3 May 2024. ﻿",
+        "date": "15 April 2024 - 3 May 2024",
+        "time": "12:00 am - 12:00 am",
+        "category": "Sports"
+    },
+    {
+        "name": "Torba Market 2023",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/farmers-torba-market-education-city-doha-2023/_680x450_clip_center-center_100_none/farmers-torba-market-education-city-doha-2023.jpeg",
+        "location": "Education City - Gate 7, Torba Farmers Market",
+        "description": "You’ll find everything from reusable cups and bags to pre-loved fashion items and fun workshops.",
+        "date": "11 November 2023 - 27 April 2024",
+        "time": "08:00 am - 09:00 pm",
+        "category": "Community"
+    },
+    {
+        "name": "Qatar Touring Car Championship 2024",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/qatar-touring-car-championship-2024/_680x450_clip_center-center_100_none/qatar-touring-car-championship-2024.jpg",
+        "location": "Al Rayyan",
+        "description": "The new schedule of Qatar Touring Car Championship 2024 has been announced.",
+        "date": "11 January 2024 - 9 November 2024",
+        "time": "09:00 am - 09:00 pm",
+        "category": "Sports"
+    },
+    {
+        "name": "MIA Bazaar returns at the MIA Park",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/mia-bazaar-returns-mia-park-october-2023-march-2024/_680x450_clip_center-center_100_none/mia-bazaar-returns-mia-park-october-2023-march-2024-cover.jpg",
+        "location": "MIA Park, Museum of Islamic Art",
+        "description": "The MIA Bazaar is a family-friendly event with free admission, open on Fridays from 2 pm to 10 pm and Saturdays from 10 am to 8 pm. Entry is free!",
+        "date": "20 October 2023 - 10 March 2024",
+        "time": "02:00 pm - 10:00 pm",
+        "category": "Community"
+    },
+    {
+        "name": "Fashioning an Empire: Textiles from Safavid Iran",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/mia-park-museum-of-islamic-art-fashioning-an-empire-safavid-iran/_680x450_clip_center-center_100_none/Fashioning-an-Empire-Textiles-from-Safavid-Iran.jpg",
+        "location": "Museum of Islamic Art, Qatar",
+        "description": "This captivating exhibition will highlight the critical role that silk played during the Safavid period (1501–1736 CE).",
+        "date": "23 October 2023 - 20 April 2024",
+        "time": "10:00 am - 07:00 pm",
+        "category": "Arts & Culture"
+    },
+    {
+        "name": "Wanda Diamond League 2024 meeting in Doha",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/wanda-diamond-league-2024-meeting-doha/_680x450_clip_center-center_100_none/diamond-league-2024-meeting-in-doha.jpg",
+        "location": "Doha, Qatar",
+        "description": "Doha will be one of the venues of Wanda Diamond League's prestigious one-day global track and field meetings on 10 May 2024.",
+        "date": "10 May 2024",
+        "time": "12:00 am",
+        "category": "Sports"
+    },
+    {
+        "name": "Shattered 2023 Exhibition",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/mia-park-museum-of-islamic-art-shattered-2023-exhibition/_680x450_clip_center-center_100_none/Shattered-2023.jpg",
+        "location": "Museum of Islamic Art, Qatar",
+        "description": "A captivating installation unfolds, a collection of exquisitely formed glass birds created by Turkish artist Feleksan Onar. Know more here!",
+        "date": "20 September 2023 - 7 May 2024",
+        "time": "09:00 am - 07:00 pm",
+        "category": "Arts & Culture"
+    },
+    {
+        "name": "Qatar Economic Forum 2024",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/qatar-economic-forum-bloomberg-2024/_680x450_clip_center-center_100_none/qatar-economic-forum-bloomberg-2024.jpg",
+        "location": "Doha, Qatar (TBA)",
+        "description": "Influential global business leaders, academics, and entrepreneurs will gather for a comprehensive dialogue about the global economy.",
+        "date": "14 May 2024 - 16 May 2024",
+        "time": "12:00 am - 12:00 am",
+        "category": "Other"
+    },
+    {
+        "name": "Qatar Talent Show",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/Qatar-Talent-Show-2023-2024/_680x450_clip_center-center_100_none/Qatar-talent-show-2023.png",
+        "location": "Different locations (Check below)",
+        "description": "For students, children, and youth to showcase talents and inspire others, foster healthy competition, and create camaraderie. Register here!",
+        "date": "10 August 2023 - 3 May 2024",
+        "time": "10:00 am - 05:30 pm",
+        "category": "Entertainment"
+    },
+    {
+        "name": "Art Therapy Diploma by VCUarts Qatar",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/vcuarts-qatar-art-therapy-diploma-course/_680x450_clip_center-center_100_none/Art-Therapy-Diploma.jpg",
+        "location": "Online class",
+        "description": "It will be delivered over 12 mos, is the first in the region & is certified by the UK's Counselling and Psychotherapy Central Awarding Body (CPCAB).",
+        "date": "23 September 2023 - 27 July 2024",
+        "time": "10:00 am - 05:00 pm",
+        "category": "Education"
+    },
+    {
+        "name": "Formula 1® Qatar Airways Qatar Grand Prix 2024",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/f1-formula-1-world-championship-2024-lusail-qatar/_680x450_clip_center-center_100_none/formula-1.jpeg",
+        "location": "Lusail Circuit Sports Club",
+        "description": "﻿Watch the exciting action unfold at the Formula 1® Qatar Airways Qatar Grand Prix 2024!",
+        "date": "29 November 2024 - 1 December 2024",
+        "time": "12:00 am - 11:59 pm",
+        "category": "Sports"
+    },
+    {
+        "name": "ConteQ Expo24",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/conteq-expo24-qncc-qatar/_680x450_clip_center-center_100_none/qatar-host-conteq-expo24-september-2024.jpg",
+        "location": "Qatar National Convention Centre",
+        "description": "ConteQ Expo24 aims to create a platform that champions digitalization, emerging innovation in the construction, manufacturing and retail industries.",
+        "date": "16 September 2024 - 19 September 2024",
+        "time": "12:00 am - 12:00 am",
+        "category": "Other"
+    },
+    {
+        "name": "Expo 2023 Doha Qatar",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/expo-2023-doha-qatar/_680x450_clip_center-center_100_none/International-Horticultural-Doha-Expo-2023.jpeg",
+        "location": "Al Bidda Park",
+        "description": "International Horticultural Expo or Doha Expo 2023, which will be held from 2 October 2023 to 28 March 2024, in Al Bidda Park!",
+        "date": "2 October 2023 - 28 March 2024",
+        "time": "10:00 am - 11:00 pm",
+        "category": "Other"
+    },
+    {
+        "name": "Lusail Winter Wonderland",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/lusail-winter-wonderland-doha-qatar-2022/_680x450_clip_center-center_100_none/lusail-wonderland.jpg",
+        "location": "Al Maha Island in Lusail City, Qatar",
+        "description": "Get ready to create memories and share the joy with friends and family this winter!",
+        "date": "- 30 April 2024",
+        "time": "- 11:00 pm",
+        "category": "Entertainment"
+    },
+    {
+        "name": "Pipilotti Rist: Your Brain to Me, My Brain to You at National Museum of Qatar",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/pipilotti-rist-your-brain-to-me-my-brain-to-you/_680x450_clip_center-center_100_none/Pipilotti-Rist.png",
+        "location": "QBEC Gallery, National Museum of Qatar",
+        "description": "Come and go on an immersive journey of self-discovery through a multisensory experience that inspires introspection and awe. Know more here!",
+        "date": "21 March 2022 - 30 April 2024",
+        "time": "09:00 am - 09:00 pm",
+        "category": "Education"
+    },
+    {
+        "name": "FILMS IN CONCERT - THE LION KING LIVE IN CONCERT (ARABIC)",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_1920x700_webp133529852522373287.webp",
+        "location": "Al MAYASSA THEATRE at QNCC",
+        "description": "The Lion King (show is in Arabic):",
+        "date": " 12-04-2024",
+        "time": " 06:00 PM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "Mollywood Magic",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Banner_1920x700_(1)_webp133517713956944276.webp",
+        "location": "Stadium 974 (Ras Abu Aboud)",
+        "description": "Get ready to amplify your senses at 'Mollywood Magic,' an extraordinary spectacle brought to you by Nine one events on March 7th, held at the vibrant 974 Stadium. This night will not be about accolades but about igniting the spark of entertainment with the galaxy of 86 stars from the Malayalam film industry. A constellation of your favorite actors, directors, and storytellers are set to descend, making it a rendezvous of talent and charisma that transcends the ordinary.",
+        "date": " 07-03-2024",
+        "time": " 07:00 PM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "Kite Beach Festival",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Kite_Beach_Festival_webp_Banner133529990086897467.webp",
+        "location": "Hilton Salwa Beach Resort & Villas",
+        "description": "Hilton Salwa’s long awaited beach festival is back, promising you lots of family fun with a special Kite Festival edition and great kids’ games at the beach.",
+        "date": " 08-03-2024",
+        "time": " 10:00 AM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "HAYYA RUN 2024",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Hayya_Run133535023520455197.webp",
+        "location": "Al Janoub Stadium Park",
+        "description": "The 2nd edition of HAYYA RUN will take place at Al Janoub Stadium Park on Friday 8 March 2024 and comprise of distances ranging from 800M to 10K.  All events will be run on accurately measured short courses with multiple laps and will be restricted to a maximum of 400 participants.",
+        "date": " 08-03-2024",
+        "time": " 07:00 AM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "Showtime! 2024",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Showtime_Q-tickets_1920x700133517670208234120.webp",
+        "location": "PUE-Theater QATAR FOUNDATION",
+        "description": "Showtime! returns even bigger and better than before.",
+        "date": " 06-03-2024 - 08-03-2024",
+        "time": " 02:30 PM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "Holi Reloaded (Season 4)",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Web_banner133536704431501882.webp",
+        "location": "Doha Sport park ( Golf Club ) Near katara Village",
+        "description": "WiroHub Events is back with (Desi Swag Holi), Holi Reloaded ( Season 4 )  Get reloaded with fun, music, food, and colors. This time it's bigger, better than before, and a lot crazier. Bring your family to the ultimate Holi destination at Doha Sports Park. It’s more than your imagination!",
+        "date": " 08-03-2024",
+        "time": " 04:00 PM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "FORMULA 1 QATAR AIRWAYS QATAR GRAND PRIX 2024",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Web_Latest133539175145515331.webp",
+        "location": "LUSAIL INTERNATIONAL CIRCUIT",
+        "description": "MAIN GRANDSTAND \nTicket inclusions:",
+        "date": " 29-11-2024 - 01-12-2024",
+        "time": "  Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "SEA CAVES WATER AND ADVENTURE PARK- DESERT FALLS",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Q-Tickets_DF_Buy_1_Get_1_Offer_2024_webp133515088632378515.webp",
+        "location": "Desert Falls Water and Adventure park",
+        "description": "One of the largest theme parks in the Middle East, brace yourself for a jaw-dropping adventure at Desert Falls Water and Adventure Park. Located within Hilton Salwa Beach Resort & Villas, Sea Caves Water Park features 19 attractions with 30 rides and slides, including the water park’s signature ride “The King Cobra” and many other attractions including the Kids Ship Pool, the Whizzard Mat Racer, inner tube slides, Surfing Dunes, Family Abyss, Falls Pool and the Wave Pool.",
+        "date": " 01-12-2022 - 07-04-2024",
+        "time": " 10:00 AM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "RESORT POOL AND BEACH ACCESS",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Pool__Beach_Access133480739320532783.webp",
+        "location": "Hilton Salwa Beach Resort & Villas",
+        "description": "Pool and Beach access is fully redeemable on Food and Beverage at South Bay and is open from 8am to sunset",
+        "date": " 14-12-2022 - 31-12-2024",
+        "time": " 10:00 AM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "Wild Dunes Shared Desert Safari",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Qtickets_webp133509252375540050.webp",
+        "location": "Inland Sea",
+        "description": "Wild Dunes Shared Desert Safari: Thrills, Stunts, and Sunsets in the Desert",
+        "date": " 26-01-2024 - 30-01-2026",
+        "time": " 01:30 PM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "Sunrise Escape in the Desert",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_QTickets_webp133509252159645765.webp",
+        "location": "Inland Sea",
+        "description": "Book your spot on this amazing Sunrise Desert Safari to explore Qatari sand dunes and experience the natural beauty you've never discovered. Enjoy a personalized break at the Inland Sea with snacks and beach chairs.",
+        "date": " 28-01-2024 - 31-01-2026",
+        "time": " 03:00 AM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "Our Little Secret Getaway",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Qtickets_Site_webp133509252015211580.webp",
+        "location": "Marina Gate 18, Porto Arabia, the Pearl",
+        "description": "Embark on a journey to Safliya Island for a clandestine 3-hour Private Dinner experience, departing from Marina Gate 18. Cruise to the island, relish an exclusive majlis setup on the beach, and enjoy dinner as the sun sets over Doha’s skyline. With a secret boat journey, mesmerizing views, and secluded beachside dining, this exclusive experience offers a perfect blend of luxury and natural beauty..",
+        "date": " 28-01-2024 - 31-01-2026",
+        "time": " 04:30 PM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "FORMULA 1 STC SAUDI ARABIAN GRAND PRIX",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Web_banner133500359216358397.webp",
+        "location": "Jeddah Corniche Circuit",
+        "description": "Paddock Club\n  Ticket inclusions:",
+        "date": " 07-03-2024 - 09-03-2024",
+        "time": " 12:00 AM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "16th Artistic gymnastics world cup",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_16_th_Gymnastic133490873039338065.webp",
+        "location": "Aspire Ladies Sport Hall, Doha, QATAR",
+        "description": "The 16th Artistic Gymnastics World Cup will gather the best gymnasts of the world for 2 days of competitions.",
+        "date": " 19-04-2024 - 20-04-2024",
+        "time": " 04:00 PM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "AUTISM RUN 2024",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Banner-09133502918473460205.webp",
+        "location": "Al Bidda Park",
+        "description": "AUTISM PARENTS PLATFORM, in collaboration with Qatar Sports For All, presents the inaugural AUTISM RUN 2024 powered by Doha Expo & Seashore. The event will take place at Al Bidda Park on Saturday 9 March 2024 and comprise of distances ranging from 800M to 10K.  All events will be run on an accurately measured short course with multiple laps and will be restricted to a maximum of 400 participants.",
+        "date": " 09-03-2024",
+        "time": " 07:00 AM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "WANDA DIAMOND LEAGUE",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Web-Banner-1920x700_WEBP133474468918829262.webp",
+        "location": "Qatar Sports Club",
+        "description": "The Doha Diamond League 2024 is one of fifteen meetings in the outdoor athletics season, organized by World Athletics.  The competition brings together the world's best athletes for an evening of competition.",
+        "date": " 10-05-2024",
+        "time": " 06:00 PM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "Full Moon Desert Safari",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_FM_Desert_Safari_2133497153184407178.webp",
+        "location": "Inland Sea",
+        "description": "An enchanted and remarkable desert encounter. In addition to the camel and falcon viewing at the desert camp, our Full Moon Desert Safari package includes a close-up look at the parched vegetation, which include cacti, wildflowers, and shrubs. This is an amazing experience in and of itself. Discover this UNESCO-designated natural reserve of breathtaking sand dunes, also called singing sand dunes, with unique biodiversity; this is one of the few locations in the world where, at high tide, the sea touches down into the middle of the desert.",
+        "date": " 23-02-2024 - 13-12-2024",
+        "time": " 01:30 PM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "Museum of illusions",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Museum_of_illusions_WEBP133474457047647313.webp",
+        "location": "Gate Mall, 1st floor",
+        "description": "It is sure to be an amazing and unimaginable experience because whatever you see, especially here in the Museum of Illusions, is not what it appears to be!!",
+        "date": " 08-10-2022 - 01-01-2026",
+        "time": " 09:00 AM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "Lusail Winter Wonderland",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Home_page_banner_WEBP133474463371664480.webp",
+        "location": "AL Maha Island",
+        "description": "Located in the heart of Al Maha Island, immerse yourself in festive fun for the whole family with over 50 rides and attractions, scrumptious food and drinks, live entertainment and more.",
+        "date": " 01-11-2023 - 09-03-2024",
+        "time": " 04:00 PM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "Sheikh Faisal Bin Qassim Al Thani Museum",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Sheikh_Faisal_Bin_Museum_WEBP133474457348063333.webp",
+        "location": "Sheikh Faisal Bin Qassim Al Thani Museum, Dukhan Road, Al Shahaniya",
+        "description": "",
+        "date": " 20-11-2022 - 10-10-2024",
+        "time": " 09:00 AM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "Arabian Shuwa Beach Experience",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_1920x700_webp133498679001539779.webp",
+        "location": "Banana Island Resort Doha",
+        "description": "A favourite Omani recipe, 'shuwa' is a dish of slow–cooked marinated lamb. The meat is coated in a flavourful rub of spices, garlic and oil, although exact recipes and spices used vary from region to region. It is traditionally cooked, wrapped and buried in a pit of hot coals for several hours –producing the most tasty dishes owing to the resting stage when the marination of the meat allows the juices to properly absorb and thereafter cook perfectly.",
+        "date": " 22-11-2023 - 31-12-2024",
+        "time": " 01:00 PM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "Swing into Golf",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_SWING_INTO_GOLF_banner133539421103193450.webp",
+        "location": "Education City Golf Club",
+        "description": "Swing Into Golf",
+        "date": " 19-11-2023 - 31-03-2024",
+        "time": " 06:00 PM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "Doha Quest",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_1920x700px_webp133498679805807176.webp",
+        "location": "Al Khaleej Street, Doha Oasis, Msheireb",
+        "description": "Quest, the ultimate indoor experiential theme park nestled in the heart of Doha Oasis in Msheireb! This themed and story-based realm takes you on a journey through three time-dimensions: the past (Oryxville), present (City of Imagination), and future (Gravity). With over 30 rides & attractions, featuring a mix of adrenaline-heavy thrill rides, media-controlled simulators, virtual reality experiences, laser tag adventures, and family-friendly attractions, Quest offers an experience unlike any other in Doha.",
+        "date": " 30-10-2023 - 31-12-2024",
+        "time": " 08:30 AM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "The Beach House Brunch: Street Food Style",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_1920x700_webp133498685551667065.webp",
+        "location": "Banana Island Resort Doha",
+        "description": "Make your Fridays more enjoyable as you and your family delight in an extensive and generous feast by the Q Lounge pool side - complete with the spectacular beach view. Come in your most comfortable and colourful clothes to match the chill vibe.The little ones will certainly have fun as well at the kids’ corner and live dessert stations.",
+        "date": " 08-11-2022 - 31-12-2024",
+        "time": " 01:00 PM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "Dhow Cruise Ride",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Dhow_Cruise_Ride_-_Doha_Dhow_WEBP133502369313935665.webp",
+        "location": "Marina A (Sheraton), Marina B (Al Bidda) Marina C (Dakhliya)",
+        "description": "Dhow Cruise (Shared Basis)",
+        "date": " 07-08-2023 - 31-08-2024",
+        "time": " 01:00 PM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "VIP Dhow Cruise",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_VIP_Dhow_Cruise_2_WEBP133502369537254418.webp",
+        "location": "Marina A (Sheraton)",
+        "description": "Private Dhow",
+        "date": " 07-08-2023 - 31-08-2024",
+        "time": " 01:00 PM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "Swim and Jump",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_SWIM_webp133502370660322408.webp",
+        "location": "Box Park Corniche",
+        "description": "Escape the hustle and bustle of city life and soak up the sights aboard a dhow. What better way to spend your weekend. Leave your worries behind and create a moment to remember on-board National Cruise",
+        "date": " 04-08-2023 - 02-08-2024",
+        "time": " 02:00 PM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "See Doha from Sea - Sunset Cruise",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_SEE_DOHA_webp133502370900747895.webp",
+        "location": "Box Park - Pearl (Back & Front)",
+        "description": "A Touch of heritage meets modern architecture during this Two-Hours Mid Day or Evening cruise on an Arabic dhow, a traditional wooden sailing vessel, through the waters of the Arabian Gulf. Be amazed by the stunning views of Doha’s major tourist spots while having Refreshments ( water. Tea, and coffee )",
+        "date": " 01-08-2023 - 01-08-2024",
+        "time": " 05:00 PM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "30 Minutes Arabic",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_30_Minutes_Arabic_Dhow_Ride_banner__WEBP133502372600929365.webp",
+        "location": "Mina Port – Pick up and drop Marina Gate 3",
+        "description": "Enjoy 30 Min Arabic Dhow ride with your family and friends refreshments on board in the Majlis set up on the Upper Deck",
+        "date": " 01-08-2023 - 01-08-2024",
+        "time": " 05:00 PM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "Wooden Dhow Boat Cruise",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_3_WEBP133502373724039144.webp",
+        "location": "Corniche Dhow Harbor",
+        "description": "Gate Rules:ARRIVE 15 MINUTES BEFORE THE CHOSEN TIME SLOT",
+        "date": " 01-08-2023 - 31-07-2024",
+        "time": " 08:00 AM Onwards",
+        "category": "Other"
+    }
+]

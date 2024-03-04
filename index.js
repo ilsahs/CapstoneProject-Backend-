@@ -4,16 +4,23 @@ const cors = require("cors")
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const cookieParser = require('cookie-parser')
-const UserModel = require('./models/Users')
-const Events = require('./models/Events')
 const Comments = require('./models/Comments')
 const multer = require('multer');
 const path = require('path');
 const { errorMonitor } = require("events")
 const bodyParser = require("body-parser")
 const dotenv = require("dotenv")
+const cron = require('node-cron');
+const fs = require('fs');
+const { promisify } = require('util');
+const exec = promisify(require('child_process').exec);
+const {OpenAIClient, AzureKeyCredential} = require("@azure/openai");
+const mime = require('mime-types');
 
-//const chatRoutes = require("./routes/chatRoutes")
+//Models
+const UserModel = require('./models/Users')
+const EventModel = require('./models/Events')
+const CommentsModel = require("./models/Comments")
 
 const app = express()
 app.use(express.json())
@@ -27,26 +34,33 @@ app.use(bodyParser.json());
 
 dotenv.config()
 
-const {OpenAIClient, AzureKeyCredential} = require("@azure/openai");
-const CommentsModel = require("./models/Comments")
+//Environment Variables
 const endpoint = process.env["ENDPOINT"] || "<endpoint>";
-const azureApiKey = process.env["AZURE_API_KEY"] || "<api key>";
+const azureApiKey = process.env["AZURE_API_KEY"] || "<api_key>";
+const deploymentName = process.env["DEPLOYMENT_NAME"] || "<deployment_name";
+const whisperEndpoint = process.env["WHIPER_ENDPOINT"] || "<whisper_endpoint>";
+const whisperAzureApiKey = process.env["WHISPER_API_KEY"] || "<whisper_api_key>";
+const whisperDeploymentName = process.env["WHISPER_DEPLOYMENT_NAME"] || "<whisper_deployment_name";
+const visionDeploymentName = process.env["VISION_DEPLOYMENT_NAME"] || "<vision_deployment_name";
 
 mongoose.connect('mongodb+srv://meera:12class34@cluster0.f34xz2a.mongodb.net/qatarEvents');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'uploads/'); 
+        const folder = file.mimetype.startsWith('image/') ? 'images'
+                    : file.mimetype.startsWith('audio/') ? 'audios'
+                    : 'others';
+        const destPath = path.join(__dirname, 'uploads', folder);
+        fs.mkdirSync(destPath, { recursive: true });
+        cb(null, destPath); 
     },
-    filename: function (req, file, cb) {
-        
+    filename: function (req, file, cb) {        
         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
         cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
     },
 });
 
 const upload = multer({ storage: storage });
-
 
 app.use('/uploads', express.static('uploads'));
 
@@ -72,9 +86,74 @@ const verifyUser = (req, res, next) => {
         });
     }
 }
-//
+
+// function localImageToDataUrl(imagePath){
+//     const mimeType = mime.lookup(imagePath) || 'application/octet-stream';
+//     // Extract file name from the image path
+//     const fileName = path.basename(imagePath);
+    
+//     // Construct the desired file path
+//     const filePath = `./uploads/images/${fileName}`;
+//     //const base64EncodedData = fs.readFileSync(filePath).toString('base64');  
+//     //console.log(mimeType)
+//     //encodedImage = `data:${mimeType};base64,{${base64EncodedData}}`;
+//     return filePath;
+//   }
+
+const pythonScriptPath = './scraping/scraping.py';
+const jsonFilePath = './scraping/events_data.json';
+const command = `python ${pythonScriptPath}`;
+const readFile = promisify(fs.readFile);
+
+//Schedule web scraping for every hour: 0 * * * *
+//every 5 minutes: */5 * * * *
+cron.schedule('*/5 * * * *', async () => {
+// const scrape = async () => {
+    console.log('Running Python script...');
+    // Execute the Python script
+    try {
+        const { stdout, stderr } = await exec(command);
+        if (stderr) {
+            console.error(`Python script STDERR: ${stderr}`);
+        }
+        console.log(`Python script STDOUT: ${stdout}`);
+        
+        // Read the JSON file
+        const data = await readFile(jsonFilePath, 'utf8');
+        const scrapedEvents = JSON.parse(data);
+        // Assuming updateEvents is an async function
+        updateEvents(scrapedEvents);
+    } catch (error) {
+        console.error(`Error: ${error}`);
+    }
+}, 
+{
+    scheduled: true,
+    timezone: 'Asia/Qatar'
+});
+
+const updateEvents = (scrapedEvents) => {
+    console.log(`Total Events: ${scrapedEvents.length}`)
+    scrapedEvents.forEach (async e => {
+    await EventModel.findOneAndUpdate(
+        //check if the event exists based on the name
+        {title: e.name},
+        //if it exists, u update it by replacing it completely
+        e,
+        //else you insert a new event to the db
+        {upsert: true, new: true})
+        .then(() => {
+            console.log(`Event ${e.name} updated/added successfully`);
+        })
+        .catch(error => {
+            console.error(`Error updating/adding event: ${error}`);
+        });
+    })
+}
+
+// Dashboard
 app.get('/dashboard', verifyUser, (req, res) => {
-    Events.find().then(events => {
+    EventModel.find().then(events => {
         //console.log(events);
         res.json(events);
     }).catch(err => {
@@ -83,6 +162,7 @@ app.get('/dashboard', verifyUser, (req, res) => {
     });
 })
 
+//All users
 app.get('/all', (req, res) => {
     //console.log("testing log")
     UserModel.find().then((result) => {
@@ -92,6 +172,7 @@ app.get('/all', (req, res) => {
     })
 })
 
+//All Comments
 app.get('/allcomments', (req, res) => {
     Comments.find().then((result) => {
         res.send(result);
@@ -100,6 +181,7 @@ app.get('/allcomments', (req, res) => {
     })
 })
 
+//Register
 app.post('/Register', (req, res) => {
     const { Name, Email, Password } = req.body;
     bcrypt.hash(Password, 10)
@@ -110,13 +192,41 @@ app.post('/Register', (req, res) => {
         }).catch(err => res.json(err))
 })
 
+//Login
+app.post('/login', (req, res) => {
+    const { Email, Password } = req.body;
+    UserModel.findOne({ Email: Email })
+        .then(user => {
+            if (user) {
+                bcrypt.compare(Password, user.Password, (err, response) => {
+                    if (response) {
+                        const token = jwt.sign({ Email: user.Email },
+                            "jwt-secret-key", { expiresIn: '30m' })
+                        res.cookie('token', token)
+                        let checkacc = check(Email);
+                        return res.json({ Status: "Success" })
+                    } else {
+                        return res.json("The password is incorrect")
+                    }
+                })
+            } else {
+                return res.json("No record existed")
+            }
+        })
+})
+
+//Logout
+app.get('/logout', (req, res) => {
+    res.clearCookie('token')
+    return res.json({logout : true})
+})
+
+//Test
 app.post('/test', verifyUser, (req, res) => {
     const email = req.decoded.Email;
     //console.log(email)
     res.send(email)
-
 })
-
 
 function check(email) {
     UserModel.findOne({ Email: email })
@@ -127,81 +237,15 @@ function check(email) {
             return "Success"
         })
 }
-app.get("/api/thread/like",(req,res)=>{
-    const token = req.cookies.token
-    const decoded = jwt.verify(token, "jwt-secret-key");
-    const userEmail = decoded.Email;
- 
-    //console.log({ userEmail});
-    return res.json({userEmail})
-})
-app.post("/api/thread/like", (req, res) => {
-    
-    const { threadId, email } = req.body;
-  
-    const result = threadList.filter((thread) => thread.id === threadId);
- 
-    const threadLikes = result[0].likes;
-  
-    const authenticateReaction = threadLikes.filter((user) => user === email);
 
-    if (authenticateReaction.length === 0) {
-        threadLikes.push(email);
-        return res.json({
-            message: "You've reacted to the post!",
-        });
-    }
-    res.json({
-        error_message: "You can only react once!",
-    });
-});
-app.post("/api/thread/replies", (req, res) => {
-  
-    const { id } = req.body;
-   
-    const result = threadList.filter((thread) => thread.id === id);
-
-    res.json({
-        replies: result[0].replies,
-        title: result[0].title,
-    });
-});
-app.get("/api/create/reply", async (req, res) => {
-    const token = req.cookies.token
-    const decoded = jwt.verify(token, "jwt-secret-key");
-    const userEmail = decoded.Email;
-    return res.json({userEmail})
-})
-
-app.post("/api/create/reply", async (req, res) => {
-
-    const { id, email, reply } = req.body;
-   
-    const result = threadList.filter((thread) => thread.id === id);
-
-    // const user = users.filter((user) => user.id === email);
-  
-    result[0].replies.unshift({
-        email: email,
-        // name: user[0].username,
-        text: reply,
-    });
-
-    res.json({
-        message: "Response added successfully!",
-    });
-});
-
+//Complete Profile
 app.post('/complete', upload.single('ProfilePicture'), async (req, res) => {
-
     try {
         //getting email from token
         const token = req.cookies.token
         const decoded = jwt.verify(token, "jwt-secret-key");
         const userEmail = decoded.Email;
 
-
-        
         const ProfilePicture = req.file ? req.file.filename : null;
 
         const { DOB, selectedPreferences } = req.body;
@@ -260,6 +304,9 @@ app.post('/login', (req, res) => {
         })
 })
 
+
+
+//Get comments based on event ID
 app.get('/comments/:eventId', async (req, res) => {
     const eventId = req.params.eventId;
     try {
@@ -277,104 +324,81 @@ app.get('/comments/:eventId', async (req, res) => {
     }
   });
 
-app.get('/logout', (req, res) => {
-    res.clearCookie('token')
-    return res.json({logout : true})
-})
+//Chatbot
+app.post("/chat", upload.single('file'), async(req, res) => {
+    try {
+        if (req.file) {
+            const filePath = req.file.path;
+            const mimeType = req.file.mimetype;
+            const fileName = path.basename(filePath);
+            console.log(fileName)
+            
+            //Image doesn't work yet
+            if (mimeType.startsWith('image/')) { 
+                console.log("Uploaded file is an image")        
+                const fileP = `images/${fileName}`;
+                const imageUrl = `${req.protocol}://${req.get('host')}/uploads/${fileP}`
+                console.log(imageUrl)    
+                console.log("Start image analysis")
 
-const generateID = () => Math.random().toString(36).substring(2, 10);
-app.get("/api/create/thread",verifyUser, async (req, res) => {
-    const token = req.cookies.token
-    const decoded = jwt.verify(token, "jwt-secret-key");
-    const userEmail = decoded.Email;
- 
-    console.log({ userEmail});
-    return res.json({userEmail})
-});
-const threadList = [];
-app.post("/api/create/thread", async (req, res) => {
-    const { thread, email } = req.body;
-    const threadId = generateID();
-    
-    threadList.unshift({
-        id: threadId,
-        title: thread,
-        email,
-        replies: [],
-        likes: [],
-    });
+                const client2 = new OpenAIClient(endpoint, new AzureKeyCredential(azureApiKey));
+                console.log("Start 2 image analysis")
+                const result = await client2.getChatCompletions(visionDeploymentName, [
+                    { role: "system", content: "You are a helpful assistant." },
+                    {
+                        role: "user",
+                        content: [
+                            { type: "text", text: "Describe this picture:" },
+                            { type: "image_url", image_url: { url: imageUrl } }
+                        ]
+                    }
+                ],
+                {
+                    temperature: 1,
+                    max_tokens: 256, 
+                    top_p: 1 
+                });
+                
+                for (const choice of result.choices) {
+                    console.log(choice.message.content);
+                }    
+            }
 
-    
-    res.json({
-        message: "Thread created successfully!",
-        threads: threadList,
-    });
-    //console.log({ thread, email, threadId });
-});
+            else if (mimeType.startsWith('audio/')) {
+                console.log("Uploaded file is an audio");
+                const fileP = `./uploads/audios/${fileName}`;
+                console.log("== Transcribe Audio Sample ==");
+                const client1 = new OpenAIClient(whisperEndpoint, new AzureKeyCredential(whisperAzureApiKey));
+                const audio = await readFile(fileP);
+                const result1 = await client1.getAudioTranscription(whisperDeploymentName, audio);
+                res.send(result1.text);
+            }
+        }
 
+        else if (req.body) {
+            const {prompt} = req.body
+            // Here you can handle text messages
+            //Chat Completions
+            const client = new OpenAIClient(endpoint, new AzureKeyCredential(azureApiKey));
+            const jsonFile = "./prompts.json"
+            const fileData = await readFile(jsonFile, 'utf8');
+            const prompts = JSON.parse(fileData);
+            prompts[prompts.length -1]['content'] = prompt;
 
-app.post("/chat", async(req, res) => {
-    const {prompt} = req.body
-    try{
-    const client = new OpenAIClient(endpoint, new AzureKeyCredential(azureApiKey));
-    const deploymentId = "events-hub";
-    const result = await client.getChatCompletions(deploymentId, [
-    {
-      "role": "system",
-      "content": "You are the assistant for providing information about upcoming events. Users will inquire about details such as event titles, dates, locations, and summaries. Your goal is to create informative and contextually appropriate responses.\n\n1. User Interaction:\n    - Users will initiate conversations with questions related to events.\n    - The assistant should respond in a friendly and informative manner, addressing queries about event details.\n\n2. Event Information:\n    - The dataset provided contains details about various events, including titles, dates, locations, categories, and summaries.\n\n3. Context Handling:\n    - Maintain context within the conversation to ensure coherent and relevant responses.\n    - If the user asks follow-up questions, the assistant should refer to previous responses or provide additional details.\n\n4. Output Format:\n    - The assistant should output responses in a structured format, including relevant event details such as titles, dates, and summaries.\n\nExample Queries:\n- \"Tell me about the upcoming events.\"\n- \"When is the next event taking place?\"\n- \"Give me more details about the 'Special Concert' event.\"\n\nEvaluation Criteria:\n- Responses should be accurate, informative, and contextually relevant.\n- The assistant should handle various types of queries related to event details effectively.\n"
-    },
-    {
-      "role": "user",
-      "content": "Tell me about the Qatar Airways Grand Prix of Qatar Moto GP 2023."
-    },
-    {
-      "role": "assistant",
-      "content": "The Qatar Airways Grand Prix of Qatar Moto GP 2023 is a sports event that will take place from 17 Nov to 19 Nov at the Lusail International Circuit. It's a thrilling race where top riders compete under dazzling lights for victory. You can find more information about the event [here](https://visitqatar.com/intl-en/events-calendar/motogp-qatar-airways-grand-prix-2023)"
-    },
-    {
-      "role": "user",
-      "content": "What is the World Innovation Summit for Education (WISE) 2023 about?"
-    },
-    {
-      "role": "assistant",
-      "content": "The World Innovation Summit for Education (WISE) 2023 is a business summit focused on building the future of education. It aims to engage in discussions and explore solutions to pressing educational challenges. The summit will be held from 28 Nov to 29 Nov at the Qatar National Convention Center. You can find more information [here](https://www.wise-qatar.org)"
-    },
-    {
-      "role": "user",
-      "content": "Tell me more about the Katara Traditional Dhow Festival."
-    },
-    {
-      "role": "assistant",
-      "content": "The Katara Traditional Dhow Festival is a free event held from 28 Nov to 02 Dec at Katara Beach. It's the 13th edition of the festival, where traditional dhows will be showcased. You can find more information [here](https://www.katara.net)."
-    },
-    {
-      "role": "user",
-      "content": "What is the Made in Qatar exhibition about?"
-    },
-    {
-      "role": "assistant",
-      "content": "The Made in Qatar exhibition is a free event taking place from 29 Nov to 02 Dec at the Doha Exhibition & Convention Center (DECC). It is a platform that brings together local companies and factories to support and promote Qatari products. You can find more information [here](https://www.madeinqatar.com.qa/)."
-    },
-    // {
-    //   "role": "user",
-    //   "content": "What sport events are being held?",
-    // },
-    {
-        "role": "assistant",
-        "content": prompt,
-    }
-    ],
-    {
-      temperature: 1,
-      max_tokens: 256,
-      top_p: 1,
-      frequency_penalty: 0,
-      presence_penalty: 0 
-    },
-    );
-    for (const choice of result.choices) {
-       res.send(choice.message.content);
-     }
+            const result = await client.getChatCompletions(deploymentName, prompts,
+            {
+                temperature: 1,
+                max_tokens: 256,
+                top_p: 1,
+                frequency_penalty: 0,
+                presence_penalty: 0 
+            },
+            );
+            
+            for (const choice of result.choices) {
+                res.send(choice.message.content);
+            }
+        }    
     }
     catch(err){
         res.status(500).send(err)
