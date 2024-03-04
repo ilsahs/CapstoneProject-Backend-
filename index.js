@@ -127,6 +127,70 @@ function check(email) {
             return "Success"
         })
 }
+app.get("/api/thread/like",(req,res)=>{
+    const token = req.cookies.token
+    const decoded = jwt.verify(token, "jwt-secret-key");
+    const userEmail = decoded.Email;
+ 
+    //console.log({ userEmail});
+    return res.json({userEmail})
+})
+app.post("/api/thread/like", (req, res) => {
+    
+    const { threadId, email } = req.body;
+  
+    const result = threadList.filter((thread) => thread.id === threadId);
+ 
+    const threadLikes = result[0].likes;
+  
+    const authenticateReaction = threadLikes.filter((user) => user === email);
+
+    if (authenticateReaction.length === 0) {
+        threadLikes.push(email);
+        return res.json({
+            message: "You've reacted to the post!",
+        });
+    }
+    res.json({
+        error_message: "You can only react once!",
+    });
+});
+app.post("/api/thread/replies", (req, res) => {
+  
+    const { id } = req.body;
+   
+    const result = threadList.filter((thread) => thread.id === id);
+
+    res.json({
+        replies: result[0].replies,
+        title: result[0].title,
+    });
+});
+app.get("/api/create/reply", async (req, res) => {
+    const token = req.cookies.token
+    const decoded = jwt.verify(token, "jwt-secret-key");
+    const userEmail = decoded.Email;
+    return res.json({userEmail})
+})
+
+app.post("/api/create/reply", async (req, res) => {
+
+    const { id, email, reply } = req.body;
+   
+    const result = threadList.filter((thread) => thread.id === id);
+
+    // const user = users.filter((user) => user.id === email);
+  
+    result[0].replies.unshift({
+        email: email,
+        // name: user[0].username,
+        text: reply,
+    });
+
+    res.json({
+        message: "Response added successfully!",
+    });
+});
 
 app.post('/complete', upload.single('ProfilePicture'), async (req, res) => {
 
@@ -169,7 +233,11 @@ app.post('/complete', upload.single('ProfilePicture'), async (req, res) => {
 
 
 })
-
+app.get("/api/all/threads", (req, res) => {
+    res.json({
+        threads: threadList,
+    });
+});
 app.post('/login', (req, res) => {
     const { Email, Password } = req.body;
     UserModel.findOne({ Email: Email })
@@ -213,6 +281,37 @@ app.get('/logout', (req, res) => {
     res.clearCookie('token')
     return res.json({logout : true})
 })
+
+const generateID = () => Math.random().toString(36).substring(2, 10);
+app.get("/api/create/thread",verifyUser, async (req, res) => {
+    const token = req.cookies.token
+    const decoded = jwt.verify(token, "jwt-secret-key");
+    const userEmail = decoded.Email;
+ 
+    console.log({ userEmail});
+    return res.json({userEmail})
+});
+const threadList = [];
+app.post("/api/create/thread", async (req, res) => {
+    const { thread, email } = req.body;
+    const threadId = generateID();
+    
+    threadList.unshift({
+        id: threadId,
+        title: thread,
+        email,
+        replies: [],
+        likes: [],
+    });
+
+    
+    res.json({
+        message: "Thread created successfully!",
+        threads: threadList,
+    });
+    //console.log({ thread, email, threadId });
+});
+
 
 app.post("/chat", async(req, res) => {
     const {prompt} = req.body
