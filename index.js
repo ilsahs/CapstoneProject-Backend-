@@ -274,7 +274,37 @@ app.post('/complete', upload.single('ProfilePicture'), async (req, res) => {
         console.error("Error:", error);
         return res.status(401).json("Invalid token");
     }
+
+
 })
+app.get("/api/all/threads", (req, res) => {
+    res.json({
+        threads: threadList,
+    });
+});
+app.post('/login', (req, res) => {
+    const { Email, Password } = req.body;
+    UserModel.findOne({ Email: Email })
+        .then(user => {
+            if (user) {
+                bcrypt.compare(Password, user.Password, (err, response) => {
+                    if (response) {
+                        const token = jwt.sign({ Email: user.Email },
+                            "jwt-secret-key", { expiresIn: '30m' })
+                        res.cookie('token', token)
+                        let checkacc = check(Email);
+                        return res.json({ Status: "Success" })
+                    } else {
+                        return res.json("The password is incorrect")
+                    }
+                })
+            } else {
+                return res.json("No record existed")
+            }
+        })
+})
+
+
 
 //Get comments based on event ID
 app.get('/comments/:eventId', async (req, res) => {
@@ -292,7 +322,7 @@ app.get('/comments/:eventId', async (req, res) => {
       console.error(err.message);
       
     }
-});
+  });
 
 //Chatbot
 app.post("/chat", upload.single('file'), async(req, res) => {
