@@ -11,8 +11,6 @@ const EventSchema = new mongoose.Schema({
     summary:String,
     link:String,
     image: String
-    
-
 },{ collection: 'Events', versionKey: false })
 
 
