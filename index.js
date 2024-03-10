@@ -335,8 +335,7 @@ app.post("/chat", upload.single('file'), async(req, res) => {
             
             //Image doesn't work yet
             if (mimeType.startsWith('image/')) { 
-                console.log("Uploaded file is an image")
-                console.log("== Vision Image Analyzer ==")        
+                console.log("Uploaded file is an image")        
                 const fileP = `images/${fileName}`;
                 const imageUrl = `${req.protocol}://${req.get('host')}/uploads/${fileP}`
                 console.log(imageUrl)    
@@ -377,9 +376,8 @@ app.post("/chat", upload.single('file'), async(req, res) => {
         }
 
         else if (req.body) {
-            //Text Messages
-            console.log("== Chat Completions ==")
             const {prompt} = req.body
+            // Here you can handle text messages
             //Chat Completions
             const client = new OpenAIClient(endpoint, new AzureKeyCredential(azureApiKey));
             const jsonFile = "./prompts.json"
