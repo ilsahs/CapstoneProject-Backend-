@@ -108,15 +108,6 @@
         "category": "Entertainment"
     },
     {
-        "name": "Sustainable Zero-Waste Community Iftar at Education City",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/sustainable-zero-waste-community-iftar-2024-doha/_680x450_clip_center-center_100_none/sustainable-zero-waste-community-iftar-2024-qatar.jpg",
-        "location": "Minaretein Center (EC Mosque)",
-        "description": "1,000-2,000 daily Iftar meals will be provided, focusing on minimal environmental impact through zero waste practices.",
-        "date": "11 March 2024 - 10 April 2024",
-        "time": "05:45 pm - 07:00 pm",
-        "category": "Community"
-    },
-    {
         "name": "Celebrating Garangao at Qatar National Library",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/garangao-2024-qatar-national-library/_680x450_clip_center-center_100_none/garangao-2024-qatar-national-library.jpg",
         "location": "Qatar National Library",
@@ -124,6 +115,15 @@
         "date": "20 March 2024 - 20 March 2024",
         "time": "02:00 pm - 04:00 pm",
         "category": "Entertainment"
+    },
+    {
+        "name": "Sustainable Zero-Waste Community Iftar at Education City",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/sustainable-zero-waste-community-iftar-2024-doha/_680x450_clip_center-center_100_none/sustainable-zero-waste-community-iftar-2024-qatar.jpg",
+        "location": "Minaretein Center (EC Mosque)",
+        "description": "1,000-2,000 daily Iftar meals will be provided, focusing on minimal environmental impact through zero waste practices.",
+        "date": "11 March 2024 - 10 April 2024",
+        "time": "05:45 pm - 07:00 pm",
+        "category": "Community"
     },
     {
         "name": "“The Voyager is the Narrator” exhibition at Doha Fire Station",
