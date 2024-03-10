@@ -8,12 +8,10 @@ const EventSchema = new mongoose.Schema({
     time: String,
     location:String,
     category:String,
-    summary:String,
-    link:String,
+    description:String,
     image: String
-    
-
-},{ collection: 'Events', versionKey: false })
+},
+{ collection: 'Events', versionKey: false })
 
 
 const EventModel = mongoose.model("Events", EventSchema)
