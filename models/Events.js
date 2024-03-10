@@ -8,11 +8,8 @@ const EventSchema = new mongoose.Schema({
     time: String,
     location:String,
     category:String,
-    summary:String,
-    link:String,
+    description:String,
     image: String
-    
-
 },{ collection: 'Events', versionKey: false })
 
 
