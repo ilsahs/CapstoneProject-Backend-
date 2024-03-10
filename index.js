@@ -238,6 +238,109 @@ function check(email) {
         })
 }
 
+app.get("/api/thread/like",(req,res)=>{
+    const token = req.cookies.token
+    const decoded = jwt.verify(token, "jwt-secret-key");
+    const userEmail = decoded.Email;
+ 
+    //console.log({ userEmail});
+    return res.json({userEmail})
+})
+
+app.post("/api/thread/like", (req, res) => {    
+    const { threadId, email } = req.body;
+  
+    const result = threadList.filter((thread) => thread.id === threadId);
+ 
+    const threadLikes = result[0].likes;
+  
+    const authenticateReaction = threadLikes.filter((user) => user === email);
+
+    if (authenticateReaction.length === 0) {
+        threadLikes.push(email);
+        return res.json({
+            message: "You've reacted to the post!",
+        });
+    }
+    res.json({
+        error_message: "You can only react once!",
+    });
+});
+
+app.post("/api/thread/replies", (req, res) => {  
+    const { id } = req.body;
+   
+    const result = threadList.filter((thread) => thread.id === id);
+
+    res.json({
+        replies: result[0].replies,
+        title: result[0].title,
+    });
+});
+
+app.get("/api/create/reply", async (req, res) => {
+    const token = req.cookies.token
+    const decoded = jwt.verify(token, "jwt-secret-key");
+    const userEmail = decoded.Email;
+    return res.json({userEmail})
+})
+
+app.post("/api/create/reply", async (req, res) => {
+    const { id, email, reply } = req.body;
+   
+    const result = threadList.filter((thread) => thread.id === id);
+
+    // const user = users.filter((user) => user.id === email);
+  
+    result[0].replies.unshift({
+        email: email,
+        // name: user[0].username,
+        text: reply,
+    });
+
+    res.json({
+        message: "Response added successfully!",
+    });
+});
+
+const generateID = () => Math.random().toString(36).substring(2, 10);
+
+app.get("/api/create/thread",verifyUser, async (req, res) => {
+    const token = req.cookies.token
+    const decoded = jwt.verify(token, "jwt-secret-key");
+    const userEmail = decoded.Email;
+ 
+    console.log({ userEmail});
+    return res.json({userEmail})
+});
+
+const threadList = [];
+
+app.post("/api/create/thread", async (req, res) => {
+    const { thread, email } = req.body;
+    const threadId = generateID();
+    
+    threadList.unshift({
+        id: threadId,
+        title: thread,
+        email,
+        replies: [],
+        likes: [],
+    });
+    
+    res.json({
+        message: "Thread created successfully!",
+        threads: threadList,
+    });
+    //console.log({ thread, email, threadId });
+});
+
+app.get("/api/all/threads", (req, res) => {
+    res.json({
+        threads: threadList,
+    });
+});
+
 //Complete Profile
 app.post('/complete', upload.single('ProfilePicture'), async (req, res) => {
     try {
@@ -274,37 +377,7 @@ app.post('/complete', upload.single('ProfilePicture'), async (req, res) => {
         console.error("Error:", error);
         return res.status(401).json("Invalid token");
     }
-
-
 })
-app.get("/api/all/threads", (req, res) => {
-    res.json({
-        threads: threadList,
-    });
-});
-app.post('/login', (req, res) => {
-    const { Email, Password } = req.body;
-    UserModel.findOne({ Email: Email })
-        .then(user => {
-            if (user) {
-                bcrypt.compare(Password, user.Password, (err, response) => {
-                    if (response) {
-                        const token = jwt.sign({ Email: user.Email },
-                            "jwt-secret-key", { expiresIn: '30m' })
-                        res.cookie('token', token)
-                        let checkacc = check(Email);
-                        return res.json({ Status: "Success" })
-                    } else {
-                        return res.json("The password is incorrect")
-                    }
-                })
-            } else {
-                return res.json("No record existed")
-            }
-        })
-})
-
-
 
 //Get comments based on event ID
 app.get('/comments/:eventId', async (req, res) => {
@@ -322,7 +395,7 @@ app.get('/comments/:eventId', async (req, res) => {
       console.error(err.message);
       
     }
-  });
+});
 
 //Chatbot
 app.post("/chat", upload.single('file'), async(req, res) => {
