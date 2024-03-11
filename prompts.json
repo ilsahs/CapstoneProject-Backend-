@@ -5,6 +5,22 @@
     },
     {
       "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "Hello! How can I assist you today?"
+    },
+    {
+      "role": "user",
+      "content": "hello"
+    },
+    {
+      "role": "assistant",
+      "content": "Hi there! How can I help you?"
+    },
+    {
+      "role": "user",
       "content": "Tell me about the Qatar Airways Grand Prix of Qatar Moto GP 2023."
     },
     {
@@ -36,7 +52,7 @@
       "content": "The Made in Qatar exhibition is a free event taking place from 29 Nov to 02 Dec at the Doha Exhibition & Convention Center (DECC). It is a platform that brings together local companies and factories to support and promote Qatari products. You can find more information [here](https://www.madeinqatar.com.qa/)."
     },
     {
-        "role": "assistant",
+        "role": "user",
         "content": ""
     }
     ]

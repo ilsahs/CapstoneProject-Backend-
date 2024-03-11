@@ -16,6 +16,8 @@ const { promisify } = require('util');
 const exec = promisify(require('child_process').exec);
 const {OpenAIClient, AzureKeyCredential} = require("@azure/openai");
 const mime = require('mime-types');
+var FormData = require('form-data');
+const axios = require('axios');
 
 //Models
 const UserModel = require('./models/Users')
@@ -87,19 +89,6 @@ const verifyUser = (req, res, next) => {
     }
 }
 
-// function localImageToDataUrl(imagePath){
-//     const mimeType = mime.lookup(imagePath) || 'application/octet-stream';
-//     // Extract file name from the image path
-//     const fileName = path.basename(imagePath);
-    
-//     // Construct the desired file path
-//     const filePath = `./uploads/images/${fileName}`;
-//     //const base64EncodedData = fs.readFileSync(filePath).toString('base64');  
-//     //console.log(mimeType)
-//     //encodedImage = `data:${mimeType};base64,{${base64EncodedData}}`;
-//     return filePath;
-//   }
-
 const pythonScriptPath = './scraping/scraping.py';
 const jsonFilePath = './scraping/events_data.json';
 const command = `python ${pythonScriptPath}`;
@@ -107,7 +96,7 @@ const readFile = promisify(fs.readFile);
 
 //Schedule web scraping for every hour: 0 * * * *
 //every 5 minutes: */5 * * * *
-cron.schedule('*/5 * * * *', async () => {
+cron.schedule('0 * * * *', async () => {
 // const scrape = async () => {
     console.log('Running Python script...');
     // Execute the Python script
@@ -400,29 +389,41 @@ app.get('/comments/:eventId', async (req, res) => {
 //Chatbot
 app.post("/chat", upload.single('file'), async(req, res) => {
     try {
+        let prompt = null;
         if (req.file) {
-            const filePath = req.file.path;
+            const filePath = req.file.path.replaceAll('\\', '/');
             const mimeType = req.file.mimetype;
             const fileName = path.basename(filePath);
-            console.log(fileName)
             
-            //Image doesn't work yet
             if (mimeType.startsWith('image/')) { 
-                console.log("Uploaded file is an image")        
-                const fileP = `images/${fileName}`;
-                const imageUrl = `${req.protocol}://${req.get('host')}/uploads/${fileP}`
-                console.log(imageUrl)    
+                console.log("Uploaded file is an image")
+                const imageData = fs.readFileSync(filePath);
+
+                // Create form data
+                var data = new FormData();
+                data.append('image', imageData, { filename: req.file.originalname });
+
+                const imgurClientId = '623bf1b7676bcd5';
+                const imgurResponse = await axios.post('https://api.imgur.com/3/image', data, {
+                    headers: {
+                        ...data.getHeaders(),
+                        Authorization: `Client-ID ${imgurClientId}`
+                    }
+                });
+
+                const imgUrl = imgurResponse.data.data.link;
+                console.log(imgUrl)
                 console.log("Start image analysis")
 
                 const client2 = new OpenAIClient(endpoint, new AzureKeyCredential(azureApiKey));
                 console.log("Start 2 image analysis")
                 const result = await client2.getChatCompletions(visionDeploymentName, [
-                    { role: "system", content: "You are a helpful assistant." },
+                    { role: "system", content: "You are a helpful assistant. Identify the location of the place the image is taken in" },
                     {
                         role: "user",
                         content: [
-                            { type: "text", text: "Describe this picture:" },
-                            { type: "image_url", image_url: { url: imageUrl } }
+                            { type: "text", text: "Desrcibe the image and identify the location:" },
+                            { type: "image_url", image_url: { url: imgUrl } }
                         ]
                     }
                 ],
@@ -433,7 +434,7 @@ app.post("/chat", upload.single('file'), async(req, res) => {
                 });
                 
                 for (const choice of result.choices) {
-                    console.log(choice.message.content);
+                   res.send(choice.message.content);
                 }    
             }
 
@@ -444,12 +445,19 @@ app.post("/chat", upload.single('file'), async(req, res) => {
                 const client1 = new OpenAIClient(whisperEndpoint, new AzureKeyCredential(whisperAzureApiKey));
                 const audio = await readFile(fileP);
                 const result1 = await client1.getAudioTranscription(whisperDeploymentName, audio);
-                res.send(result1.text);
+                console.log(result1.text)
+                // res.send(result1.text);
+                prompt = result1.text;
             }
         }
 
-        else if (req.body) {
-            const {prompt} = req.body
+        if (req.body && req.body.prompt) {
+            prompt = req.body.prompt;
+            console.log("body and prompt")
+        }
+
+        if (prompt) {
+            console.log("chat completions")
             // Here you can handle text messages
             //Chat Completions
             const client = new OpenAIClient(endpoint, new AzureKeyCredential(azureApiKey));

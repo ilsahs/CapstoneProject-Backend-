@@ -1,5 +1,23 @@
 [
     {
+        "name": "Ramadan 2024 cannon at Souq Waqif",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/ramadan-2024-cannon-souq-waqif/_680x450_clip_center-center_100_none/souq-waqif-ramadan-cannon-2024.jpg",
+        "location": "Eastern Square, Souq Waqif",
+        "description": "The Ramadan cannon will be fired at the Eastern Square of Souq Waqif.",
+        "date": "11 March 2024 - 9 April 2024",
+        "time": "05:44 pm - 05:57 pm",
+        "category": "Arts & Culture"
+    },
+    {
+        "name": "Ramadan 2024 cannon at Souq Al Wakrah",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/ramadan-2024-cannon-souq-al-wakrah/_680x450_clip_center-center_100_none/ramadan-cannon-souq-al-wakrah-2024.jpg",
+        "location": "Western Square, ﻿Souq Al Wakrah",
+        "description": "The Ramadan cannon will be fired at the Western Square of Souq Al Wakrah.",
+        "date": "11 March 2024 - 9 April 2024",
+        "time": "05:44 pm - 05:57 pm",
+        "category": "Arts & Culture"
+    },
+    {
         "name": "Throwback Food Festival at Old Doha Port",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/throwback-food-festival-old-doha-port/_680x450_clip_center-center_100_none/throwback-food-festival-ramadan-2024.jpg",
         "location": "Mina Park, Old Doha Port (Opposite Container Yard)",
@@ -29,7 +47,7 @@
     {
         "name": "Katara Volley 2024",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/katara-volleyball-tournament-2024/_680x450_clip_center-center_100_none/katara-volleyball-2024-ramadan.jpg",
-        "location": "Katara Beach 5, Katara Cultural Village",
+        "location": "Katara Beach 4, Katara Cultural Village",
         "description": "The number of team players required is 6, with 4 main players and 2 reserve players.",
         "date": "10 March 2024 - 8 April 2024",
         "time": "12:00 am - 12:00 am",
@@ -516,18 +534,9 @@
         "name": "RESORT POOL AND BEACH ACCESS",
         "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Pool__Beach_Access133480739320532783.webp",
         "location": "Hilton Salwa Beach Resort & Villas",
-        "description": "Pool and Beach access is fully redeemable on Food and Beverage at South Bay and is open from 8am to sunset",
+        "description": "",
         "date": " 14-12-2022 - 31-12-2024",
         "time": " 08:00 AM Onwards",
-        "category": "Other"
-    },
-    {
-        "name": "Sunrise Escape in the Desert",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_QTickets_webp133509252159645765.webp",
-        "location": "Inland Sea",
-        "description": "Book your spot on this amazing Sunrise Desert Safari to explore Qatari sand dunes and experience the natural beauty you've never discovered. Enjoy a personalized break at the Inland Sea with snacks and beach chairs.",
-        "date": " 28-01-2024 - 31-01-2026",
-        "time": " 03:00 AM Onwards",
         "category": "Other"
     },
     {
@@ -549,15 +558,6 @@
         "category": "Other"
     },
     {
-        "name": "Full Moon Desert Safari",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_FM_Desert_Safari_2133497153184407178.webp",
-        "location": "Inland Sea",
-        "description": "An enchanted and remarkable desert encounter. In addition to the camel and falcon viewing at the desert camp, our Full Moon Desert Safari package includes a close-up look at the parched vegetation, which include cacti, wildflowers, and shrubs. This is an amazing experience in and of itself. Discover this UNESCO-designated natural reserve of breathtaking sand dunes, also called singing sand dunes, with unique biodiversity; this is one of the few locations in the world where, at high tide, the sea touches down into the middle of the desert.",
-        "date": " 23-02-2024 - 22-03-2024",
-        "time": " 01:30 PM Onwards",
-        "category": "Other"
-    },
-    {
         "name": "Museum of illusions",
         "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Museum_of_illusions_WEBP133474457047647313.webp",
         "location": "Gate Mall, 1st floor",
@@ -567,12 +567,48 @@
         "category": "Other"
     },
     {
+        "name": "Tanzania: Your Special Bush To Beach Safari",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_1920x700133482339391921232.webp",
+        "location": "Tanzania",
+        "description": "",
+        "date": " 13-04-2024 - 24-04-2024",
+        "time": " 12:00 AM Onwards",
+        "category": "Other"
+    },
+    {
         "name": "Sheikh Faisal Bin Qassim Al Thani Museum",
         "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Sheikh_Faisal_Bin_Museum_WEBP133474457348063333.webp",
         "location": "Sheikh Faisal Bin Qassim Al Thani Museum, Dukhan Road, Al Shahaniya",
         "description": "",
         "date": " 20-11-2022 - 10-10-2024",
         "time": " 09:00 AM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "Doha Quest",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_1920x700px_webp133498679805807176.webp",
+        "location": "Al Khaleej Street, Doha Oasis, Msheireb",
+        "description": "Quest, the ultimate indoor experiential theme park nestled in the heart of Doha Oasis in Msheireb! This themed and story-based realm takes you on a journey through three time-dimensions: the past (Oryxville), present (City of Imagination), and future (Gravity). With over 30 rides & attractions, featuring a mix of adrenaline-heavy thrill rides, media-controlled simulators, virtual reality experiences, laser tag adventures, and family-friendly attractions, Quest offers an experience unlike any other in Doha.",
+        "date": " 30-10-2023 - 31-12-2024",
+        "time": " 08:30 AM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "Sunrise Escape in the Desert",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_QTickets_webp133509252159645765.webp",
+        "location": "Inland Sea",
+        "description": "Book your spot on this amazing Sunrise Desert Safari to explore Qatari sand dunes and experience the natural beauty you've never discovered. Enjoy a personalized break at the Inland Sea with snacks and beach chairs.",
+        "date": " 28-01-2024 - 31-01-2026",
+        "time": " 03:00 AM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "Full Moon Desert Safari",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_FM_Desert_Safari_2133497153184407178.webp",
+        "location": "Inland Sea",
+        "description": "An enchanted and remarkable desert encounter. In addition to the camel and falcon viewing at the desert camp, our Full Moon Desert Safari package includes a close-up look at the parched vegetation, which include cacti, wildflowers, and shrubs. This is an amazing experience in and of itself. Discover this UNESCO-designated natural reserve of breathtaking sand dunes, also called singing sand dunes, with unique biodiversity; this is one of the few locations in the world where, at high tide, the sea touches down into the middle of the desert.",
+        "date": " 23-02-2024 - 22-03-2024",
+        "time": " 01:30 PM Onwards",
         "category": "Other"
     },
     {
@@ -591,15 +627,6 @@
         "description": "Swing Into Golf",
         "date": " 19-11-2023 - 31-03-2024",
         "time": " 06:00 PM Onwards",
-        "category": "Other"
-    },
-    {
-        "name": "Doha Quest",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_1920x700px_webp133498679805807176.webp",
-        "location": "Al Khaleej Street, Doha Oasis, Msheireb",
-        "description": "Quest, the ultimate indoor experiential theme park nestled in the heart of Doha Oasis in Msheireb! This themed and story-based realm takes you on a journey through three time-dimensions: the past (Oryxville), present (City of Imagination), and future (Gravity). With over 30 rides & attractions, featuring a mix of adrenaline-heavy thrill rides, media-controlled simulators, virtual reality experiences, laser tag adventures, and family-friendly attractions, Quest offers an experience unlike any other in Doha.",
-        "date": " 30-10-2023 - 31-12-2024",
-        "time": " 08:30 AM Onwards",
         "category": "Other"
     },
     {
