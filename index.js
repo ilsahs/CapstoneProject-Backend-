@@ -14,7 +14,7 @@ const cron = require('node-cron');
 const fs = require('fs');
 const { promisify } = require('util');
 const exec = promisify(require('child_process').exec);
-const {OpenAIClient, AzureKeyCredential} = require("@azure/openai");
+const { OpenAIClient, AzureKeyCredential } = require("@azure/openai");
 const mime = require('mime-types');
 var FormData = require('form-data');
 const axios = require('axios');
@@ -50,13 +50,13 @@ mongoose.connect('mongodb+srv://meera:12class34@cluster0.f34xz2a.mongodb.net/qat
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         const folder = file.mimetype.startsWith('image/') ? 'images'
-                    : file.mimetype.startsWith('audio/') ? 'audios'
-                    : 'others';
+            : file.mimetype.startsWith('audio/') ? 'audios'
+                : 'others';
         const destPath = path.join(__dirname, 'uploads', folder);
         fs.mkdirSync(destPath, { recursive: true });
-        cb(null, destPath); 
+        cb(null, destPath);
     },
-    filename: function (req, file, cb) {        
+    filename: function (req, file, cb) {
         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
         cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
     },
@@ -68,7 +68,7 @@ app.use('/uploads', express.static('uploads'));
 
 const verifyUser = (req, res, next) => {
     const token = req.cookies.token;
-    console.log("this is token:", token)
+    //console.log("this is token:", token)
     if (!token || token === "undefined") {
         console.log("here 1")
         return res.status(401).json("Token is missing");
@@ -97,7 +97,7 @@ const readFile = promisify(fs.readFile);
 //Schedule web scraping for every hour: 0 * * * *
 //every 5 minutes: */5 * * * *
 cron.schedule('0 * * * *', async () => {
-// const scrape = async () => {
+    // const scrape = async () => {
     console.log('Running Python script...');
     // Execute the Python script
     try {
@@ -106,7 +106,7 @@ cron.schedule('0 * * * *', async () => {
             console.error(`Python script STDERR: ${stderr}`);
         }
         console.log(`Python script STDOUT: ${stdout}`);
-        
+
         // Read the JSON file
         const data = await readFile(jsonFilePath, 'utf8');
         const scrapedEvents = JSON.parse(data);
@@ -115,36 +115,40 @@ cron.schedule('0 * * * *', async () => {
     } catch (error) {
         console.error(`Error: ${error}`);
     }
-}, 
-{
-    scheduled: true,
-    timezone: 'Asia/Qatar'
-});
+},
+    {
+        scheduled: true,
+        timezone: 'Asia/Qatar'
+    });
 
 const updateEvents = (scrapedEvents) => {
     console.log(`Total Events: ${scrapedEvents.length}`)
-    scrapedEvents.forEach (async e => {
-    await EventModel.findOneAndUpdate(
-        //check if the event exists based on the name
-        {title: e.name},
-        //if it exists, u update it by replacing it completely
-        e,
-        //else you insert a new event to the db
-        {upsert: true, new: true})
-        .then(() => {
-            console.log(`Event ${e.name} updated/added successfully`);
-        })
-        .catch(error => {
-            console.error(`Error updating/adding event: ${error}`);
-        });
+    scrapedEvents.forEach(async e => {
+        await EventModel.findOneAndUpdate(
+            //check if the event exists based on the name
+            { title: e.name },
+            //if it exists, u update it by replacing it completely
+            e,
+            //else you insert a new event to the db
+            { upsert: true, new: true })
+            .then(() => {
+                console.log(`Event ${e.name} updated/added successfully`);
+            })
+            .catch(error => {
+                console.error(`Error updating/adding event: ${error}`);
+            });
     })
 }
 
 // Dashboard
 app.get('/dashboard', verifyUser, (req, res) => {
+    const token = req.cookies.token
+    const decoded = jwt.verify(token, "jwt-secret-key");
+    const userEmail = decoded.Email;
+    //console.log(userEmail, "emaillasnaskndls")
     EventModel.find().then(events => {
         //console.log(events);
-        res.json(events);
+        res.json({ events: events, email: userEmail });
     }).catch(err => {
         console.error("Error fetching events:", err);
         res.status(500).json(err);
@@ -170,12 +174,52 @@ app.get('/allcomments', (req, res) => {
     })
 })
 
+app.post('/comments', async (req, res) => {
+    console.log("reaching in comments post")
+    try {
+        const { eventID, newComment, email } = req.body;
+        console.log(eventID)
+        //const event = await CommentsModel.findById(eventId);
+        //console.log(event)
+        console.log(email)
+        console.log(newComment)
+
+
+        const user = await UserModel.findOne({ Email: email });
+        const name = user.Name;
+
+        CommentsModel.findOneAndUpdate(
+            { Eventid: eventID }, 
+            {
+                $push: {
+                    Comments: { 
+                        user: email,
+                        name: name,
+                        comment: newComment
+                    }
+                }
+            },
+            { upsert: true, new: true } 
+        ).then(updatedEvent => {
+            console.log('Comment added successfully');
+            console.log(updatedEvent); 
+        })
+        .catch(error => {
+            console.error('Error adding comment:', error);
+        });
+        console.log(name)
+        
+    } catch (error) {
+        console.error('Error adding comment:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+})
 //Register
 app.post('/Register', (req, res) => {
     const { Name, Email, Password } = req.body;
     bcrypt.hash(Password, 10)
         .then(hash => {
-            UserModel.create({ Name: Name, Email: Email, Password: hash })
+            UserModel.create({ Name: Name, Email: Email, Password: hash, Skip:'false' })
                 .then(user => res.json("Success"))
                 .catch(err => res.json(err))
         }).catch(err => res.json(err))
@@ -187,13 +231,16 @@ app.post('/login', (req, res) => {
     UserModel.findOne({ Email: Email })
         .then(user => {
             if (user) {
+                console.log("in user here")
                 bcrypt.compare(Password, user.Password, (err, response) => {
                     if (response) {
+                        console.log("in the response")
                         const token = jwt.sign({ Email: user.Email },
                             "jwt-secret-key", { expiresIn: '30m' })
                         res.cookie('token', token)
                         let checkacc = check(Email);
-                        return res.json({ Status: "Success" })
+                        console.log("now returning")
+                        return res.json({ Status: "Success", Skip: user.Skip })
                     } else {
                         return res.json("The password is incorrect")
                     }
@@ -207,7 +254,7 @@ app.post('/login', (req, res) => {
 //Logout
 app.get('/logout', (req, res) => {
     res.clearCookie('token')
-    return res.json({logout : true})
+    return res.json({ logout: true })
 })
 
 //Test
@@ -227,22 +274,22 @@ function check(email) {
         })
 }
 
-app.get("/api/thread/like",(req,res)=>{
+app.get("/api/thread/like", (req, res) => {
     const token = req.cookies.token
     const decoded = jwt.verify(token, "jwt-secret-key");
     const userEmail = decoded.Email;
- 
+
     //console.log({ userEmail});
-    return res.json({userEmail})
+    return res.json({ userEmail })
 })
 
-app.post("/api/thread/like", (req, res) => {    
+app.post("/api/thread/like", (req, res) => {
     const { threadId, email } = req.body;
-  
+
     const result = threadList.filter((thread) => thread.id === threadId);
- 
+
     const threadLikes = result[0].likes;
-  
+
     const authenticateReaction = threadLikes.filter((user) => user === email);
 
     if (authenticateReaction.length === 0) {
@@ -256,9 +303,9 @@ app.post("/api/thread/like", (req, res) => {
     });
 });
 
-app.post("/api/thread/replies", (req, res) => {  
+app.post("/api/thread/replies", (req, res) => {
     const { id } = req.body;
-   
+
     const result = threadList.filter((thread) => thread.id === id);
 
     res.json({
@@ -271,16 +318,18 @@ app.get("/api/create/reply", async (req, res) => {
     const token = req.cookies.token
     const decoded = jwt.verify(token, "jwt-secret-key");
     const userEmail = decoded.Email;
-    return res.json({userEmail})
+    const user = await UserModel.findOne({ Email: userEmail });
+    const name = user.Name;
+    return res.json({ name })
 })
 
 app.post("/api/create/reply", async (req, res) => {
     const { id, email, reply } = req.body;
-   
+
     const result = threadList.filter((thread) => thread.id === id);
 
     // const user = users.filter((user) => user.id === email);
-  
+
     result[0].replies.unshift({
         email: email,
         // name: user[0].username,
@@ -294,13 +343,16 @@ app.post("/api/create/reply", async (req, res) => {
 
 const generateID = () => Math.random().toString(36).substring(2, 10);
 
-app.get("/api/create/thread",verifyUser, async (req, res) => {
+app.get("/api/create/thread", verifyUser, async (req, res) => {
     const token = req.cookies.token
     const decoded = jwt.verify(token, "jwt-secret-key");
     const userEmail = decoded.Email;
- 
-    console.log({ userEmail});
-    return res.json({userEmail})
+
+    const user = await UserModel.findOne({ Email: userEmail });
+    const name = user.Name;
+
+    console.log({ name });
+    return res.json({ name })
 });
 
 const threadList = [];
@@ -308,7 +360,7 @@ const threadList = [];
 app.post("/api/create/thread", async (req, res) => {
     const { thread, email } = req.body;
     const threadId = generateID();
-    
+
     threadList.unshift({
         id: threadId,
         title: thread,
@@ -316,7 +368,7 @@ app.post("/api/create/thread", async (req, res) => {
         replies: [],
         likes: [],
     });
-    
+
     res.json({
         message: "Thread created successfully!",
         threads: threadList,
@@ -340,7 +392,7 @@ app.post('/complete', upload.single('ProfilePicture'), async (req, res) => {
 
         const ProfilePicture = req.file ? req.file.filename : null;
 
-        const { DOB, selectedPreferences } = req.body;
+        const { Skip, DOB, selectedPreferences } = req.body;
         // console.log(userEmail, selectedPreferences, DOB, ProfilePicture);
         if (userEmail) {
             const update = await UserModel.findOneAndUpdate(
@@ -349,7 +401,8 @@ app.post('/complete', upload.single('ProfilePicture'), async (req, res) => {
                     $set: {
                         DOB: DOB,
                         Preferences: selectedPreferences,
-                        ProfilePicture: ProfilePicture
+                        ProfilePicture: ProfilePicture,
+                        Skip: Skip
                     },
                 },
                 { new: true, useFindAndModify: false }
@@ -373,7 +426,7 @@ app.get('/comments/:eventId', async (req, res) => {
     const eventId = req.params.eventId;
     try {
         Comments.find({ Eventid: eventId }).then((result) => {
-         
+
             //console.log("this is result of comments", result)
             res.send(result);
         }).catch((err) => {
@@ -381,21 +434,21 @@ app.get('/comments/:eventId', async (req, res) => {
         })
 
     } catch (err) {
-      console.error(err.message);
-      
+        console.error(err.message);
+
     }
 });
 
 //Chatbot
-app.post("/chat", upload.single('file'), async(req, res) => {
+app.post("/chat", upload.single('file'), async (req, res) => {
     try {
         let prompt = null;
         if (req.file) {
             const filePath = req.file.path.replaceAll('\\', '/');
             const mimeType = req.file.mimetype;
             const fileName = path.basename(filePath);
-            
-            if (mimeType.startsWith('image/')) { 
+
+            if (mimeType.startsWith('image/')) {
                 console.log("Uploaded file is an image")
                 const imageData = fs.readFileSync(filePath);
 
@@ -427,15 +480,15 @@ app.post("/chat", upload.single('file'), async(req, res) => {
                         ]
                     }
                 ],
-                {
-                    temperature: 1,
-                    max_tokens: 256, 
-                    top_p: 1 
-                });
-                
+                    {
+                        temperature: 1,
+                        max_tokens: 256,
+                        top_p: 1
+                    });
+
                 for (const choice of result.choices) {
-                   res.send(choice.message.content);
-                }    
+                    res.send(choice.message.content);
+                }
             }
 
             else if (mimeType.startsWith('audio/')) {
@@ -464,24 +517,24 @@ app.post("/chat", upload.single('file'), async(req, res) => {
             const jsonFile = "./prompts.json"
             const fileData = await readFile(jsonFile, 'utf8');
             const prompts = JSON.parse(fileData);
-            prompts[prompts.length -1]['content'] = prompt;
+            prompts[prompts.length - 1]['content'] = prompt;
 
             const result = await client.getChatCompletions(deploymentName, prompts,
-            {
-                temperature: 1,
-                max_tokens: 256,
-                top_p: 1,
-                frequency_penalty: 0,
-                presence_penalty: 0 
-            },
+                {
+                    temperature: 1,
+                    max_tokens: 256,
+                    top_p: 1,
+                    frequency_penalty: 0,
+                    presence_penalty: 0
+                },
             );
-            
+
             for (const choice of result.choices) {
                 res.send(choice.message.content);
             }
-        }    
+        }
     }
-    catch(err){
+    catch (err) {
         res.status(500).send(err)
     }
 })

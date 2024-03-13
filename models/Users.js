@@ -9,7 +9,8 @@ ProfilePicture:String,
 Name:String,
 DOB:String,
 Email:String,
-Preferences: String
+Preferences: String,
+Skip: String
 
 },{ collection: 'UserAccounts' })
 
