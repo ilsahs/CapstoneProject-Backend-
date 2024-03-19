@@ -27,7 +27,7 @@ const CommentsModel = require("./models/Comments")
 const app = express()
 app.use(express.json())
 app.use(cors({
-    origin: ["https://qeventhub.vercel.app/"],
+    origin: ["http://localhost:5173"],
     methods: ["GET", "POST"],
     credentials: true
 }))
@@ -45,7 +45,7 @@ const whisperAzureApiKey = process.env["WHISPER_API_KEY"] || "<whisper_api_key>"
 const whisperDeploymentName = process.env["WHISPER_DEPLOYMENT_NAME"] || "<whisper_deployment_name";
 const visionDeploymentName = process.env["VISION_DEPLOYMENT_NAME"] || "<vision_deployment_name";
 
-mongoose.connect('mongodb+srv://ilsahsiddiqui:<VL1CVlyN4Ck93hcZ>@cluster0.rgrkyxj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+mongoose.connect('mongodb+srv://meera:12class34@cluster0.f34xz2a.mongodb.net/qatarEvents');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -440,15 +440,15 @@ app.get('/comments/:eventId', async (req, res) => {
 });
 
 //Chatbot
-app.post("/chat", upload.single('file'), async (req, res) => {
+app.post("/chat", upload.single('file'), async(req, res) => {
     try {
         let prompt = null;
         if (req.file) {
             const filePath = req.file.path.replaceAll('\\', '/');
             const mimeType = req.file.mimetype;
             const fileName = path.basename(filePath);
-
-            if (mimeType.startsWith('image/')) {
+            
+            if (mimeType.startsWith('image/')) { 
                 console.log("Uploaded file is an image")
                 const imageData = fs.readFileSync(filePath);
 
@@ -475,20 +475,20 @@ app.post("/chat", upload.single('file'), async (req, res) => {
                     {
                         role: "user",
                         content: [
-                            { type: "text", text: "Desrcibe the image and identify the location:" },
+                            { type: "text", text: "Describe the image and identify the location in a concise manner. Mention any important landmarks visible in the image:" },
                             { type: "image_url", image_url: { url: imgUrl } }
                         ]
                     }
                 ],
-                    {
-                        temperature: 1,
-                        max_tokens: 256,
-                        top_p: 1
-                    });
-
+                {
+                    temperature: 1,
+                    max_tokens: 256, 
+                    top_p: 1 
+                });
+                
                 for (const choice of result.choices) {
-                    res.send(choice.message.content);
-                }
+                   res.send(choice.message.content);
+                }    
             }
 
             else if (mimeType.startsWith('audio/')) {
@@ -510,31 +510,58 @@ app.post("/chat", upload.single('file'), async (req, res) => {
         }
 
         if (prompt) {
-            console.log("chat completions")
-            // Here you can handle text messages
+            console.log("== Streaming Chat Completions Sample ==");
             //Chat Completions
             const client = new OpenAIClient(endpoint, new AzureKeyCredential(azureApiKey));
             const jsonFile = "./prompts.json"
             const fileData = await readFile(jsonFile, 'utf8');
             const prompts = JSON.parse(fileData);
-            prompts[prompts.length - 1]['content'] = prompt;
+            prompts[prompts.length -1]['content'] = prompt;
 
             const result = await client.getChatCompletions(deploymentName, prompts,
-                {
-                    temperature: 1,
-                    max_tokens: 256,
-                    top_p: 1,
-                    frequency_penalty: 0,
-                    presence_penalty: 0
-                },
+            {
+                temperature: 1,
+                max_tokens: 256,
+                top_p: 1,
+                frequency_penalty: 0,
+                presence_penalty: 0 
+            },
             );
-
+            
             for (const choice of result.choices) {
                 res.send(choice.message.content);
             }
-        }
+
+            // const events = await client.streamChatCompletions(deploymentName, prompts,
+            //     { 
+            //         maxTokens: 128 
+            //     },
+            // );
+            
+            // const stream = new ReadableStream({
+            //     async start(controller) {
+            //         for await (const event of events) {
+            //             controller.enqueue(event);
+            //         }
+            //     controller.close();
+            //     },
+            // });
+             
+            // const reader = stream.getReader();
+            // while (true) {
+            //     const { done, value } = await reader.read();
+            //     if (done) {
+            //         break;
+            //     }
+            //     for (const choice of value.choices) {
+            //         if (choice.delta?.content !== undefined) {
+            //             res.send(choice.delta?.content);
+            //         }
+            //     }
+            // }
+        }   
     }
-    catch (err) {
+    catch(err){
         res.status(500).send(err)
     }
 })
