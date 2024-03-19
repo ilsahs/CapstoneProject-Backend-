@@ -45,7 +45,7 @@ const whisperAzureApiKey = process.env["WHISPER_API_KEY"] || "<whisper_api_key>"
 const whisperDeploymentName = process.env["WHISPER_DEPLOYMENT_NAME"] || "<whisper_deployment_name";
 const visionDeploymentName = process.env["VISION_DEPLOYMENT_NAME"] || "<vision_deployment_name";
 
-mongoose.connect('mongodb+srv://meera:12class34@cluster0.f34xz2a.mongodb.net/qatarEvents');
+mongoose.connect('mongodb+srv://ilsahsiddiqui:<VL1CVlyN4Ck93hcZ>@cluster0.rgrkyxj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
