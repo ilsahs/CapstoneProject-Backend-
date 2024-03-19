@@ -1,58 +1,58 @@
 [
-    {
-      "role": "system",
-      "content": "You are the assistant for providing information about upcoming events. Users will inquire about details such as event titles, dates, locations, and summaries. Your goal is to create informative and contextually appropriate responses.\n\n1. User Interaction:\n    - Users will initiate conversations with questions related to events.\n    - The assistant should respond in a friendly and informative manner, addressing queries about event details.\n\n2. Event Information:\n    - The dataset provided contains details about various events, including titles, dates, locations, categories, and summaries.\n\n3. Context Handling:\n    - Maintain context within the conversation to ensure coherent and relevant responses.\n    - If the user asks follow-up questions, the assistant should refer to previous responses or provide additional details.\n\n4. Output Format:\n    - The assistant should output responses in a structured format, including relevant event details such as titles, dates, and summaries.\n\nExample Queries:\n- \"Tell me about the upcoming events.\"\n- \"When is the next event taking place?\"\n- \"Give me more details about the 'Special Concert' event.\"\n\nEvaluation Criteria:\n- Responses should be accurate, informative, and contextually relevant.\n- The assistant should handle various types of queries related to event details effectively.\n"
-    },
-    {
+  {
+    "role": "system",
+    "content": "You are the assistant for providing information about upcoming events. Users will inquire about details such as event titles, dates, locations, and summaries. Your goal is to create informative and contextually appropriate responses.\n\n1. User Interaction:\n    - Users will initiate conversations with questions related to events.\n    - The assistant should respond in a friendly and informative manner, addressing queries about event details.\n\n2. Event Information:\n    - The dataset provided contains details about various events, including titles, dates, locations, categories, and summaries.\n\n3. Context Handling:\n    - Maintain context within the conversation to ensure coherent and relevant responses.\n    - If the user asks follow-up questions, the assistant should refer to previous responses or provide additional details.\n\n4. Output Format:\n    - The assistant should output responses in a structured format, including relevant event details such as titles, dates, and summaries.\n\nExample Queries:\n- \"Tell me about the upcoming events.\"\n- \"When is the next event taking place?\"\n- \"Give me more details about the 'Special Concert' event.\"\n\nEvaluation Criteria:\n- Responses should be accurate, informative, and contextually relevant.\n- The assistant should handle various types of queries related to event details effectively.\n"
+  },
+  {
+    "role": "user",
+    "content": "hi"
+  },
+  {
+    "role": "assistant",
+    "content": "Hello! How can I assist you today?"
+  },
+  {
+    "role": "user",
+    "content": "hello"
+  },
+  {
+    "role": "assistant",
+    "content": "Hi there! How can I help you?"
+  },
+  {
+    "role": "user",
+    "content": "Tell me about the Ramadan 2024 cannon at Souq Waqif"
+  },
+  {
+    "role": "assistant",
+    "content": "The Ramadan 2024 cannon event at Souq Waqif is a traditional event that marks the beginning of Iftar during the holy month of Ramadan. The event typically features the firing of a cannon to signal the end of the fasting day and the time to break the fast. It is a significant and culturally rich experience that brings together locals and visitors to celebrate the spirit of Ramadan. The event usually takes place daily during the month of Ramadan at Souq Waqif in Qatar."
+  },
+  {
+    "role": "user",
+    "content": "What is Jewels of Ramadan at Minaretein Auditorium about?"
+  },
+  {
+    "role": "assistant",
+    "content": "The \"Jewels of Ramadan\" event at Minaretein Auditorium is a special showcase that highlights the beauty and significance of the holy month of Ramadan. The event typically features a variety of performances, including traditional music, poetry readings, cultural displays, and talks by esteemed scholars and artists. It aims to provide a platform for the community to come together, reflect, and celebrate the spirit of Ramadan through artistic and cultural expressions. The event at Minaretein Auditorium offers a unique and enriching experience for attendees seeking to immerse themselves in the traditions and meanings of Ramadan."
+  },
+  {
+    "role": "user",
+    "content": "When is Katara Volley 2024 being held?"
+  },
+  {
+    "role": "assistant",
+    "content": "The Katara Volley 2024 event is scheduled to be held from 10 March 2024 - 8 April 2024 at Katara Cultural Village. It is a vibrant sports event that gathers volleyball enthusiasts and athletes to compete and showcase their skills. Katara Volley is known for its exciting matches, competitive spirit, and festive atmosphere, making it a popular event for both participants and spectators. If you're a fan of volleyball or enjoy sports events, Katara Volley 2024 is definitely worth checking out!"
+  },
+  {
+    "role": "user",
+    "content": "What places is the Ramadan 2024 Cannon being held?"
+  },
+  {
+    "role": "assistant",
+    "content": "The Ramadan 2024 Cannon event is typically held in various locations, including Souq Waqif, Al Wajba Fort, and other designated areas in Qatar. These locations serve as traditional settings for the firing of the cannon to mark the end of the fasting day during the holy month of Ramadan. The event is a significant part of Ramadan traditions in Qatar, and locals and visitors alike gather at these locations to witness the ceremonial firing of the cannon, signaling the time to break the fast. The unique cultural experience of the Ramadan Cannon adds to the spiritual and festive atmosphere of Ramadan in Qatar."
+  },
+  {
       "role": "user",
-      "content": "hi"
-    },
-    {
-      "role": "assistant",
-      "content": "Hello! How can I assist you today?"
-    },
-    {
-      "role": "user",
-      "content": "hello"
-    },
-    {
-      "role": "assistant",
-      "content": "Hi there! How can I help you?"
-    },
-    {
-      "role": "user",
-      "content": "Tell me about the Qatar Airways Grand Prix of Qatar Moto GP 2023."
-    },
-    {
-      "role": "assistant",
-      "content": "The Qatar Airways Grand Prix of Qatar Moto GP 2023 is a sports event that will take place from 17 Nov to 19 Nov at the Lusail International Circuit. It's a thrilling race where top riders compete under dazzling lights for victory. You can find more information about the event [here](https://visitqatar.com/intl-en/events-calendar/motogp-qatar-airways-grand-prix-2023)"
-    },
-    {
-      "role": "user",
-      "content": "What is the World Innovation Summit for Education (WISE) 2023 about?"
-    },
-    {
-      "role": "assistant",
-      "content": "The World Innovation Summit for Education (WISE) 2023 is a business summit focused on building the future of education. It aims to engage in discussions and explore solutions to pressing educational challenges. The summit will be held from 28 Nov to 29 Nov at the Qatar National Convention Center. You can find more information [here](https://www.wise-qatar.org)"
-    },
-    {
-      "role": "user",
-      "content": "Tell me more about the Katara Traditional Dhow Festival."
-    },
-    {
-      "role": "assistant",
-      "content": "The Katara Traditional Dhow Festival is a free event held from 28 Nov to 02 Dec at Katara Beach. It's the 13th edition of the festival, where traditional dhows will be showcased. You can find more information [here](https://www.katara.net)."
-    },
-    {
-      "role": "user",
-      "content": "What is the Made in Qatar exhibition about?"
-    },
-    {
-      "role": "assistant",
-      "content": "The Made in Qatar exhibition is a free event taking place from 29 Nov to 02 Dec at the Doha Exhibition & Convention Center (DECC). It is a platform that brings together local companies and factories to support and promote Qatari products. You can find more information [here](https://www.madeinqatar.com.qa/)."
-    },
-    {
-        "role": "user",
-        "content": ""
-    }
-    ]
+      "content": ""
+  }
+  ]
