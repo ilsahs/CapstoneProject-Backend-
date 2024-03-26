@@ -24,17 +24,8 @@ const UserModel = require('./models/Users')
 const EventModel = require('./models/Events')
 const CommentsModel = require("./models/Comments")
 
-const app = express()
-app.use(express.json())
-app.use(cors({
-    origin: ["http://localhost:5173"],
-    methods: ["GET", "POST"],
-    credentials: true
-}))
-app.use(cookieParser())
-app.use(bodyParser.json());
-
 dotenv.config()
+
 
 //Environment Variables
 const endpoint = process.env["ENDPOINT"] || "<endpoint>";
@@ -44,8 +35,27 @@ const whisperEndpoint = process.env["WHIPER_ENDPOINT"] || "<whisper_endpoint>";
 const whisperAzureApiKey = process.env["WHISPER_API_KEY"] || "<whisper_api_key>";
 const whisperDeploymentName = process.env["WHISPER_DEPLOYMENT_NAME"] || "<whisper_deployment_name";
 const visionDeploymentName = process.env["VISION_DEPLOYMENT_NAME"] || "<vision_deployment_name";
+const db = process.env["MODB"] 
 
-mongoose.connect('mongodb+srv://meera:12class34@cluster0.f34xz2a.mongodb.net/qatarEvents');
+
+const app = express()
+app.use(express.json())
+const dev = process.env["NODE_ENV"] 
+const VITE_ORIGIN = process.env["VITE_ORIGIN"] 
+const LOCAL_ORIGIN = process.env["LOCAL_ORIGIN"] 
+const origin = dev === "production" ? VITE_ORIGIN : LOCAL_ORIGIN
+console.log(dev, VITE_ORIGIN, LOCAL_ORIGIN, origin)
+app.use(cors({
+    origin: [origin],
+    methods: ["GET", "POST"],
+    credentials: true
+}))
+app.use(cookieParser())
+app.use(bodyParser.json());
+
+
+console.log(db)
+mongoose.connect(db);
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
