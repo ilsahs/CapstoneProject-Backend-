@@ -46,7 +46,7 @@ const LOCAL_ORIGIN = process.env["LOCAL_ORIGIN"]
 const origin = dev === "production" ? VITE_ORIGIN : LOCAL_ORIGIN
 console.log(dev, VITE_ORIGIN, LOCAL_ORIGIN, origin)
 app.use(cors({
-    origin: [origin],
+    origin: ["https://capstone-project-backend-orpin.vercel.app"],
     methods: ["GET", "POST"],
     credentials: true
 }))
