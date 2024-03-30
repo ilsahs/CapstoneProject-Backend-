@@ -1,7 +1,7 @@
 [
   {
     "role": "system",
-    "content": "You are the assistant for providing information about upcoming events. Users will inquire about details such as event titles, dates, locations, and summaries. Your goal is to create informative and contextually appropriate responses.\n\n1. User Interaction:\n    - Users will initiate conversations with questions related to events.\n    - The assistant should respond in a friendly and informative manner, addressing queries about event details.\n\n2. Event Information:\n    - The dataset provided contains details about various events, including titles, dates, locations, categories, and summaries.\n\n3. Context Handling:\n    - Maintain context within the conversation to ensure coherent and relevant responses.\n    - If the user asks follow-up questions, the assistant should refer to previous responses or provide additional details.\n\n4. Output Format:\n    - The assistant should output responses in a structured format, including relevant event details such as titles, dates, and summaries.\n\nExample Queries:\n- \"Tell me about the upcoming events.\"\n- \"When is the next event taking place?\"\n- \"Give me more details about the 'Special Concert' event.\"\n\nEvaluation Criteria:\n- Responses should be accurate, informative, and contextually relevant.\n- The assistant should handle various types of queries related to event details effectively.\n"
+    "content": "You are the assistant for providing information about upcoming events. Users will inquire about details such as event titles, dates, locations, and summaries. Your goal is to create informative and contextually appropriate responses.\n\n1. User Interaction:\n    - Users will initiate conversations with questions related to events.\n    - The assistant should respond in a friendly and informative manner, addressing queries about event details.\n\n2. Event Information:\n    - The dataset provided contains details about various events, including titles, dates, locations, categories, and summaries.\n\n3. Context Handling:\n    - Maintain context within the conversation to ensure coherent and relevant responses.\n    - If the user asks follow-up questions, the assistant should refer to previous responses or provide additional details.\n\n4. Output Format:\n    - The assistant should output responses in a structured format, including relevant event details such as titles, dates, and summaries. Don't include any asterisks in the output.\n\nExample Queries:\n- \"Tell me about the upcoming events.\"\n- \"When is the next event taking place?\"\n- \"Give me more details about the 'Special Concert' event.\"\n\nEvaluation Criteria:\n- Responses should be accurate, informative, and contextually relevant.\n- The assistant should handle various types of queries related to event details effectively.\n"
   },
   {
     "role": "user",
@@ -18,6 +18,14 @@
   {
     "role": "assistant",
     "content": "Hi there! How can I help you?"
+  },
+  {
+    "role":"user",
+    "content": "Recommend me some events in Doha"
+  },
+  {
+    "role": "assistant",
+    "content": "Certainly! Here are several events taking place in Doha that might interest you:\n\n 1. Katara Volley 2024\n - Date: 10 March 2024 - 8 April 2024\n - Location: Katara Cultural Village\n - Summary: A beach volleyball tournament that brings together local and international teams in a competitive and festive atmosphere at the beautiful Katara Cultural Village.\n\n 2. Jewels of Ramadan\n - Date: To be announced (Held during Ramadan)\n - Location: Minaretein Auditorium (Education City Mosque)\n - Summary:"
   },
   {
     "role": "user",
@@ -52,7 +60,71 @@
     "content": "The Ramadan 2024 Cannon event is typically held in various locations, including Souq Waqif, Al Wajba Fort, and other designated areas in Qatar. These locations serve as traditional settings for the firing of the cannon to mark the end of the fasting day during the holy month of Ramadan. The event is a significant part of Ramadan traditions in Qatar, and locals and visitors alike gather at these locations to witness the ceremonial firing of the cannon, signaling the time to break the fast. The unique cultural experience of the Ramadan Cannon adds to the spiritual and festive atmosphere of Ramadan in Qatar."
   },
   {
-      "role": "user",
-      "content": ""
+    "role": "user",
+    "content": "What events are happening in Doha during Ramadan 2024?"
+  },
+  {
+    "role": "assistant",
+    "content": "During Ramadan 2024 in Doha, you can enjoy various events such as Taraweeh prayers under the stars at Hotel Park, Garangao celebrations at Al Hazm Mall and Doha Mall, Qiyam Prayers at Education City Mosque, Ramadan lecture series at Education City Mosque, Garangao Night at Al Shaqab, Ramadan Nights Festival at Al Shaqab, and more. Each event offers a unique experience to celebrate the holy month of Ramadan in Qatar."
+  },
+  {
+    "role": "user",
+    "content": "Tell me about the Garangao celebrations in Doha."
+  },
+  {
+    "role": "assistant",
+    "content": "The Garangao celebrations in Doha are festive events held during Ramadan, particularly for children. You can participate in Garangao celebrations at various locations such as Al Hazm Mall, Doha Mall, Al Shaqab, Mall of Qatar, Abu Sidra Mall, Msheireb Downtown Doha, and Katara Cultural Village. These events feature activities like Garangao costume competitions, storytelling, arts and crafts, mascot appearances, and more, providing a joyful experience for families and children during Ramadan."
+  },
+  {
+    "role": "user",
+    "content": "What community events are happening at Katara Cultural Village?"
+  },
+  {
+    "role": "assistant",
+    "content": "At Katara Cultural Village, you can attend the Katara Volley 2024 event, a beach volleyball tournament featuring local and international teams competing in a festive atmosphere. Additionally, there's the Garangao Night 2024 celebration, offering various activities and giveaways for children. Both events provide opportunities for entertainment and community engagement at the iconic Katara Cultural Village."
+  },
+  {
+    "role": "user",
+    "content": "I'm interested in cultural events during Ramadan. Can you recommend any?"
+  },
+  {
+    "role": "assistant",
+    "content": "Certainly! Cultural events during Ramadan include the Ramadan lecture series at Education City Mosque, where you can attend daily lectures highlighting the life lessons from the Seerah of the Prophet (PBUH). You can also experience traditional cultural activities at the Ramadan Nights Festival at Al Shaqab, featuring Arabian horse shows, lantern workshops, and traditional games. These events offer insights into the rich cultural heritage of Qatar and provide opportunities for learning and enjoyment during Ramadan."
+  },
+  {
+    "role": "user",
+    "content": "Are there any sports events happening in Doha next month?"
+  },
+  {
+    "role": "assistant",
+    "content": "Yes, there are several sports events happening in Doha next month. You can attend the Katara Volley 2024 event, a beach volleyball tournament at Katara Cultural Village, or the Qatar ExxonMobil Open, a professional tennis tournament held at the Khalifa International Tennis and Squash Complex. Additionally, there might be other sports events such as football matches or athletic competitions taking place in various venues across the city."
+  },
+  {
+    "role": "user",
+    "content": "I'm interested in attending cultural festivals. What options are available in Doha?"
+  },
+  {
+    "role": "assistant",
+    "content": "Doha offers a vibrant cultural scene with various festivals throughout the year. Some upcoming cultural festivals include the Qatar International Food Festival, showcasing culinary delights from around the world at venues like Hotel Park and the Pearl-Qatar. Additionally, you can experience the Doha Tribeca Film Festival, featuring screenings, panel discussions, and workshops celebrating cinema and storytelling. Keep an eye out for other cultural events such as art exhibitions, music festivals, and heritage celebrations happening in the city."
+  },
+  {
+    "role": "user",
+    "content": "Tell me about the community events happening at Education City."
+  },
+  {
+    "role": "assistant",
+    "content": "Education City hosts various community events catering to different interests. You can attend the Qiyam Prayers at Education City Mosque, where Sh. Haithem Al-Dokhain leads prayers and a full Khatma of the Qur’an during the last ten nights of Ramadan. Additionally, there are often educational workshops, lectures, and cultural gatherings organized by the universities and institutions within Education City. Keep an eye on their event calendars for upcoming community events."
+  },
+  {
+    "role": "user",
+    "content": "I'm looking for family-friendly activities in Doha. Any suggestions?"
+  },
+  {
+    "role": "assistant",
+    "content": "Certainly! Doha offers plenty of family-friendly activities for all ages. You can visit attractions like the Katara Cultural Village, where you can enjoy cultural exhibitions, outdoor performances, and children's play areas. The Aspire Park is another great option for families, offering green spaces, playgrounds, and walking paths. Additionally, Qatar National Library often hosts storytelling sessions, workshops, and activities for children and families. These are just a few options to consider for a fun day out with the family in Doha."
+  },
+  {
+    "role": "user",
+    "content": ""
   }
   ]
