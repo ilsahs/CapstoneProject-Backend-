@@ -18,6 +18,7 @@ const { OpenAIClient, AzureKeyCredential } = require("@azure/openai");
 const mime = require('mime-types');
 var FormData = require('form-data');
 const axios = require('axios');
+const WebSocket = require('ws');
 
 //Models
 const UserModel = require('./models/Users')
@@ -26,6 +27,7 @@ const CommentsModel = require("./models/Comments")
 
 dotenv.config()
 
+const wss = new WebSocket.Server({ port: 3002 }); // Choose a suitable port
 
 //Environment Variables
 const endpoint = process.env["ENDPOINT"] || "<endpoint>";
@@ -35,27 +37,38 @@ const whisperEndpoint = process.env["WHIPER_ENDPOINT"] || "<whisper_endpoint>";
 const whisperAzureApiKey = process.env["WHISPER_API_KEY"] || "<whisper_api_key>";
 const whisperDeploymentName = process.env["WHISPER_DEPLOYMENT_NAME"] || "<whisper_deployment_name";
 const visionDeploymentName = process.env["VISION_DEPLOYMENT_NAME"] || "<vision_deployment_name";
-const db = process.env["MODB"] 
+// const db = process.env["MODB"] 
 
+// const app = express()
+// app.use(express.json())
+// const dev = process.env["NODE_ENV"] 
+// const VITE_ORIGIN = process.env["VITE_ORIGIN"] 
+// const LOCAL_ORIGIN = process.env["LOCAL_ORIGIN"] 
+// const origin = dev === "production" ? VITE_ORIGIN : LOCAL_ORIGIN
+// console.log(dev, VITE_ORIGIN, LOCAL_ORIGIN, origin)
+
+// app.use(cors({
+//     origin: [origin],
+//     methods: ["GET", "POST"],
+//     credentials: true
+// }))
+// app.use(cookieParser())
+// app.use(bodyParser.json());
+
+// console.log(db)
+// mongoose.connect(db);
 
 const app = express()
 app.use(express.json())
-const dev = process.env["NODE_ENV"] 
-const VITE_ORIGIN = process.env["VITE_ORIGIN"] 
-const LOCAL_ORIGIN = process.env["LOCAL_ORIGIN"] 
-const origin = dev === "production" ? VITE_ORIGIN : LOCAL_ORIGIN
-console.log(dev, VITE_ORIGIN, LOCAL_ORIGIN, origin)
 app.use(cors({
-    origin: [origin],
+    origin: ["http://localhost:5173"],
     methods: ["GET", "POST"],
     credentials: true
 }))
 app.use(cookieParser())
 app.use(bodyParser.json());
 
-
-console.log(db)
-mongoose.connect(db);
+mongoose.connect('mongodb+srv://meera:12class34@cluster0.f34xz2a.mongodb.net/qatarEvents');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -449,38 +462,85 @@ app.get('/comments/:eventId', async (req, res) => {
     }
 });
 
-//Chatbot
-app.post("/chat", upload.single('file'), async(req, res) => {
-    try {
+wss.on('connection', async (ws) => {
+    // Handle incoming messages from the client
+    ws.on('message', async (message) => {
+        console.log(`Received message from client: `);
         let prompt = null;
-        if (req.file) {
-            const filePath = req.file.path.replaceAll('\\', '/');
-            const mimeType = req.file.mimetype;
-            const fileName = path.basename(filePath);
+
+        // Handle the message (if needed)
+        let mess;
+        try {
+            mess = JSON.parse(message);
+            console.log('message', mess)
+            console.log('type', mess.type)
             
-            if (mimeType.startsWith('image/')) { 
+        } catch (error) {
+            console.error('Error parsing message:', error);
+            return;
+        }
+        
+        //Check the type of the file
+        if (mess.type === 'file') {
+            console.log("here file")
+            // Here you have the file's content in Base64, its mimeType, and fileName
+            const { mimeType, content, fileName } = mess;
+            console.log(mimeType)
+            console.log(fileName);
+            const extension = fileName.match(/\.([^.]+)$/)[1];
+            console.log(extension); // Output: "jpg"
+            const folder = mimeType.startsWith('image/') ? 'uploads/images'
+                : mimeType.startsWith('audio/') ? 'uploads/audios'
+                    : 'others';
+            const fileName1 = `file-${Date.now()}.${extension}`;
+            const filePath = path.join(__dirname, folder, fileName1);
+
+            // Ensure directory exists
+            const directory = path.dirname(filePath);
+            if (!fs.existsSync(directory)) {
+                fs.mkdirSync(directory, { recursive: true });
+            }
+
+            //Check if the file content is not empty
+            if (content && content.trim() !== '') {
+                // Write the content to the file
+                fs.writeFileSync(filePath, content, 'base64', (err) => {
+                    if (err) {
+                        console.error('Error writing file:', err);
+                    } else {
+                        console.log('File saved successfully:', filePath);
+                    }
+                });
+            } else {
+                console.error('Invalid or empty file content');
+            }
+
+            //If the file is of the type image:
+            if (mimeType.startsWith('image/')){
                 console.log("Uploaded file is an image")
                 const imageData = fs.readFileSync(filePath);
-
-                // Create form data
+                
+                // Upload the image to imgur
                 var data = new FormData();
-                data.append('image', imageData, { filename: req.file.originalname });
-
-                const imgurClientId = '623bf1b7676bcd5';
+                data.append('image', imageData, { filename: fileName1 });
+                
+                const imgurClientId = '1cdfeb66ec6c452';
                 const imgurResponse = await axios.post('https://api.imgur.com/3/image', data, {
                     headers: {
                         ...data.getHeaders(),
                         Authorization: `Client-ID ${imgurClientId}`
                     }
                 });
-
+                
                 const imgUrl = imgurResponse.data.data.link;
                 console.log(imgUrl)
-                console.log("Start image analysis")
 
+                //Vision API Call
+                console.log("Start image analysis")
+                
                 const client2 = new OpenAIClient(endpoint, new AzureKeyCredential(azureApiKey));
                 console.log("Start 2 image analysis")
-                const result = await client2.getChatCompletions(visionDeploymentName, [
+                const result = await client2.streamChatCompletions(visionDeploymentName, [
                     { role: "system", content: "You are a helpful assistant. Identify the location of the place the image is taken in" },
                     {
                         role: "user",
@@ -495,15 +555,21 @@ app.post("/chat", upload.single('file'), async(req, res) => {
                     max_tokens: 256, 
                     top_p: 1 
                 });
-                
-                for (const choice of result.choices) {
-                   res.send(choice.message.content);
-                }    
+
+                for await (const res of result) {
+                    for (const choice of res.choices){
+                        if (choice.delta && choice.delta.content){
+                            ws.send(choice.delta.content);
+                            // await new Promise(resolve => setTimeout(resolve, 200)); // 500 ms delay
+                        }
+                    }
+                } 
             }
 
+            //If the file content is audio:
             else if (mimeType.startsWith('audio/')) {
                 console.log("Uploaded file is an audio");
-                const fileP = `./uploads/audios/${fileName}`;
+                const fileP = `./uploads/audios/${fileName1}`;
                 console.log("== Transcribe Audio Sample ==");
                 const client1 = new OpenAIClient(whisperEndpoint, new AzureKeyCredential(whisperAzureApiKey));
                 const audio = await readFile(fileP);
@@ -512,69 +578,52 @@ app.post("/chat", upload.single('file'), async(req, res) => {
                 // res.send(result1.text);
                 prompt = result1.text;
             }
+
+        } else {
+            console.log("here text")
+            prompt = mess['content'];
         }
+    
+        try {
+            if (mess.mimeType?.startsWith('audio/') || mess.type === 'text'){
+                //Read prompts from the JSON file and append them
+                const jsonFile = "./prompts.json";
+                const fileData = await readFile(jsonFile, 'utf8');
+                const prompts = JSON.parse(fileData);
+                prompts[prompts.length -1]['content'] = prompt;
 
-        if (req.body && req.body.prompt) {
-            prompt = req.body.prompt;
-            console.log("body and prompt")
-        }
-
-        if (prompt) {
-            console.log("== Streaming Chat Completions Sample ==");
-            //Chat Completions
-            const client = new OpenAIClient(endpoint, new AzureKeyCredential(azureApiKey));
-            const jsonFile = "./prompts.json"
-            const fileData = await readFile(jsonFile, 'utf8');
-            const prompts = JSON.parse(fileData);
-            prompts[prompts.length -1]['content'] = prompt;
-
-            const result = await client.getChatCompletions(deploymentName, prompts,
-            {
-                temperature: 1,
-                max_tokens: 256,
-                top_p: 1,
-                frequency_penalty: 0,
-                presence_penalty: 0 
-            },
-            );
-            
-            for (const choice of result.choices) {
-                res.send(choice.message.content);
+                // Stream chat completions using the combined prompts
+                const client = new OpenAIClient(endpoint, new AzureKeyCredential(azureApiKey));
+                const events = await client.streamChatCompletions(deploymentName, prompts);
+                for await (const event of events) {
+                    for (const choice of event.choices) {
+                        if (choice.delta && choice.delta.content) {
+                            ws.send(choice.delta.content);
+                            await new Promise(resolve => setTimeout(resolve, 100)); // 500 ms delay
+                        }
+                    }
+                }
             }
+        } catch (error) {
+            console.error('Error occurred while streaming chat completions:', error);
+            // Handle errors and send an appropriate response
+            ws.send(JSON.stringify({ error: 'Internal Server Error' }));
+        }
+    });
+});
 
-            // const events = await client.streamChatCompletions(deploymentName, prompts,
-            //     { 
-            //         maxTokens: 128 
-            //     },
-            // );
-            
-            // const stream = new ReadableStream({
-            //     async start(controller) {
-            //         for await (const event of events) {
-            //             controller.enqueue(event);
-            //         }
-            //     controller.close();
-            //     },
-            // });
-             
-            // const reader = stream.getReader();
-            // while (true) {
-            //     const { done, value } = await reader.read();
-            //     if (done) {
-            //         break;
-            //     }
-            //     for (const choice of value.choices) {
-            //         if (choice.delta?.content !== undefined) {
-            //             res.send(choice.delta?.content);
-            //         }
-            //     }
-            // }
-        }   
-    }
-    catch(err){
-        res.status(500).send(err)
-    }
-})
+async function uploadImageToImgur(imageUrl, clientId) {
+    const image = await axios.get(imageUrl, { responseType: 'arraybuffer' });
+    const form = new FormData();
+    form.append('image', image.data, { filename: 'image' });
+
+    return axios.post('https://api.imgur.com/3/image', form, {
+        headers: {
+            ...form.getHeaders(),
+            Authorization: `Client-ID ${clientId}`
+        }
+    });
+}
 
 const port = process.env.port || 3001
 

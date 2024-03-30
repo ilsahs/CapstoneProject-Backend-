@@ -1,84 +1,147 @@
 [
     {
-        "name": "Mother's Day: Floral Love Workshop with Heba Mootasem",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/mothers-day-floral-love-workshop-heba-mootasem-events-doha-2024/_680x450_clip_center-center_100_none/mothers-day-floral-love-workshop-heba-mootasem-events-doha-2024-cover-image.jpg",
-        "location": "Education Studio, Fire Station",
-        "description": "Create stunning flower arrangements to gift to our beloved mothers in celebration of their wonderfulness at the workshop.",
-        "date": "21 March 2024 - 21 March 2024",
-        "time": "09:00 pm - 10:30 pm",
-        "category": "Other"
-    },
-    {
-        "name": "Garangao Night at Al Shaqab",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/garangao-night-2024-festivities-al-shaqab/_680x450_clip_center-center_100_none/ramadan-nights-garangao-2024-al-shaqab.jpg",
-        "location": "Al Shaqab Indoor Arena, Al Rayyan",
-        "description": "Look forward to a mini kids' fashion show where they show off their Garangao outfits, goodie bag colouring, workshops & more!",
-        "date": "23 March 2024 - 24 March 2024",
-        "time": "08:00 pm - 12:00 am",
+        "name": "Coffee Tea & Chocolate Festival 2024 (Eid edition)",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/coffee-tea-chocolate-festival-2024-eid-edition/_680x450_clip_center-center_100_none/coffee-tea-chocolate-festival-2024-eid-edition.jpg",
+        "location": "Old Doha Port",
+        "description": "Look forward to a special Eid edition of the Coffee Tea Chocolate Festival set to take place from 11 to 20 April 2024!",
+        "date": "11 April 2024 - 20 April 2024",
+        "time": "04:00 pm - 11:59 pm",
         "category": "Community"
     },
     {
-        "name": "Garangao 2024 at Msheireb Downtown Doha",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/garangao-2024-msheireb-downtown-doha/_680x450_clip_center-center_100_none/ramadan-events-msheireb-downtown-doha_2024-03-13-085408_vrcb.jpeg",
-        "location": "Sahat Al Nakheel, Sikkat Wadi, Msheireb Downtown Doha",
-        "description": "﻿Goodie bags will be distributed during a tram tour, while families are invited to share photos of their best-dressed Garangao costumes.",
-        "date": "24 March 2024 - 25 March 2024",
-        "time": "08:30 pm - 01:30 am",
+        "name": "Qatar Philharmonic Orchestra (QPO) on Tour at QNCC",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/qatar-philharmonic-orchestra-qpo-on-tour-2024-qncc/_680x450_clip_center-center_100_none/Apr20-Tour.jpg",
+        "location": "Qatar National Convention Centre (QNCC), Auditorium 3",
+        "description": "The closing concert of the 15-Year-Anniversary Festival invites you to come on tour around the globe with QPO!",
+        "date": "20 April 2024 - 20 April 2024",
+        "time": "08:00 pm - 09:30 pm",
+        "category": "Arts & Culture"
+    },
+    {
+        "name": "Music from the Baroque Courts at QNCC",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/music-from-the-baroque-courts-qatar-2024-qncc/_680x450_clip_center-center_100_none/Apr19-2-Baroque.jpg",
+        "location": "Qatar National Convention Centre (QNCC), Auditorium 3",
+        "description": "QPO invites you to the Royal courts of the Renaissance era to experience the Baroque period of classical music.",
+        "date": "19 April 2024 - 19 April 2024",
+        "time": "07:30 pm - 09:30 pm",
+        "category": "Arts & Culture"
+    },
+    {
+        "name": "Mozart: A Musical Sitcom at QNCC",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/mozart-a-musical-sitcom-2024-qatar-qncc/_680x450_clip_center-center_100_none/Apr19-1-Mozart.jpg",
+        "location": "Qatar National Convention Centre (QNCC), Auditorium 3",
+        "description": "Join QPO for a unique musical event filled with 18th century costumes and historical characters from Mozart’s lifetime.",
+        "date": "19 April 2024 - 19 April 2024",
+        "time": "04:30 pm - 06:00 pm",
+        "category": "Arts & Culture"
+    },
+    {
+        "name": "Pearls of the Philharmonic at QNCC",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/pearls-of-the-philharmonic-2024-qatar-qncc/_680x450_clip_center-center_100_none/Apr18-Pearls.jpg",
+        "location": "Qatar National Convention Centre (QNCC), Auditorium 3",
+        "description": "QPO kicks off the 15-Year-Anniversary Festival by shining the spotlight on talented soloists of the orchestra!",
+        "date": "18 April 2024 - 18 April 2024",
+        "time": "07:30 pm - 09:30 pm",
+        "category": "Arts & Culture"
+    },
+    {
+        "name": "Family Shopping Fair at Katara Cultural Village",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/family-shopping-fair-katara-cultural-village/_680x450_clip_center-center_100_none/family-shopping-fair-katara-cultural-village.jpg",
+        "location": "South Parking, Katara Cultural Village",
+        "description": "Shop for numerous Ramadan & Eid essentials, from clothes to household items to so much more.",
+        "date": "18 March 2024 - 5 April 2024",
+        "time": "11:00 am - 12:30 am",
         "category": "Community"
     },
     {
-        "name": "Garangao Night 2024 at Katara Cultural Village",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/garanagao-night-2024-katara-cultural-village/_680x450_clip_center-center_100_none/katara-masjid-islamic-lectures-ramadan-1.jpeg",
-        "location": "Katara Corridors, Katara Cultural Village",
-        "description": "Catch a range of celebrations and giveaways taking place at Katara Cultural Village to celebrate Garangao 2024.",
-        "date": "24 March 2024 - 24 March 2024",
-        "time": "08:30 pm - 10:00 pm",
+        "name": "Ramadan Bazaar at DECC",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/ramadan-bazaar-decc-doha-exhibition-convention-center/_680x450_clip_center-center_100_none/decc-ramadan-bazaar-2024.jpeg",
+        "location": "Doha Exhibition & Convention Center (DECC)",
+        "description": "Explore a range of Abayas, carpets, food, jewellery, perfumes, clothes, shoes, toys and more.",
+        "date": "16 March 2024 - 1 April 2024",
+        "time": "11:00 am - 01:00 am",
         "category": "Community"
     },
     {
-        "name": "Garangao Night at the National Museum of Qatar",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/garangao-night-national-museum-of-qatar-2024/_680x450_clip_center-center_100_none/national-museum-qatar-2024-ramadan-shutterstock_2374525913-min.jpg",
-        "location": "Old Palace, National Museum of Qatar",
-        "description": "Roam around the old palace of the Nationa Musem of Qatar in celebration of Garangao.",
-        "date": "23 March 2024 - 23 March 2024",
-        "time": "09:30 pm - 11:30 pm",
-        "category": "Community"
+        "name": "Preteen Gardeners Academy at Education City Micro-Farm",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/preteen-gardeners-academy-education-city-micro-farm/_680x450_clip_center-center_100_none/3.png",
+        "location": "Education City Micro-Farm, Ar-Rayyan, Qatar",
+        "description": "Nurture a love for gardening whilst developing valuable life skills and meeting new friends!",
+        "date": "2 April 2024 - 7 May 2024",
+        "time": "04:00 pm - 05:00 pm",
+        "category": "Education"
     },
     {
-        "name": "Garangao 2024 at Fire Station",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/doha-fire-station-garangao-2024/_680x450_clip_center-center_100_none/doha-fire-station-garangao-celebrations-ramadan-2024-shutterstock_2156858229-min-1.jpg",
-        "location": "Fire Station Museum, Mohammed Bin Thani Street",
-        "description": "The celebrations include a magic show, Garangao giveaways, face painting along with food & beverage kiosks selling refreshments.",
-        "date": "22 March 2024 - 22 March 2024",
+        "name": "Preschool Gardeners Academy at Education City Micro-Farm",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/preschool-gardeners-academy-education-city-micro-farm/_680x450_clip_center-center_100_none/2.png",
+        "location": "Education City Micro-Farm, Ar-Rayyan, Qatar",
+        "description": "Nurture a love for gardening whilst developing valuable life skills and meeting new friends!",
+        "date": "31 March 2024 - 5 May 2024",
+        "time": "04:00 pm - 05:00 pm",
+        "category": "Education"
+    },
+    {
+        "name": "Little Gardeners Academy at Education City Micro-Farm",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/little-gardeners-academy-education-city-micro-farm/_680x450_clip_center-center_100_none/1.png",
+        "location": "Education City Micro-Farm, Ar-Rayyan, Qatar",
+        "description": "Nurture a love for gardening whilst developing valuable life skills & meeting new friends!",
+        "date": "4 April 2024 - 11 May 2024",
+        "time": "04:00 pm - 05:00 pm",
+        "category": "Education"
+    },
+    {
+        "name": "Sarah G & Bamboo Live In Doha",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/sarah-g-bamboo-live-concert-april-event-doha-2024/_680x450_clip_center-center_100_none/sarah-g-bamboo-live-concert-april-event-doha-2024-cover-image.jpg",
+        "location": "QNCC Exhibition Hall 3 & 4",
+        "description": "Philippine music legends Bamboo and Sarah Geronimo take center stage in Doha. Buy your tickets now!",
+        "date": "11 April 2024 - 11 April 2024",
         "time": "08:00 pm - 11:00 pm",
+        "category": "Entertainment"
+    },
+    {
+        "name": "Taraweeh prayers under the stars at Hotel Park",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/taraweeh-prayers-under-the-stars-hotel-park-2024/_680x450_clip_center-center_100_none/hotel-park-taraweeh-ramadan-2024-qatar.jpg",
+        "location": "Hotel Park Doha, Corniche Street",
+        "description": "Look forward to an outdoor prayer experience with Taraweeh prayers held daily under the stars during the Holy month of Ramadan.",
+        "date": "10 March 2024 - 9 April 2024",
+        "time": "07:30 pm - 09:00 pm",
         "category": "Community"
     },
     {
-        "name": "Garangao Market at Darb Al Saai",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/garangao-market-darb-al-saai-ramadan-2024/_680x450_clip_center-center_100_none/garangao-market-darb-al-saai-ramadan-2024.jpg",
-        "location": "Darb Al Saai, Umm Salal Muhammed",
-        "description": "The Garangao Market will feature Mesahar drummers, henna artists, games, gifts, kids workshops & more!",
-        "date": "18 March 2024 - 24 March 2024",
-        "time": "08:00 pm - 12:00 am",
+        "name": "Taraweeh Prayers at Education City Mosque",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/taraweeh-prayers-education-city-mosque/_680x450_clip_center-center_100_none/taraweeh-prayers-education-city-mosqueshutterstock_1828856834-min.jpg",
+        "location": "Education City Mosque",
+        "description": "Imam Sh. Haithem Al Dokhain will be doing a full khatma of the Qur'an which is scheduled through the Taraweeh and Qiyaam prayer schedule.",
+        "date": "10 March 2024 - 9 April 2024",
+        "time": "07:30 pm - 09:00 pm",
         "category": "Community"
     },
     {
-        "name": "Full Moon Yoga at Zulal Wellness Resort",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/full-moon-yoga-at-zulal-wellness-resort/_680x450_clip_center-center_100_none/FULL-MOON-YOGA-MARCH-2024-Low.jpg",
-        "location": "Zulal Wellness Resort, Yoga Studio",
-        "description": "Zulal Wellness Resort by Chiva-Som invites you to benefit from the powerful effects of the full moon yoga.",
-        "date": "26 March 2024 - 26 March 2024",
-        "time": "06:30 pm - 07:30 pm",
-        "category": "Sports"
+        "name": "Qiyam Prayers at Education City Mosque",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/qiyam-prayers-education-city-mosque-ramadan-doha-2024/_680x450_clip_center-center_100_none/qiyam-prayers-education-city-mosque-ramadan-doha-2024-cover-image.jpg",
+        "location": "Education City Mosque",
+        "description": "Join Sh. Haithem Al-Dokhain for Qiyam prayers and a full Khatma of the Qur’an during the last ten nights of Ramadan.",
+        "date": "30 March 2024 - 8 April 2024",
+        "time": "11:30 pm - 01:00 am",
+        "category": "Community"
     },
     {
-        "name": "Qatar vs Kuwait - 2026 FIFA World Cup & 2027 AFC Asian Cup joint qualifiers third round",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/qatar-vs-kuwait-2026-fifa-world-cup-2027-afc-asian-cup-joint-qualifiers-third-round/_680x450_clip_center-center_100_none/qatar-vs-kuwait-2026-fifa-world-cup-2027-afc-asian-joint-qualifiers-third-round.jpeg",
-        "location": "Jassim Bin Hamad Stadium",
-        "description": "The match will be taking place at the Jassim Bin Hamad Stadium at 9:30 pm on 21 March 2024! Show up and support Al Annabi!",
-        "date": "21 March 2024 - 21 March 2024",
-        "time": "09:30 pm - 11:00 pm",
-        "category": "Sports"
+        "name": "Ramadan lecture series at Education City Mosque",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/ramadan-lecture-series-education-city-mosque-2024/_680x450_clip_center-center_100_none/ramadan-lecture-series-education-city-mosque-2024-shutterstock_1828830191-min.jpg",
+        "location": "Education City Mosque, Al Rayyan",
+        "description": "The daily lectures will highlight the unique personality of the Prophet (PBUH) and the ethical life lessons from his Seerah.\n﻿",
+        "date": "11 March 2024 - 9 April 2024",
+        "time": "07:30 pm - 08:30 pm",
+        "category": "Community"
+    },
+    {
+        "name": "Ramadan festivities at the Souq Al Wakra Hotel Qatar",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/ramadan-festivities-souq-al-wakra-hotel-qatar-2024/_680x450_clip_center-center_100_none/ramadan-festivities-souq-al-wakra-hotel-qatar-2024.jpeg",
+        "location": "Souq Al Wakra Hotel Qatar",
+        "description": "Go for an enriching experience that celebrates local traditions and fosters creative connections.",
+        "date": "11 March 2024 - 8 April 2024",
+        "time": "03:00 pm - 10:00 pm",
+        "category": "Community"
     },
     {
         "name": "Ramadan Market at Lusail Boulevard",
@@ -97,15 +160,6 @@
         "date": "22 March 2024 - 6 April 2024",
         "time": "08:00 pm - 10:00 pm",
         "category": "Sports"
-    },
-    {
-        "name": "Preschoolers' Spring Garden Hunt",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/preschoolers-spring-garden-hunt/_680x450_clip_center-center_100_none/2.png",
-        "location": "Education City Micro-Farm, Ar-Rayyan, Qatar",
-        "description": "Join us on a journey filled with curiosity and exploration!",
-        "date": "30 March 2024 - 30 March 2024",
-        "time": "08:30 am - 10:00 pm",
-        "category": "Entertainment"
     },
     {
         "name": "Toy Story in Concert",
@@ -144,30 +198,12 @@
         "category": "Community"
     },
     {
-        "name": "Spring Garden Hunt at Education City Micro-Farm",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/spring-garden-hunt/_680x450_clip_center-center_100_none/1.png",
-        "location": "Education City Micro-Farm, Ar-Rayyan, Qatar",
-        "description": "Join us on a journey filled with curiosity and exploration!",
-        "date": "29 March 2024 - 30 March 2024",
-        "time": "03:00 pm - 05:00 pm",
-        "category": "Entertainment"
-    },
-    {
         "name": "Ramadan 2024 events at Katara Cultural Village",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/ramadan-2024-events-at-katara-cultural-village/_680x450_clip_center-center_100_none/katara-masjid-islamic-lectures-ramadan.jpg",
         "location": "Across Katara Cultural Village",
         "description": "Katara is hosting Ramadan events ranging from lectures to sports tournaments, traditional drummers & more!",
         "date": "11 March 2024 - 10 April 2024",
         "time": "12:00 am - 12:00 am",
-        "category": "Community"
-    },
-    {
-        "name": "Ramadan Cultural Session at Embrace Doha",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/ramadan-cultural-session-embrace-doha-iftar-event-doha-2024/_680x450_clip_center-center_100_none/ramadan-cultural-session-embrace-doha-cultural-house-doha-2024-cover-image.jpeg",
-        "location": "Souq Al Wakrah",
-        "description": "Immerse yourself in the richness of Ramadan and discover time-honored customs and delicious flavors at this cultural hub.",
-        "date": "16 March 2024 - 27 March 2024",
-        "time": "04:30 pm - 06:30 pm",
         "category": "Community"
     },
     {
@@ -178,42 +214,6 @@
         "date": "12 March 2024 - 9 April 2024",
         "time": "03:00 pm - 07:00 pm",
         "category": "Entertainment"
-    },
-    {
-        "name": "Liwan for Good",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/liwan-for-good-ramadan-2024/_680x450_clip_center-center_100_none/liwan-for-good-ramadan-2024.png",
-        "location": "Liwan Design Studios and Labs",
-        "description": "This community-orientated event aims to bring together local charities and businesses for an evening of giving.",
-        "date": "20 March 2024 - 20 March 2024",
-        "time": "08:30 pm - 11:30 pm",
-        "category": "Community"
-    },
-    {
-        "name": "Planet Kids Club Storytime",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/planet-kids-club-storytime-march-2024/_680x450_clip_center-center_100_none/planet-kids-club-storytime-march-2024.jpg",
-        "location": "Museum of Islamic Art",
-        "description": "This month, there will be a reading of Ramadan Around the World by Ndaa Hassan at MIA Library.",
-        "date": "26 March 2024 - 26 March 2024",
-        "time": "07:30 pm - 08:30 pm",
-        "category": "Education"
-    },
-    {
-        "name": "Dadu: Ramadan Gifts With Baladna",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/dadu-ramadan-gifts-with-baladna-doha/_680x450_clip_center-center_100_none/dadu-ramadan-gifts-with-baladna-doha.png",
-        "location": "Dadu Gardens",
-        "description": "Go to Dadu Gardens to enjoy special cooking sessions, activities, crafts and more!",
-        "date": "15 March 2024 - 22 March 2024",
-        "time": "08:30 pm - 10:30 pm",
-        "category": "Community"
-    },
-    {
-        "name": "Garangao 2024 Events at Qatar Museums",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/garangao-2024-events-qatar-museums/_680x450_clip_center-center_100_none/garangao-2024-events-qatar-museums.jpg",
-        "location": "Different locations in Qatar",
-        "description": "Check out the Garangao events for kids this Ramadan by Qatar Museums and enjoy!",
-        "date": "18 March 2024 - 24 March 2024",
-        "time": "08:00 pm - 11:30 pm",
-        "category": "Community"
     },
     {
         "name": "Ramadan 2024 cannon at Old Doha Port",
@@ -274,8 +274,8 @@
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/throwback-food-festival-old-doha-port/_680x450_clip_center-center_100_none/throwback-food-festival-ramadan-2024.jpg",
         "location": "Mina Park, Old Doha Port (Opposite Container Yard)",
         "description": "This Ramadan enjoy a food festival featuring some of Qatar's oldest restaurants, entertainment and competitions.",
-        "date": "10 March 2024 - 11 April 2024",
-        "time": "05:00 pm - 04:00 am",
+        "date": "10 March 2024 - 10 April 2024",
+        "time": "05:00 pm - 11:59 pm",
         "category": "Entertainment"
     },
     {
@@ -288,15 +288,6 @@
         "category": "Arts & Culture"
     },
     {
-        "name": "Katara Ramadan Chess Open 2024",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/katara-ramadan-chess-open-2024/_680x450_clip_center-center_100_none/katara-ramadan-chess-open-2024.jpg",
-        "location": "Katara Cultural Village",
-        "description": "The chess tournament hosted by Katara Cultural Village along with the Qatar Chess Association will be from 14 - 23 March 2024.",
-        "date": "14 March 2024 - 23 March 2024",
-        "time": "09:00 pm - 12:30 am",
-        "category": "Sports"
-    },
-    {
         "name": "Katara Volley 2024",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/katara-volleyball-tournament-2024/_680x450_clip_center-center_100_none/katara-volleyball-2024-ramadan.jpg",
         "location": "Katara Beach 4, Katara Cultural Village",
@@ -304,15 +295,6 @@
         "date": "10 March 2024 - 8 April 2024",
         "time": "12:00 am - 12:00 am",
         "category": "Sports"
-    },
-    {
-        "name": "Ramadan Gathering with Shaykh Ismail Menk",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/ramadan-gathering-with-shaykh-ismail-menk/_680x450_clip_center-center_100_none/mufti-menk-ramadan-gathering-education-city.jpg",
-        "location": "Ceremonial Court, Education City",
-        "description": "Shaykh Ismail Menk will be discussing the secrets of the blessed month of Ramadan and its significance for Muslims.",
-        "date": "22 March 2024 - 22 March 2024",
-        "time": "10:00 pm - 11:00 pm",
-        "category": "Community"
     },
     {
         "name": "Jewels of Ramadan at Minaretein Auditorium",
@@ -324,39 +306,12 @@
         "category": "Entertainment"
     },
     {
-        "name": "Khutbah by Mufti Menk at Education City Mosque",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/khutbah-mufti-menk-at-education-city-mosque/_680x450_clip_center-center_100_none/khutbah-mufti-menk-at-education-city-mosque.jpg",
-        "location": "Education City Mosque",
-        "description": "The sermon will be in English with Arabic live translation available.",
-        "date": "22 March 2024 - 22 March 2024",
-        "time": "11:00 am - 12:00 pm",
-        "category": "Entertainment"
-    },
-    {
         "name": "Slice of Support night bazaar at Torba Market",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/slice-of-support-night-bazaar-torba-market-ramadan-2024/_680x450_clip_center-center_100_none/slice-of-support-night-bazaar-torba-market-ramadan-2024.jpg",
         "location": "Gate 7, Torba Farmers Market, Education City",
         "description": "The event will be a night bazaar to support the Palestinian cause under the theme of 'Slice of Support'.",
         "date": "16 March 2024 - 6 April 2024",
         "time": "08:00 pm - 01:00 am",
-        "category": "Community"
-    },
-    {
-        "name": "Ramadan Sports Festival 2024 at Aspire Zone",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/ramadan-sports-festival-2024-aspire-zone/_680x450_clip_center-center_100_none/ramadan-sports-festival-2024.jpg",
-        "location": "Aspire Zone",
-        "description": "The sports challenges are in sports like football, hockey, basketball and event a special competition for those with special needs.",
-        "date": "13 March 2024 - 27 March 2024",
-        "time": "09:30 pm - 12:00 am",
-        "category": "Sports"
-    },
-    {
-        "name": "Ramadan 2024 events at Qatar National Library",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/ramadan-2024-events-qatar-national-library/_680x450_clip_center-center_100_none/ramadan-2024-events-qatar-national-library.jpg",
-        "location": "Qatar National Library, Education City",
-        "description": "The events include a range of learn opportunities for children from the Qur'an and a session for teenage girls.",
-        "date": "14 March 2024 - 28 March 2024",
-        "time": "12:00 am - 11:59 pm",
         "category": "Community"
     },
     {
@@ -378,47 +333,11 @@
         "category": "Community"
     },
     {
-        "name": "Celebrating Garangao at Qatar National Library",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/garangao-2024-qatar-national-library/_680x450_clip_center-center_100_none/garangao-2024-qatar-national-library.jpg",
-        "location": "Qatar National Library",
-        "description": "Celebrate garangao and enjoy a variety of cultural and art activities at the Qatar National Library.",
-        "date": "20 March 2024 - 20 March 2024",
-        "time": "02:00 pm - 04:00 pm",
-        "category": "Entertainment"
-    },
-    {
         "name": "“The Voyager is the Narrator” exhibition at Doha Fire Station",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/the-voyager-is-the-narrator-exhibition-doha-fire-station/_680x450_clip_center-center_100_none/the-voyager-is-the-narrator-exhibition-doha-fire-station.jpg",
         "location": "Gallery 3 & 4, Fire Station",
         "description": "The exhibition is taking place at Gallery 3 & 4 in Doha Fire Station from 7 February - 20 April 2024.",
         "date": "7 February 2024 - 20 April 2024",
-        "time": "09:00 am - 07:00 pm",
-        "category": "Arts & Culture"
-    },
-    {
-        "name": "Garangao Night at Old Doha Port for Ramadan 2024",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/garangao-night-old-doha-port-events-ramadan-2024/_680x450_clip_center-center_100_none/garangao-night-old-doha-port-events-ramadan-2024-cover-image.jpeg",
-        "location": "Old Doha Port",
-        "description": "Come and take part in the Garangao celebrations at Old Doha Port with your little ones this Ramadan!",
-        "date": "23 March 2024 - 23 March 2024",
-        "time": "06:00 pm - 11:00 pm",
-        "category": "Community"
-    },
-    {
-        "name": "Crafting Uzbekistan: Traditions in Threads",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/crafting-uzbekistan-traditions-threads-design-doha/_680x450_clip_center-center_100_none/crafting-uzbekistan-traditions-threads-design-doha.jpg",
-        "location": "M7",
-        "description": "Witness handcrafted treasures on display encompassing a variety of items, elegantly carved chests, book stands, exquisite ikat silk fabric, and more.",
-        "date": "24 February 2024 - 30 March 2024",
-        "time": "09:00 am - 07:00 pm",
-        "category": "Arts & Culture"
-    },
-    {
-        "name": "Colors of the City: A Century of Architecture in Doha",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/colors-city-century-architecture-design-doha/_680x450_clip_center-center_100_none/colors-of-the-city-a-century-of-architecture-in-doha.jpg",
-        "location": "M7",
-        "description": "Explore a dual-themed exhibition presenting global influences on architecture in the capital of Qatar.",
-        "date": "24 February 2024 - 30 March 2024",
         "time": "09:00 am - 07:00 pm",
         "category": "Arts & Culture"
     },
@@ -450,26 +369,8 @@
         "category": "Food & Dining"
     },
     {
-        "name": "Session on Fiqh and Beauty at Qatar National Library",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/session-on-fiqh-and-beauty-at-qatar-national-library/_680x450_clip_center-center_100_none/FIQH_BEAUTY-RAmadan-2024-event.jpg",
-        "location": "Qatar National Library",
-        "description": "Learn about Taharah (purity), prayer, and values at Qatar National Library!",
-        "date": "20 March 2024 - 27 March 2024",
-        "time": "01:30 pm - 02:30 pm",
-        "category": "Community"
-    },
-    {
-        "name": "Stories from the Qur'an at Qatar National Library",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/stories-from-the-quran-at-qatar-national-library/_680x450_clip_center-center_100_none/Stories-from-the-Quran-Qatar-National-Library.jpg",
-        "location": "Qatar National Library",
-        "description": "The Holy Qur'an includes many wonderful stories, so bring your children and join the Qatar National Library to learn more about them.",
-        "date": "18 March 2024 - 30 March 2024",
-        "time": "01:30 pm - 03:00 pm",
-        "category": "Community"
-    },
-    {
         "name": "First edition of LEGO® Shows Qatar this Eid Al Fitr 2024",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/lego-shows-2024-event-doha/_680x450_clip_center-center_100_none/lego-shows-2024-event-doha-cover-image.jpg",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/lego-shows-2024-event-doha/_680x450_clip_center-center_100_none/First-edition-of-LEGO®-Shows-Qatar-2024.jpg",
         "location": "Hall 8 and 9, Qatar National Convention Center",
         "description": "The attraction will offer family-friendly activities, life-size Minifigures, food options, hospitality, and 26 themed areas with engaging activities.",
         "date": "10 April 2024 - 25 April 2024",
@@ -511,15 +412,6 @@
         "date": "23 February 2024 - 1 June 2024",
         "time": "09:00 am - 07:00 pm",
         "category": "Arts & Culture"
-    },
-    {
-        "name": "The Pearl Island Ramadan Football Tournament 2024",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/the-pearl-island-ramadan-football-tournament-2024/_680x450_clip_center-center_100_none/the-pearl-island-ramadan-football-tournament-2024.jpg",
-        "location": "Temba Arena, The Pearl Island",
-        "description": "Witness football fun at The Pearl Island Ramadan Football Tournament 2024.",
-        "date": "12 March 2024 - 24 March 2024",
-        "time": "08:30 pm - 11:45 pm",
-        "category": "Sports"
     },
     {
         "name": "Project Qatar 2024",
@@ -675,15 +567,6 @@
         "category": "Other"
     },
     {
-        "name": "Expo 2023 Doha Qatar",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/expo-2023-doha-qatar/_680x450_clip_center-center_100_none/International-Horticultural-Doha-Expo-2023.jpeg",
-        "location": "Al Bidda Park",
-        "description": "International Horticultural Expo or Doha Expo 2023, which will be held from 2 October 2023 to 28 March 2024, in Al Bidda Park!",
-        "date": "2 October 2023 - 28 March 2024",
-        "time": "10:00 am - 11:00 pm",
-        "category": "Other"
-    },
-    {
         "name": "Lusail Winter Wonderland",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/lusail-winter-wonderland-doha-qatar-2022/_680x450_clip_center-center_100_none/lusail-wonderland.jpg",
         "location": "Al Maha Island in Lusail City, Qatar",
@@ -702,6 +585,33 @@
         "category": "Education"
     },
     {
+        "name": "The Pearl Island Ramadan Padel Tournament",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/the-pearl-island-ramadan-padel-tournament/_680x450_clip_center-center_100_none/the-pearl-island-ramadan-padel-tournament.jpg",
+        "location": "The Pearl Island",
+        "description": "Don’t miss out on the action-packed showdown on the court!",
+        "date": "25 March 2024 - 30 March 2024",
+        "time": "09:00 pm - 11:00 pm",
+        "category": "Sports"
+    },
+    {
+        "name": "Sarah G x Bamboo Live in Doha",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Banner_Latest133554735660528506.webp",
+        "location": "QNCC Exhibition Hall 3 & 4",
+        "description": "",
+        "date": " 11-04-2024",
+        "time": " 08:00 PM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "What Gravity Challenge",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Banner133559428244293937.webp",
+        "location": "Katara Amphitheater",
+        "description": "",
+        "date": " 09-05-2024",
+        "time": " 05:40 PM Onwards",
+        "category": "Other"
+    },
+    {
         "name": "FILMS IN CONCERT - TOY STORY IN CONCERT (ENGLISH)",
         "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Banner133546100504055788.webp",
         "location": "Al MAYASSA THEATRE at QNCC",
@@ -711,11 +621,20 @@
         "category": "Other"
     },
     {
-        "name": "Pearls of the Philharmonic",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Apr18-20_1920x700133542840751100469.webp",
+        "name": "FILMS IN CONCERT - THE LION KING LIVE IN CONCERT (ARABIC)",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_1920x700_webp133529852522373287.webp",
+        "location": "Al MAYASSA THEATRE at QNCC",
+        "description": "The Lion King (show is in Arabic):",
+        "date": " 12-04-2024",
+        "time": " 06:00 PM Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "A Night at the Oscars",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Web_Banner133558219515488684.webp",
         "location": "Qatar National Convention Centre, Auditorium 3",
-        "description": "Celebrate 15 years of incredible music-making with the Qatar Philharmonic Orchestra for the 15-Year-Anniversary Festival! The Philharmonic ushers in the celebration with a variety of performances that will take place in Auditorium 3 at the Qatar National Convention Centre from 18-20 of April, showcasing the breadth and diversity of the Qatar Philharmonic Orchestra.",
-        "date": " 18-04-2024",
+        "description": "Step into the glitz and glamour of Hollywood with the Qatar Philharmonic Orchestra's enchanting event, Night at the Oscars. Led by the esteemed conductor Frank Strobel and featuring captivating narration by Manfred Callsen, this unforgettable evening promises to transport audiences into the heart of beloved cinematic masterpieces such as, Emma, Star Wars, Beauty and the Beast, Jaws and Lord of the Rings.",
+        "date": " 27-04-2024",
         "time": " 07:30 PM Onwards",
         "category": "Other"
     },
@@ -729,6 +648,15 @@
         "category": "Other"
     },
     {
+        "name": "QRS Ramadan Challenge 2024",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_RamadanChallengeRun3133541209564939370.webp",
+        "location": "Al Shaqab (Education City)",
+        "description": "",
+        "date": " 21-03-2024 - 03-04-2024",
+        "time": " 08:50 PM Onwards",
+        "category": "Other"
+    },
+    {
         "name": "Music from the Baroque Courts",
         "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Apr18-20_1920x700133542840319524834.webp",
         "location": "Qatar National Convention Centre, Auditorium 3",
@@ -738,21 +666,12 @@
         "category": "Other"
     },
     {
-        "name": "QPO on Tour",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Apr18-20_1920x700133542840161493187.webp",
+        "name": "Pearls of the Philharmonic",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Apr18-20_1920x700133542840751100469.webp",
         "location": "Qatar National Convention Centre, Auditorium 3",
         "description": "Celebrate 15 years of incredible music-making with the Qatar Philharmonic Orchestra for the 15-Year-Anniversary Festival! The Philharmonic ushers in the celebration with a variety of performances that will take place in Auditorium 3 at the Qatar National Convention Centre from 18-20 of April, showcasing the breadth and diversity of the Qatar Philharmonic Orchestra.",
-        "date": " 20-04-2024",
-        "time": " 08:00 PM Onwards",
-        "category": "Other"
-    },
-    {
-        "name": "Hamilton Ramadan Iftar",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Banner133547876034311579.webp",
-        "location": "Raffles and Fairmont Hotel, Katara Hall",
-        "description": "",
-        "date": " 28-03-2024",
-        "time": " 05:49 PM Onwards",
+        "date": " 18-04-2024",
+        "time": " 07:30 PM Onwards",
         "category": "Other"
     },
     {
@@ -765,21 +684,12 @@
         "category": "Other"
     },
     {
-        "name": "QRS Ramadan Challenge 2024",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_RamadanChallengeRun3133541209564939370.webp",
-        "location": "Al Shaqab (Education City)",
-        "description": "QRS Ramadan Challenge 2024 will take place at Al Shaqab (Education City) and consist of distances ranging from 800M to 10K.  All events will be run on an accurately measured short course with multiple laps and will be restricted to a maximum of 300 participants.",
-        "date": " 21-03-2024 - 03-04-2024",
-        "time": " 08:50 PM Onwards",
-        "category": "Other"
-    },
-    {
-        "name": "FILMS IN CONCERT - THE LION KING LIVE IN CONCERT (ARABIC)",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_1920x700_webp133529852522373287.webp",
-        "location": "Al MAYASSA THEATRE at QNCC",
-        "description": "The Lion King (show is in Arabic):",
-        "date": " 12-04-2024",
-        "time": " 06:00 PM Onwards",
+        "name": "QPO on Tour",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Apr18-20_1920x700133542840161493187.webp",
+        "location": "Qatar National Convention Centre, Auditorium 3",
+        "description": "Celebrate 15 years of incredible music-making with the Qatar Philharmonic Orchestra for the 15-Year-Anniversary Festival! The Philharmonic ushers in the celebration with a variety of performances that will take place in Auditorium 3 at the Qatar National Convention Centre from 18-20 of April, showcasing the breadth and diversity of the Qatar Philharmonic Orchestra.",
+        "date": " 20-04-2024",
+        "time": " 08:00 PM Onwards",
         "category": "Other"
     },
     {
@@ -789,6 +699,15 @@
         "description": "MAIN GRANDSTAND \nTicket inclusions:",
         "date": " 29-11-2024 - 01-12-2024",
         "time": "  Onwards",
+        "category": "Other"
+    },
+    {
+        "name": "Salwa Beach Fest",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Web_banner133554802897633124.webp",
+        "location": "Hilton Salwa Beach Resort and Villas",
+        "description": "Salwa Beach Fest is Back!",
+        "date": " 12-04-2024",
+        "time": " 10:00 AM Onwards",
         "category": "Other"
     },
     {
@@ -820,7 +739,7 @@
     },
     {
         "name": "WANDA DIAMOND LEAGUE",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Web-Banner-1920x700_WEBP133474468918829262.webp",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Web_banner133560771263446889.webp",
         "location": "Qatar Sports Club",
         "description": "The Doha Diamond League 2024 is one of fifteen meetings in the outdoor athletics season, organized by World Athletics.  The competition brings together the world's best athletes for an evening of competition.",
         "date": " 10-05-2024",
@@ -859,7 +778,7 @@
         "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_1920x700px_webp133498679805807176.webp",
         "location": "Al Khaleej Street, Doha Oasis, Msheireb",
         "description": "Quest, the ultimate indoor experiential theme park nestled in the heart of Doha Oasis in Msheireb! This themed and story-based realm takes you on a journey through three time-dimensions: the past (Oryxville), present (City of Imagination), and future (Gravity). With over 30 rides & attractions, featuring a mix of adrenaline-heavy thrill rides, media-controlled simulators, virtual reality experiences, laser tag adventures, and family-friendly attractions, Quest offers an experience unlike any other in Doha.",
-        "date": " 30-10-2023 - 31-12-2024",
+        "date": " 30-10-2023 - 29-06-2024",
         "time": " 08:30 AM Onwards",
         "category": "Other"
     },
@@ -873,30 +792,12 @@
         "category": "Other"
     },
     {
-        "name": "Full Moon Desert Safari",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_FM_Desert_Safari_2133497153184407178.webp",
-        "location": "Inland Sea",
-        "description": "An enchanted and remarkable desert encounter. In addition to the camel and falcon viewing at the desert camp, our Full Moon Desert Safari package includes a close-up look at the parched vegetation, which include cacti, wildflowers, and shrubs. This is an amazing experience in and of itself. Discover this UNESCO-designated natural reserve of breathtaking sand dunes, also called singing sand dunes, with unique biodiversity; this is one of the few locations in the world where, at high tide, the sea touches down into the middle of the desert.",
-        "date": " 23-02-2024 - 22-03-2024",
-        "time": " 01:30 PM Onwards",
-        "category": "Other"
-    },
-    {
         "name": "Arabian Shuwa Beach Experience",
         "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_1920x700_webp133498679001539779.webp",
         "location": "Banana Island Resort Doha",
         "description": "A favourite Omani recipe, 'shuwa' is a dish of slow–cooked marinated lamb. The meat is coated in a flavourful rub of spices, garlic and oil, although exact recipes and spices used vary from region to region. It is traditionally cooked, wrapped and buried in a pit of hot coals for several hours –producing the most tasty dishes owing to the resting stage when the marination of the meat allows the juices to properly absorb and thereafter cook perfectly.",
         "date": " 22-11-2023 - 31-12-2024",
         "time": " 01:00 PM Onwards",
-        "category": "Other"
-    },
-    {
-        "name": "Swing into Golf",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_SWING_INTO_GOLF_banner133539421103193450.webp",
-        "location": "Education City Golf Club",
-        "description": "Swing Into Golf",
-        "date": " 19-11-2023 - 31-03-2024",
-        "time": " 06:00 PM Onwards",
         "category": "Other"
     },
     {
