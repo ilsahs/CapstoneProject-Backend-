@@ -19,6 +19,38 @@ def validate_structure(soup):
         return False
     return True
 
+def format_date(date_str):
+    date_str = date_str.strip()
+    # Check if the date string contains the expected format
+    if " - " not in date_str:
+        date_obj = datetime.strptime(date_str, "%d-%m-%Y")
+        # Format the datetime object to the desired format
+        formatted_date = date_obj.strftime("%d %B %Y")
+        print(formatted_date)
+
+    else:  
+        # Split the date string into start and end dates
+        start_date_str, end_date_str = date_str.split(" - ")
+        # Split each date into day, month, and year
+        start_day, start_month, start_year = start_date_str.split("-")
+        end_day, end_month, end_year = end_date_str.split("-")
+        # Create a dictionary to map month numbers to month names
+        month_names = {
+            "01": "January", "02": "February", "03": "March", "04": "April",
+            "05": "May", "06": "June", "07": "July", "08": "August",
+            "09": "September", "10": "October", "11": "November", "12": "December"
+        }
+        # Format start and end dates
+        formatted_start_date = f"{int(start_day)} {month_names[start_month]} {start_year}"
+        formatted_end_date = f"{int(end_day)} {month_names[end_month]} {end_year}"
+        # Construct the final date string
+        formatted_date = f"{formatted_start_date} - {formatted_end_date}"
+        print(formatted_date)
+
+    
+    return formatted_date
+
+
 def scrape_events_page(page_url):
     soup = fetch_page(page_url)
 
@@ -41,7 +73,12 @@ def scrape_events_page(page_url):
             # print(title)
             description = page.find("div", class_="row").find_all('p')[0].text.strip()
             location = page.find("div", class_="mve-cat").find('ul').find_all('li')[2].text.strip()
-            date = page.find("div", class_="mve-cat").find('ul').find_all('li')[0].text.replace("to", "-")
+            date_str = page.find("div", class_="mve-cat").find('ul').find_all('li')[0].text.replace("to", "-")
+            date_str = date_str.strip()
+
+            # Format date string
+            print(date_str)
+            date = format_date(date_str)
             time = page.find("div", class_="mve-cat").find('ul').find_all('li')[1].text
             image = events[i].find("div", class_="mve-sec1-img").find('img')['src']
            
@@ -54,9 +91,9 @@ def scrape_events_page(page_url):
                 'time': time,
                 'category': 'Other',
             }) 
-       
-    except:
-        print("done")    
+                   
+    except Exception as e:
+        print(e)    
     
     return events_data
 

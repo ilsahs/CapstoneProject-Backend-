@@ -4,7 +4,8 @@ const { Schema, Types } = mongoose;
 const EventSchema = new mongoose.Schema({
     // _id:  { type: Types.ObjectId },
     title: String,
-    date:String,
+    startDate: Date,
+    endDate: { type: Date, default: null }, // Default to null if not provided
     time: String,
     location:String,
     category:String,
