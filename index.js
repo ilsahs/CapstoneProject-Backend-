@@ -4,7 +4,6 @@ const cors = require("cors")
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const cookieParser = require('cookie-parser')
-const Comments = require('./models/Comments')
 const multer = require('multer');
 const path = require('path');
 const { errorMonitor } = require("events")
@@ -19,6 +18,7 @@ const mime = require('mime-types');
 var FormData = require('form-data');
 const axios = require('axios');
 const WebSocket = require('ws');
+const moment = require('moment');
 
 //Models
 const UserModel = require('./models/Users')
@@ -147,13 +147,26 @@ cron.schedule('0 * * * *', async () => {
 const updateEvents = (scrapedEvents) => {
     console.log(`Total Events: ${scrapedEvents.length}`)
     scrapedEvents.forEach(async e => {
+        let dates = e.date.split(' - ');
+        let startDate = moment(dates[0], "DD MMMM YYYY").toDate(); // Parse the start date
+        let endDate = dates.length > 1 ? moment(dates[1], "DD MMMM YYYY").toDate() : null; // Parse the end date if it exists
+
+        // Construct the event object
+        let event = {
+            title: e.name,
+            startDate: startDate,
+            endDate: endDate,
+            time: e.time,
+            location: e.location,
+            category: e.category,
+            description: e.description,
+            image: e.image
+        };
+
         await EventModel.findOneAndUpdate(
-            //check if the event exists based on the name
-            { title: e.name },
-            //if it exists, u update it by replacing it completely
-            e,
-            //else you insert a new event to the db
-            { upsert: true, new: true })
+            { title: e.name }, // Check if the event exists based on the name
+            event, // If it exist, update it with the new event object
+            { upsert: true, new: true }) // Insert a new event if it doesn't exist
             .then(() => {
                 console.log(`Event ${e.name} updated/added successfully`);
             })
@@ -190,7 +203,7 @@ app.get('/all', (req, res) => {
 
 //All Comments
 app.get('/allcomments', (req, res) => {
-    Comments.find().then((result) => {
+    CommentsModel.find().then((result) => {
         res.send(result);
     }).catch((err) => {
         res.send(err)
@@ -448,7 +461,7 @@ app.post('/complete', upload.single('ProfilePicture'), async (req, res) => {
 app.get('/comments/:eventId', async (req, res) => {
     const eventId = req.params.eventId;
     try {
-        Comments.find({ Eventid: eventId }).then((result) => {
+        CommentsModel.find({ Eventid: eventId }).then((result) => {
 
             //console.log("this is result of comments", result)
             res.send(result);
@@ -462,6 +475,45 @@ app.get('/comments/:eventId', async (req, res) => {
     }
 });
 
+//Get events based on category
+app.get('/:category', (req, res) => {
+    const category = req.params.category;
+    try {
+        EventModel.find({category : category }).then((result) => {
+            res.json(result);
+        }).catch((err) => {
+            res.send(err)
+        })
+    } catch (err) {
+        console.error(err.message);
+
+    }
+    // const filteredEvents = events.filter(event => event.category === category);
+    // res.json(filteredEvents);
+  });
+
+app.get('/events/this-week/:dateRange', async (req, res) => {
+    const dateRange = req.params.dateRange.split(' - '); // Split date range into start and end dates
+    console.log(dateRange)
+    const startDate = new Date(dateRange[0]);
+    const endDate = new Date(dateRange[1]);
+
+    try {
+        const filteredEvents = await EventModel.find({
+            $or: [
+                { startDate: { $gte: new Date(startDate), $lte: new Date(endDate) } },
+                { endDate: { $gte: new Date(startDate), $lte: new Date(endDate) } }
+            ]
+        });
+        
+    res.json(filteredEvents);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+//Chatbot
 wss.on('connection', async (ws) => {
     // Handle incoming messages from the client
     ws.on('message', async (message) => {
@@ -611,19 +663,6 @@ wss.on('connection', async (ws) => {
         }
     });
 });
-
-async function uploadImageToImgur(imageUrl, clientId) {
-    const image = await axios.get(imageUrl, { responseType: 'arraybuffer' });
-    const form = new FormData();
-    form.append('image', image.data, { filename: 'image' });
-
-    return axios.post('https://api.imgur.com/3/image', form, {
-        headers: {
-            ...form.getHeaders(),
-            Authorization: `Client-ID ${clientId}`
-        }
-    });
-}
 
 const port = process.env.port || 3001
 
