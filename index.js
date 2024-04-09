@@ -119,7 +119,7 @@ const readFile = promisify(fs.readFile);
 
 //Schedule web scraping for every hour: 0 * * * *
 //every 5 minutes: */5 * * * *
-cron.schedule('*/5 * * * *', async () => {
+cron.schedule('0 * * * *', async () => {
     // const scrape = async () => {
     console.log('Running Python script...');
     // Execute the Python script
@@ -160,7 +160,7 @@ const updateEvents = (scrapedEvents) => {
         else {
             endDate = null
         }
-        
+
         // Construct the event object
         let event = {
             title: e.name,
