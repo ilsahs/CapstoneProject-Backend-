@@ -119,7 +119,7 @@ const readFile = promisify(fs.readFile);
 
 //Schedule web scraping for every hour: 0 * * * *
 //every 5 minutes: */5 * * * *
-cron.schedule('0 * * * *', async () => {
+cron.schedule('*/5 * * * *', async () => {
     // const scrape = async () => {
     console.log('Running Python script...');
     // Execute the Python script
@@ -149,8 +149,18 @@ const updateEvents = (scrapedEvents) => {
     scrapedEvents.forEach(async e => {
         let dates = e.date.split(' - ');
         let startDate = moment(dates[0], "DD MMMM YYYY").toDate(); // Parse the start date
-        let endDate = dates.length > 1 ? moment(dates[1], "DD MMMM YYYY").toDate() : null; // Parse the end date if it exists
+        startDate.setDate(startDate.getDate() + 1);
+        let eD = dates.length > 1 ? moment(dates[1], "DD MMMM YYYY").toDate() : null;
+        let endDate;
+        if (eD != null){
+            eD.setDate(eD.getDate() +1);
+            endDate =  eD.getTime() === startDate.getTime()? null: eD;// Parse the end date if it exists
 
+        }
+        else {
+            endDate = null
+        }
+        
         // Construct the event object
         let event = {
             title: e.name,
@@ -175,6 +185,29 @@ const updateEvents = (scrapedEvents) => {
             });
     })
 }
+
+const getCurrentWeekandTime = () => {
+    const today = new Date();
+    const todayDate = today.toDateString()
+    console.log(todayDate)
+    const currentDayOfWeek = today.getDay(); // 0 for Sunday, 1 for Monday, ..., 6 for Saturday
+  
+    // Calculate the start date (Sunday) of the current week
+    const startDate = new Date(today);
+    startDate.setDate(today.getDate() - currentDayOfWeek);
+  
+    // Calculate the end date (Saturday) of the current week
+    const endDate = new Date(today);
+    endDate.setDate(today.getDate() + (6 - currentDayOfWeek));
+
+    const startD = startDate.toDateString(); // Get the date portion
+    const endD = endDate.toDateString();
+
+    const currentTime = today.toLocaleTimeString()
+    console.log(currentTime)
+
+    return {startD, endD, currentTime, todayDate};
+  }
 
 // Dashboard
 app.get('/dashboard', verifyUser, (req, res) => {
@@ -519,6 +552,12 @@ wss.on('connection', async (ws) => {
     ws.on('message', async (message) => {
         console.log(`Received message from client: `);
         let prompt = null;
+        const eventsList = await EventModel.find({});
+        console.log(eventsList)
+
+        const { startD: sDate, endD: eDate, currentTime: cTime, todayDate: todayD } = getCurrentWeekandTime();
+
+        const promptEngineering = `The current date and time is ${todayD} ${cTime}. The date range for the current week starts from ${sDate} and ends at ${eDate}. In addition, this is the list of events happening in Qatar: ${eventsList}. Based on this list, answer my question if it is related to events. `;
 
         // Handle the message (if needed)
         let mess;
@@ -642,7 +681,8 @@ wss.on('connection', async (ws) => {
                 const jsonFile = "./prompts.json";
                 const fileData = await readFile(jsonFile, 'utf8');
                 const prompts = JSON.parse(fileData);
-                prompts[prompts.length -1]['content'] = prompt;
+                
+                prompts[prompts.length -1]['content'] = promptEngineering + prompt;
 
                 // Stream chat completions using the combined prompts
                 const client = new OpenAIClient(endpoint, new AzureKeyCredential(azureApiKey));
@@ -669,3 +709,11 @@ const port = process.env.port || 3001
 app.listen(port, () => {
     console.log("Server is Running")
 })
+
+// app.listen(port, async() => {
+//     const data = await readFile(jsonFilePath, 'utf8');
+//         const scrapedEvents = JSON.parse(data);
+//         // Assuming updateEvents is an async function
+//         updateEvents(scrapedEvents);
+//     console.log("Server is Running")
+// })

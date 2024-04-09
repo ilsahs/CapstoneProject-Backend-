@@ -1,5 +1,14 @@
 [
     {
+        "name": "Eid Al Fitr 2024 celebrations at West Walk",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/eid-al-fitr-2024-celebrations-west-walk/_680x450_clip_center-center_100_none/eid-al-fitr-2024-celebrations-west-walk.jpg",
+        "location": "West Walk, Al Sidr Street, Al Waab",
+        "description": "The activities will feature henna application, photography sessions & more!",
+        "date": "10 April 2024 - 10 April 2024",
+        "time": "07:00 pm - 08:00 pm",
+        "category": "Entertainment"
+    },
+    {
         "name": "Ayed Live in Concert",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/ayed-live-concert-qncc-doha-2024/_680x450_clip_center-center_100_none/ayed-live-in-concert-qnccc-doha-2024.jpg",
         "location": "Qatar National Convention Centre",
@@ -163,7 +172,7 @@
     },
     {
         "name": "Eid Al Fitr celebration at Lusail Boulevard",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/eid-al-fitr-celebration-events-lusail-boulevard/_680x450_clip_center-center_100_none/eid-al-fitr-celebration-events-lusail-boulevard-2024.jpg",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/eid-al-fitr-celebration-events-lusail-boulevard/_680x450_clip_center-center_100_none/eid-al-fitr-celebration-events-lusail-boulevard_2024-04-09-081938_vwhv.jpg",
         "location": "Lusail Boulevard",
         "description": "Enjoy the Eid Al Fitr festivities at Lusail Boulevard with fantastic entertainment.",
         "date": "10 April 2024 - 12 April 2024",
@@ -387,33 +396,6 @@
         "category": "Entertainment"
     },
     {
-        "name": "Taraweeh prayers under the stars at Hotel Park",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/taraweeh-prayers-under-the-stars-hotel-park-2024/_680x450_clip_center-center_100_none/hotel-park-taraweeh-ramadan-2024-qatar.jpg",
-        "location": "Hotel Park Doha, Corniche Street",
-        "description": "Look forward to an outdoor prayer experience with Taraweeh prayers held daily under the stars during the Holy month of Ramadan.",
-        "date": "10 March 2024 - 9 April 2024",
-        "time": "07:30 pm - 09:00 pm",
-        "category": "Community"
-    },
-    {
-        "name": "Taraweeh Prayers at Education City Mosque",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/taraweeh-prayers-education-city-mosque/_680x450_clip_center-center_100_none/taraweeh-prayers-education-city-mosqueshutterstock_1828856834-min.jpg",
-        "location": "Education City Mosque",
-        "description": "Imam Sh. Haithem Al Dokhain will be doing a full khatma of the Qur'an which is scheduled through the Taraweeh and Qiyaam prayer schedule.",
-        "date": "10 March 2024 - 9 April 2024",
-        "time": "07:30 pm - 09:00 pm",
-        "category": "Community"
-    },
-    {
-        "name": "Ramadan lecture series at Education City Mosque",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/ramadan-lecture-series-education-city-mosque-2024/_680x450_clip_center-center_100_none/ramadan-lecture-series-education-city-mosque-2024-shutterstock_1828830191-min.jpg",
-        "location": "Education City Mosque, Al Rayyan",
-        "description": "The daily lectures will highlight the unique personality of the Prophet (PBUH) and the ethical life lessons from his Seerah.\n﻿",
-        "date": "11 March 2024 - 9 April 2024",
-        "time": "07:30 pm - 08:30 pm",
-        "category": "Community"
-    },
-    {
         "name": "Build Your House Exhibition 2024",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/build-your-house-exhibition-2024/_680x450_clip_center-center_100_none/Build-Your-House-Exhibition-2024.jpg",
         "location": "Qatar National Convention Centre",
@@ -459,69 +441,6 @@
         "category": "Community"
     },
     {
-        "name": "Ramadan Iftar Mangrove Kayak Package - Purple Island",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/ramadan-iftar-mangrove-kayak-purple-island/_680x450_clip_center-center_100_none/Iloveqatar.png",
-        "location": "Purple Island Beach, Al Khor, Qatar",
-        "description": "Embark on daily kayaking escapades during the sacred month of Ramadan and uncover the hidden treasures of Qatar!",
-        "date": "12 March 2024 - 9 April 2024",
-        "time": "03:00 pm - 07:00 pm",
-        "category": "Entertainment"
-    },
-    {
-        "name": "Ramadan 2024 cannon at Old Doha Port",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/ramadan-2024-cannon-old-doha-port/_680x450_clip_center-center_100_none/ramadan-cannon-old-doha-port.jpg",
-        "location": "Old Doha Port, near Grand Cruise Terminal side",
-        "description": "The cannon can be found at the parking lot of Old Doha Port, which directly faces the Doha Skyline and is closer to the Grand Cruise Terminal.",
-        "date": "11 March 2024 - 9 April 2024",
-        "time": "05:44 pm - 05:57 pm",
-        "category": "Arts & Culture"
-    },
-    {
-        "name": "Ramadan 2024 cannon at Lusail Boulevard",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/ramadan-2024-cannon-lusail-boulevard/_680x450_clip_center-center_100_none/ramadan-cannon-lusail-boulevard.jpg",
-        "location": "Lusail Boulevard",
-        "description": "The cannon is shot at the time of the sunset call to prayer, marking the breaking of the fast.",
-        "date": "11 March 2024 - 9 April 2024",
-        "time": "05:44 pm - 05:57 pm",
-        "category": "Arts & Culture"
-    },
-    {
-        "name": "Mawater Ramadan Car Parade at Lusail Boulevard",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/mawater-ramadan-car-parade-lusail-boulevard-2024/_680x450_clip_center-center_100_none/mawater-car-parade-ramadan-2024.jpg",
-        "location": "Lusail Boulevard",
-        "description": "The car parade will be taking place every day during Ramadan after Asr prayer - approximately around 3:30 pm.",
-        "date": "11 March 2024 - 9 April 2024",
-        "time": "03:30 pm - 05:00 pm",
-        "category": "Entertainment"
-    },
-    {
-        "name": "Ramadan cannon in Msheireb Downtown Doha",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/ramadan-cannon-msheireb-downtown-doha/_680x450_clip_center-center_100_none/ramadan-cannon-msheireb-downtown-doha.jpg",
-        "location": "Eid Prayer Ground, Msheireb Downtown Doha",
-        "description": "The Ramadan Cannon can be found at the Eid Prayer Ground every day during the holy month.",
-        "date": "11 March 2024 - 9 April 2024",
-        "time": "05:44 pm - 05:57 pm",
-        "category": "Arts & Culture"
-    },
-    {
-        "name": "Ramadan 2024 cannon at Souq Waqif",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/ramadan-2024-cannon-souq-waqif/_680x450_clip_center-center_100_none/souq-waqif-ramadan-cannon-2024.jpg",
-        "location": "Eastern Square, Souq Waqif",
-        "description": "The Ramadan cannon will be fired at the Eastern Square of Souq Waqif.",
-        "date": "11 March 2024 - 9 April 2024",
-        "time": "05:44 pm - 05:57 pm",
-        "category": "Arts & Culture"
-    },
-    {
-        "name": "Ramadan 2024 cannon at Souq Al Wakrah",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/ramadan-2024-cannon-souq-al-wakrah/_680x450_clip_center-center_100_none/ramadan-cannon-souq-al-wakrah-2024.jpg",
-        "location": "Western Square, ﻿Souq Al Wakrah",
-        "description": "The Ramadan cannon will be fired at the Western Square of Souq Al Wakrah.",
-        "date": "11 March 2024 - 9 April 2024",
-        "time": "05:44 pm - 05:57 pm",
-        "category": "Arts & Culture"
-    },
-    {
         "name": "Throwback Food Festival at Old Doha Port",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/throwback-food-festival-old-doha-port/_680x450_clip_center-center_100_none/682514/throwback-food-festival-ramadan-2024-qatar.jpg",
         "location": "Mina Park, Old Doha Port (Opposite Container Yard)",
@@ -529,15 +448,6 @@
         "date": "10 March 2024 - 15 April 2024",
         "time": "05:00 pm - 11:59 pm",
         "category": "Entertainment"
-    },
-    {
-        "name": "Ramadan 2024 Cannon at Katara Cultural Village",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/ramadan-2024-cannon-katara-cultural-village/_680x450_clip_center-center_100_none/ramadan-cannon-2024-katara-cultural-village.jpg",
-        "location": "South Parking, Katara Cultural Village",
-        "description": "The Iftar cannon will be every day on the Southern side of Katara throughout the blessed month of Ramadan 2024.",
-        "date": "11 March 2024 - 9 April 2024",
-        "time": "05:44 pm - 05:57 pm",
-        "category": "Arts & Culture"
     },
     {
         "name": "Jewels of Ramadan at Minaretein Auditorium",
@@ -792,15 +702,6 @@
         "category": "Education"
     },
     {
-        "name": "ICC Eid Bazaar & Mehndi Night",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/icc-eid-bazaar-mehndi-night/_680x450_clip_center-center_100_none/icc-eid-bazaar-mehndi-night.jpg",
-        "location": "ICC Ashoka Hall, Indian Cultural Centre, Al Maadeed Street",
-        "description": "The stalls will include handicrafts, leather products, jewellery, traditional Indian clothes, live henna and food stations.",
-        "date": "7 April 2024 - 8 April 2024",
-        "time": "06:00 pm - 11:59 pm",
-        "category": "Community"
-    },
-    {
         "name": "IRISH VILLAGE",
         "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Irish_Banner_Latest133570276480095167.webp",
         "location": "SHERATON GRAND DOHA RESORT & CONVENTION HOTEL - Garden",
@@ -1000,7 +901,7 @@
     },
     {
         "name": "SEA CAVES WATER AND ADVENTURE PARK- DESERT FALLS",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Web_banner133540290518543450.webp",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_banner_WEBP133571236892608938.webp",
         "location": "Desert Falls Water and Adventure park",
         "description": "One of the largest theme parks in the Middle East, brace yourself for a jaw-dropping adventure at Desert Falls Water and Adventure Park. Located within Hilton Salwa Beach Resort & Villas, Sea Caves Water Park features 19 attractions with 30 rides and slides, including the water park’s signature ride “The King Cobra” and many other attractions including the Kids Ship Pool, the Whizzard Mat Racer, inner tube slides, Surfing Dunes, Family Abyss, Falls Pool and the Wave Pool.",
         "date": "1 December 2022 - 31 December 2024",
