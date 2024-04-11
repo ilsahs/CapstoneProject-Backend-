@@ -88,7 +88,23 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 app.use('/uploads', express.static('uploads'));
+const picstorage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        const destPath = path.join(__dirname, 'ProfilePictures');
+        fs.mkdirSync(destPath, { recursive: true });
+        cb(null, destPath);
+    },
+    filename: function (req, file, cb) {
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+        cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
+    },
+});
 
+const uploadPic = multer({ storage: picstorage });
+
+
+
+app.use('/ProfilePictures', express.static('ProfilePictures'));
 const verifyUser = (req, res, next) => {
     const token = req.cookies.token;
     //console.log("this is token:", token)
@@ -293,7 +309,91 @@ app.post('/Register', (req, res) => {
                 .catch(err => res.json(err))
         }).catch(err => res.json(err))
 })
+// Profile
 
+app.get('/profile', verifyUser, (req, res) => {
+    const token = req.cookies.token
+    const decoded = jwt.verify(token, "jwt-secret-key");
+    const userEmail = decoded.Email;
+    var ProfilePicture;
+    var DOB;
+    var preferences;
+    var username;
+    UserModel.findOne({ Email: userEmail })
+        .then(user => {
+            if (user) {
+                ProfilePicture = user.ProfilePicture;
+                DOB = user.DOB;
+                preferences = user.Preferences;
+                username = user.Name
+                res.json({ username : username, preferences: preferences, DOB: DOB, ProfilePicture: ProfilePicture, Email : userEmail });
+            }
+        }).catch(err => {
+        console.error("Error fetching profile:", err);
+        res.status(500).json(err);
+    });
+})
+
+app.post('/profile', uploadPic.single('ProfilePicture'), async (req, res) => {
+    try {
+        //getting email from token
+        const token = req.cookies.token
+        const decoded = jwt.verify(token, "jwt-secret-key");
+        const userEmail = decoded.Email;
+
+        const ProfilePicture = req.file ? req.file.filename : null;
+
+        const { Name, DOB, selectedPreferences } = req.body;
+         console.log(userEmail, selectedPreferences, DOB, ProfilePicture,Name);
+        if (userEmail) {
+            const update = await UserModel.findOneAndUpdate(
+                { Email: userEmail },
+                {
+                    $set: {
+                        DOB: DOB,
+                        Preferences: selectedPreferences,
+                        ProfilePicture: "http://localhost:3001/ProfilePictures/" + ProfilePicture,
+                        Name: Name
+                    },
+                },
+                { new: true, useFindAndModify: false }
+            );
+
+            if (!update) {
+                return res.status(404).json({ error: 'User not found' });
+            }
+        }
+
+        res.json({ message: 'Success' });
+    }
+    catch (error) {
+        console.error("Error:", error);
+        return res.status(401).json("Invalid token");
+    }
+})
+
+//Skip
+app.post('/skip', async (req, res) => {
+    console.log("in skip")
+    const token = req.cookies.token
+    const decoded = jwt.verify(token, "jwt-secret-key");
+    const userEmail = decoded.Email;
+    const { skip} = req.body;
+    if (userEmail) {
+        const update = await UserModel.findOneAndUpdate(
+            { Email: userEmail },
+            {
+                $set: {
+                    Skip: skip
+                },
+            },
+            { new: true, useFindAndModify: false }
+        );
+        if (!update) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+    }
+})
 //Login
 app.post('/login', (req, res) => {
     const { Email, Password } = req.body;
@@ -452,7 +552,7 @@ app.get("/api/all/threads", (req, res) => {
 });
 
 //Complete Profile
-app.post('/complete', upload.single('ProfilePicture'), async (req, res) => {
+app.post('/complete', uploadPic.single('ProfilePicture'), async (req, res) => {
     try {
         //getting email from token
         const token = req.cookies.token
