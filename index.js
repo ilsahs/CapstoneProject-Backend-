@@ -109,19 +109,14 @@ const verifyUser = (req, res, next) => {
     const token = req.cookies.token;
     //console.log("this is token:", token)
     if (!token || token === "undefined") {
-        console.log("here 1")
         return res.status(401).json("Token is missing");
     } else {
-        console.log("here 2")
         jwt.verify(token, "jwt-secret-key", (err, decoded) => {
             if (err) {
-                console.log("here 3")
                 console.error("Error with token verification:", err);
                 return res.status(401).json("Error with token");
             } else {
-                console.log("here 4")
                 req.decoded = decoded;
-
                 next();
             }
         });
@@ -205,7 +200,6 @@ const updateEvents = (scrapedEvents) => {
 const getCurrentWeekandTime = () => {
     const today = new Date();
     const todayDate = today.toDateString()
-    console.log(todayDate)
     const currentDayOfWeek = today.getDay(); // 0 for Sunday, 1 for Monday, ..., 6 for Saturday
   
     // Calculate the start date (Sunday) of the current week
@@ -220,7 +214,6 @@ const getCurrentWeekandTime = () => {
     const endD = endDate.toDateString();
 
     const currentTime = today.toLocaleTimeString()
-    console.log(currentTime)
 
     return {startD, endD, currentTime, todayDate};
   }
@@ -260,14 +253,13 @@ app.get('/allcomments', (req, res) => {
 })
 
 app.post('/comments', async (req, res) => {
-    console.log("reaching in comments post")
     try {
         const { eventID, newComment, email } = req.body;
-        console.log(eventID)
+        // console.log(eventID)
         //const event = await CommentsModel.findById(eventId);
         //console.log(event)
-        console.log(email)
-        console.log(newComment)
+        // console.log(email)
+        // console.log(newComment)
 
 
         const user = await UserModel.findOne({ Email: email });
@@ -287,12 +279,10 @@ app.post('/comments', async (req, res) => {
             { upsert: true, new: true } 
         ).then(updatedEvent => {
             console.log('Comment added successfully');
-            console.log(updatedEvent); 
         })
         .catch(error => {
             console.error('Error adding comment:', error);
         });
-        console.log(name)
         
     } catch (error) {
         console.error('Error adding comment:', error);
@@ -344,7 +334,7 @@ app.post('/profile', uploadPic.single('ProfilePicture'), async (req, res) => {
         const ProfilePicture = req.file ? req.file.filename : null;
 
         const { Name, DOB, selectedPreferences } = req.body;
-         console.log(userEmail, selectedPreferences, DOB, ProfilePicture,Name);
+        //  console.log(userEmail, selectedPreferences, DOB, ProfilePicture,Name);
         if (userEmail) {
             const update = await UserModel.findOneAndUpdate(
                 { Email: userEmail },
@@ -374,7 +364,6 @@ app.post('/profile', uploadPic.single('ProfilePicture'), async (req, res) => {
 
 //Skip
 app.post('/skip', async (req, res) => {
-    console.log("in skip")
     const token = req.cookies.token
     const decoded = jwt.verify(token, "jwt-secret-key");
     const userEmail = decoded.Email;
@@ -400,15 +389,12 @@ app.post('/login', (req, res) => {
     UserModel.findOne({ Email: Email })
         .then(user => {
             if (user) {
-                console.log("in user here")
                 bcrypt.compare(Password, user.Password, (err, response) => {
                     if (response) {
-                        console.log("in the response")
                         const token = jwt.sign({ Email: user.Email },
                             "jwt-secret-key", { expiresIn: '30m' })
                         res.cookie('token', token)
                         let checkacc = check(Email);
-                        console.log("now returning")
                         return res.json({ Status: "Success", Skip: user.Skip })
                     } else {
                         return res.json("The password is incorrect")
@@ -520,7 +506,6 @@ app.get("/api/create/thread", verifyUser, async (req, res) => {
     const user = await UserModel.findOne({ Email: userEmail });
     const name = user.Name;
 
-    console.log({ name });
     return res.json({ name })
 });
 
@@ -627,7 +612,6 @@ app.get('/:category', (req, res) => {
 
 app.get('/events/this-week/:dateRange', async (req, res) => {
     const dateRange = req.params.dateRange.split(' - '); // Split date range into start and end dates
-    console.log(dateRange)
     const startDate = new Date(dateRange[0]);
     const endDate = new Date(dateRange[1]);
 
@@ -650,10 +634,8 @@ app.get('/events/this-week/:dateRange', async (req, res) => {
 wss.on('connection', async (ws) => {
     // Handle incoming messages from the client
     ws.on('message', async (message) => {
-        console.log(`Received message from client: `);
         let prompt = null;
         const eventsList = await EventModel.find({});
-        console.log(eventsList)
 
         const { startD: sDate, endD: eDate, currentTime: cTime, todayDate: todayD } = getCurrentWeekandTime();
 
@@ -663,8 +645,6 @@ wss.on('connection', async (ws) => {
         let mess;
         try {
             mess = JSON.parse(message);
-            console.log('message', mess)
-            console.log('type', mess.type)
             
         } catch (error) {
             console.error('Error parsing message:', error);
@@ -673,13 +653,9 @@ wss.on('connection', async (ws) => {
         
         //Check the type of the file
         if (mess.type === 'file') {
-            console.log("here file")
             // Here you have the file's content in Base64, its mimeType, and fileName
             const { mimeType, content, fileName } = mess;
-            console.log(mimeType)
-            console.log(fileName);
             const extension = fileName.match(/\.([^.]+)$/)[1];
-            console.log(extension); // Output: "jpg"
             const folder = mimeType.startsWith('image/') ? 'uploads/images'
                 : mimeType.startsWith('audio/') ? 'uploads/audios'
                     : 'others';
@@ -730,7 +706,6 @@ wss.on('connection', async (ws) => {
                 console.log("Start image analysis")
                 
                 const client2 = new OpenAIClient(endpoint, new AzureKeyCredential(azureApiKey));
-                console.log("Start 2 image analysis")
                 const result = await client2.streamChatCompletions(visionDeploymentName, [
                     { role: "system", content: "You are a helpful assistant. Identify the location of the place the image is taken in" },
                     {
@@ -765,13 +740,11 @@ wss.on('connection', async (ws) => {
                 const client1 = new OpenAIClient(whisperEndpoint, new AzureKeyCredential(whisperAzureApiKey));
                 const audio = await readFile(fileP);
                 const result1 = await client1.getAudioTranscription(whisperDeploymentName, audio);
-                console.log(result1.text)
                 // res.send(result1.text);
                 prompt = result1.text;
             }
 
         } else {
-            console.log("here text")
             prompt = mess['content'];
         }
     
@@ -782,7 +755,8 @@ wss.on('connection', async (ws) => {
                 const fileData = await readFile(jsonFile, 'utf8');
                 const prompts = JSON.parse(fileData);
                 
-                prompts[prompts.length -1]['content'] = promptEngineering + prompt;
+                prompts[0]["content"] += promptEngineering
+                prompts[prompts.length -1]['content'] = prompt;
 
                 // Stream chat completions using the combined prompts
                 const client = new OpenAIClient(endpoint, new AzureKeyCredential(azureApiKey));
