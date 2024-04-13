@@ -719,7 +719,7 @@ wss.on('connection', async (ws) => {
                     {
                         role: "user",
                         content: [
-                            { type: "text", text: "Describe the image and identify the location in a concise manner. Mention any important landmarks visible in the image:" },
+                            { type: "text", text: "Identify the location in a concise manner. Mention any important landmarks visible in the image:" },
                             { type: "image_url", image_url: { url: imgUrl } }
                         ]
                     }
@@ -734,10 +734,13 @@ wss.on('connection', async (ws) => {
                     for (const choice of res.choices){
                         if (choice.delta && choice.delta.content){
                             ws.send(choice.delta.content);
-                            // await new Promise(resolve => setTimeout(resolve, 200)); // 500 ms delay
+                            await new Promise(resolve => setTimeout(resolve, 100));
                         }
                     }
                 } 
+
+                const endOfConversationMessage = { type: 'endConversation' };
+                sendMessage(ws, endOfConversationMessage);
             }
 
             //If the file content is audio:
@@ -751,8 +754,6 @@ wss.on('connection', async (ws) => {
                 // res.send(result1.text);
                 prompt = result1.text;
 
-                const endOfConversationMessage = { type: 'endConversation' };
-                sendMessage(ws, endOfConversationMessage);
             }
 
         } else {
