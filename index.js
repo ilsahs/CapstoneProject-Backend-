@@ -630,6 +630,14 @@ app.get('/events/this-week/:dateRange', async (req, res) => {
     }
 });
 
+const sendMessage = (ws, message) => {
+    try {
+        ws.send(JSON.stringify(message));
+    } catch (error) {
+        console.error('Error sending message:', error);
+    }
+};
+
 //Chatbot
 wss.on('connection', async (ws) => {
     // Handle incoming messages from the client
@@ -742,6 +750,9 @@ wss.on('connection', async (ws) => {
                 const result1 = await client1.getAudioTranscription(whisperDeploymentName, audio);
                 // res.send(result1.text);
                 prompt = result1.text;
+
+                const endOfConversationMessage = { type: 'endConversation' };
+                sendMessage(ws, endOfConversationMessage);
             }
 
         } else {
@@ -769,6 +780,9 @@ wss.on('connection', async (ws) => {
                         }
                     }
                 }
+
+                const endOfConversationMessage = { type: 'endConversation' };
+                sendMessage(ws, endOfConversationMessage);
             }
         } catch (error) {
             console.error('Error occurred while streaming chat completions:', error);
