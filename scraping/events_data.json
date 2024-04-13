@@ -1,12 +1,12 @@
 [
     {
-        "name": "Eid Al Fitr 2024 celebrations at West Walk",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/eid-al-fitr-2024-celebrations-west-walk/_680x450_clip_center-center_100_none/eid-al-fitr-2024-celebrations-west-walk.jpg",
-        "location": "West Walk, Al Sidr Street, Al Waab",
-        "description": "The activities will feature henna application, photography sessions & more!",
-        "date": "10 April 2024 - 10 April 2024",
-        "time": "07:00 pm - 08:00 pm",
-        "category": "Entertainment"
+        "name": "NCT 8th Anniversary Party Fancafe Event",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/nct-8th-anniversary-party-fancafe-event/_680x450_clip_center-center_100_none/NCT-8th-ANNIV-PARTY-BANNER-FOR-ILQLIVE.jpg",
+        "location": "Bubblelicious, Al Jazeera Street, Doha, Qatar",
+        "description": "Celebrate NCT, K-pop boy group's anniversary with us - a first NCT event in Qatar!",
+        "date": "18 April 2024 - 18 April 2024",
+        "time": "05:00 pm - 08:00 pm",
+        "category": "Community"
     },
     {
         "name": "Ayed Live in Concert",
@@ -15,15 +15,6 @@
         "description": "Catch the sensational singer Ayed Yousef live in concert at QNCC.",
         "date": "16 April 2024 - 16 April 2024",
         "time": "08:00 pm - 11:00 pm",
-        "category": "Entertainment"
-    },
-    {
-        "name": "Layali Al Eid in Gamra By Fahad Signature",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/eid-al-fitr-celebrations-gamra-by-fahad-signature-al-maha-island-2024/_680x450_clip_center-center_100_none/eid-al-fitr-celebrations-gamra-by-fahad-signature-al-maha-island-2024-cover-image.jpeg",
-        "location": "Al Maha Island",
-        "description": "Gamra By Fahad Signature offers the perfect destination for an Eid experience with a buffet and entertainment activities.",
-        "date": "11 April 2024 - 13 April 2024",
-        "time": "09:00 pm - 01:00 am",
         "category": "Entertainment"
     },
     {
@@ -54,15 +45,6 @@
         "category": "Arts & Culture"
     },
     {
-        "name": "Elmaestro Comedy Show by Bassem Hamraoui",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/elmaestro-standup-comedy-show-bassem-hamraoui-doha-2024/_680x450_clip_center-center_100_none/elmaestro-standup-comedy-show-bassem-hamraoui-doha-2024-cover-image.jpg",
-        "location": "Al Wajba Ballroom, La Cigale Hotel",
-        "description": "Enjoy an exciting evening filled with laughs at Bassem Hamraoui's standup comedy show.",
-        "date": "12 April 2024 - 12 April 2024",
-        "time": "06:00 pm - 11:00 pm",
-        "category": "Entertainment"
-    },
-    {
         "name": "Arts & Crafts for Eid Al Fitr at Mall of Qatar",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/arts-crafts-eid-al-fitr-mall-of-qatar-2024/_680x450_clip_center-center_100_none/arts-crafts-eid-al-fitr-mall-of-qatar-2024cover-image.jpg",
         "location": "Southwest Gate, facing Decathlon, Mall of Qatar",
@@ -70,24 +52,6 @@
         "date": "10 April 2024 - 20 April 2024",
         "time": "02:00 pm - 10:00 pm",
         "category": "Community"
-    },
-    {
-        "name": "Eid Al Fitr celebrations with Al Rayyan TV",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/eid-al-fitr-2024-al-rayyan-tv-mall-of-qatar/_680x450_clip_center-center_100_none/eid-al-fitr-2024-al-rayyan-tv-mall-of-qatar-alrayyantv.jpg",
-        "location": "Oasis Stage, Mall of Qatar",
-        "description": "Join the fun with Al Rayyan TV at the Mall of Qatar! Exciting contests and prizes await you on the Oasis Stage.",
-        "date": "10 April 2024 - 13 April 2024",
-        "time": "04:00 pm - 05:00 pm",
-        "category": "Entertainment"
-    },
-    {
-        "name": "Eid Al Fitr celebrations at Alhazm Mall",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/eid-al-fitr-2024-celebration-alhazm-mall/_680x450_clip_center-center_100_none/eid-al-fitr-2024-celebration-al-hazm-mall-cover-image.jpg",
-        "location": "Alhazm Mall",
-        "description": "Celebrate Eid Al Fitr with a range of activities for families and children at Alhazm Mall.",
-        "date": "10 April 2024 - 13 April 2024",
-        "time": "04:00 pm - 10:00 pm",
-        "category": "Entertainment"
     },
     {
         "name": "PJ Masks at Doha Festival City",
@@ -105,24 +69,6 @@
         "description": "Celebrate the Eid Al Fitr festivities at Mina District, Old Doha Port and enjoy numerous entertainment and shows.",
         "date": "10 April 2024 - 20 April 2024",
         "time": "04:00 pm - 10:00 pm",
-        "category": "Entertainment"
-    },
-    {
-        "name": "Eid Al Fitr 2024 prayers & festival at Education City Stadium",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/eid-al-fitr-2024-prayers-festival-education-city-stadium/_680x450_clip_center-center_100_none/eid-al-fitr-prayers-festival-education-city-stadium.jpg",
-        "location": "Education City Stadium",
-        "description": "Following prayers will be a festive celebration for the community which will feature activities like face painting, henna artists, air hockey & more!",
-        "date": "10 April 2024 - 10 April 2024",
-        "time": "05:32 am - 11:00 am",
-        "category": "Entertainment"
-    },
-    {
-        "name": "Adventures of Eid at Ezdan Mall Al Gharaffa & Al Wakra",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/adventures-eid-al-fitr-ezdan-mall-al-gharaffa-al-wakra/_680x450_clip_center-center_100_none/adventures-eid-al-fitr-ezdan-mall-al-gharaffa-al-wakra.jpg",
-        "location": "Al Qaabiya St",
-        "description": "Create fun memories this Eid Al Fitr at Ezdan Malls!",
-        "date": "10 April 2024 - 13 April 2024",
-        "time": "05:30 pm - 09:30 pm",
         "category": "Entertainment"
     },
     {
@@ -153,33 +99,6 @@
         "category": "Entertainment"
     },
     {
-        "name": "Heritage, History & Modernity Exhibition at Katara Cultural Village",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/heritage-history-modernity-exhibition-katara-eid-al-fitr-2024/_680x450_clip_center-center_100_none/682576/heritage-history-modernity-exhibition-katara-eid-al-fitr-2024.jpg",
-        "location": "Building 22",
-        "description": "Here's something you can check out and do for Eid Al Fitr 2024.",
-        "date": "10 April 2024 - 13 April 2024",
-        "time": "03:00 pm - 09:00 pm",
-        "category": "Arts & Culture"
-    },
-    {
-        "name": "\"Eid-Al Fitr 2024\" Celebrations at Katara Cultural Village",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/eid-al-fitr-2024-celebrations-katara-cultural-village/_680x450_clip_center-center_100_none/682553/eid-al-fitr-2024-celebrations-katara-cultural-village.jpg",
-        "location": "Katara Corniche & Al-Hikma Courtyard",
-        "description": "Exciting shows and numerous surprises await you at Katara! Enjoy!",
-        "date": "10 April 2024 - 13 April 2024",
-        "time": "03:00 pm - 09:00 pm",
-        "category": "Entertainment"
-    },
-    {
-        "name": "Eid Al Fitr celebration at Lusail Boulevard",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/eid-al-fitr-celebration-events-lusail-boulevard/_680x450_clip_center-center_100_none/eid-al-fitr-celebration-events-lusail-boulevard_2024-04-09-081938_vwhv.jpg",
-        "location": "Lusail Boulevard",
-        "description": "Enjoy the Eid Al Fitr festivities at Lusail Boulevard with fantastic entertainment.",
-        "date": "10 April 2024 - 12 April 2024",
-        "time": "04:00 pm - 11:00 pm",
-        "category": "Entertainment"
-    },
-    {
         "name": "Teach Meets Green!",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/teach-meets-green-doha/_680x450_clip_center-center_100_none/ILQ-Posters-1.png",
         "location": "Education City Micro-Farm",
@@ -187,15 +106,6 @@
         "date": "27 April 2024 - 27 April 2024",
         "time": "04:00 pm - 06:00 pm",
         "category": "Education"
-    },
-    {
-        "name": "Eid Al Fitr fireworks show at Katara Cultural Village",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/eid-al-fitr-fireworks-show-katara-cultural-village/_680x450_clip_center-center_100_none/katara-eid-fireworks-2024.jpg",
-        "location": "Katara Cultural Village",
-        "description": "Enjoy a spectacular fireworks show at Katara Cultural Village in celebration of Eid Al Fitr 2024.",
-        "date": "10 April 2024 - 12 April 2024",
-        "time": "09:00 pm - 09:10 pm",
-        "category": "Entertainment"
     },
     {
         "name": "What Gravity Challenge",
@@ -222,24 +132,6 @@
         "description": "The carnival will feature culinary offerings, entertainment like arcade games, classic carnival games, arts & crafts and more!",
         "date": "6 April 2024 - 20 April 2024",
         "time": "05:00 pm - 11:59 pm",
-        "category": "Entertainment"
-    },
-    {
-        "name": "Eid Al Fitr 2024 fireworks show at Souq Waqif",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/fire-works-show-eid-al-fitr-2024-souq-waqif/_680x450_clip_center-center_100_none/fire-works-show-eid-al-fitr-2024-souq-waqif.jpg",
-        "location": "Eastern Square, Souq Waqif",
-        "description": "The fireworks show will be taking place for the first 4 days from Eid Al Fitr at 8:30 pm!",
-        "date": "10 April 2024 - 13 April 2024",
-        "time": "08:30 pm - 09:00 pm",
-        "category": "Entertainment"
-    },
-    {
-        "name": "Eid Al Fitr 2024 Fireworks Show Al Wakrah Old Souq",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/eid-al-fitr-fireworks-show-al-wakrah-old-souq/_680x450_clip_center-center_100_none/eid-al-fitr-fireworks-show-al-wakrah-old-souq.jpg",
-        "location": "Sea Side - Al Wakrah Old Souq",
-        "description": "This will be for four days, starting from the first day of Eid Al Fitr.",
-        "date": "10 April 2024 - 13 April 2024",
-        "time": "08:30 pm - 09:00 pm",
         "category": "Entertainment"
     },
     {
@@ -270,15 +162,6 @@
         "category": "Other"
     },
     {
-        "name": "Wanda Diamond League-Doha 2024",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/wanda-diamond-league-doha-2024/_680x450_clip_center-center_100_none/680802/wanda-doamind-league-2024.jpg",
-        "location": "Qatar Sports Club",
-        "description": "The competition brings together the world's best athletes for an evening of competition. Go witness the action!",
-        "date": "10 April 2024 - 10 April 2024",
-        "time": "06:00 pm - 09:00 pm",
-        "category": "Sports"
-    },
-    {
         "name": "KidZania Doha Eid Al Fitr 2024 Celebrations",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/kidzania-doha-eid-al-fitr-2024-celebrations/_680x450_clip_center-center_100_none/kidzania-doha-eid-al-fitr-2024-celebrations.jpg",
         "location": "KidZania Doha, Aspire Park",
@@ -288,15 +171,6 @@
         "category": "Entertainment"
     },
     {
-        "name": "Al Maha Island Aquathlon 2024",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/al-maha-island-aquathlon-2024/_680x450_clip_center-center_100_none/al-maha-island-aquathlon-2024.jpg",
-        "location": "Al Maha Island",
-        "description": "The Aquathlon which will have a 1 km swim and 5 km run, requires pre-registration and is only for men.",
-        "date": "13 April 2024 - 13 April 2024",
-        "time": "06:30 am - 09:00 am",
-        "category": "Sports"
-    },
-    {
         "name": "Eid Al Fitr Celebration in Qatar tour at NMoQ",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/eid-al-fitr-celebration-qatar-tour-national-museum-of-qatar/_680x450_clip_center-center_100_none/eid-al-fitr-celebration-qatar-tour-national-museum-of-qatar.jpg",
         "location": "National Museum of Qatar, Museum Pk Street",
@@ -304,15 +178,6 @@
         "date": "15 April 2024 - 22 April 2024",
         "time": "01:00 pm - 05:30 pm",
         "category": "Arts & Culture"
-    },
-    {
-        "name": "Eid Celebrations with National Cruise",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/eid-celebrations-with-national-cruise-2024/_680x450_clip_center-center_100_none/eid-celebrations-with-national-cruise-2024.jpg",
-        "location": "Box Park",
-        "description": "Book a fun trip with National Cruise to make your Eid celebrations memorable with a stop at Safliya Island, swimming opportunities and more!",
-        "date": "9 April 2024 - 13 April 2024",
-        "time": "10:00 am - 03:00 pm",
-        "category": "Entertainment"
     },
     {
         "name": "Coffee Tea & Chocolate Festival 2024 (Eid edition)",
@@ -387,15 +252,6 @@
         "category": "Education"
     },
     {
-        "name": "Sarah G & Bamboo Live In Doha",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/sarah-g-bamboo-live-concert-april-event-doha-2024/_680x450_clip_center-center_100_none/sarah-g-bamboo-live-concert-april-event-doha-2024-cover-image.jpg",
-        "location": "QNCC Exhibition Hall 3 & 4",
-        "description": "Philippine music legends Bamboo and Sarah Geronimo take center stage in Doha. Buy your tickets now!",
-        "date": "11 April 2024 - 11 April 2024",
-        "time": "08:00 pm - 11:00 pm",
-        "category": "Entertainment"
-    },
-    {
         "name": "Build Your House Exhibition 2024",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/build-your-house-exhibition-2024/_680x450_clip_center-center_100_none/Build-Your-House-Exhibition-2024.jpg",
         "location": "Qatar National Convention Centre",
@@ -403,42 +259,6 @@
         "date": "13 May 2024 - 16 May 2024",
         "time": "10:00 am - 10:00 pm",
         "category": "Other"
-    },
-    {
-        "name": "Ramadan Market at Lusail Boulevard",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/ramadan-mubarak-2024-lusail-boulevard/_680x450_clip_center-center_100_none/experience-ramadan-2024-lusail.jpeg",
-        "location": "Lusail Boulevard",
-        "description": "From vibrant car parades and the Ramadan Cannon to immersive family activities and authentic handicrafts, there’s a truly special atmosphere there!",
-        "date": "16 March 2024 - 9 April 2024",
-        "time": "08:00 pm - 11:59 pm",
-        "category": "Entertainment"
-    },
-    {
-        "name": "Toy Story in Concert",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/toy-story-film-concert-qncc-events-doha-april-2024/_680x450_clip_center-center_100_none/toy-story-concert-qncc-events-2024-cover-image.jpeg",
-        "location": "Al Mayassa Theatre, QNCC",
-        "description": "Enjoy the full movie with Arabic subtitles, accompanied by a live orchestra playing the unforgettable soundtrack.",
-        "date": "13 April 2024 - 13 April 2024",
-        "time": "06:00 pm - 09:00 pm",
-        "category": "Entertainment"
-    },
-    {
-        "name": "The Pearl Ramadan Bazaar 2024",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/the-pearl-ramadan-bazaar-doha-2024/_680x450_clip_center-center_100_none/676208/the-pearl-ramadan-bazaar-doha-2024.jpg",
-        "location": "2 to 6 La Croisette, Porto Arabia",
-        "description": "Shop for all your needs and supplies for Ramadan here!",
-        "date": "11 March 2024 - 13 April 2024",
-        "time": "08:30 pm - 02:00 am",
-        "category": "Community"
-    },
-    {
-        "name": "Ramadan 2024 events at Katara Cultural Village",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/ramadan-2024-events-at-katara-cultural-village/_680x450_clip_center-center_100_none/katara-masjid-islamic-lectures-ramadan.jpg",
-        "location": "Across Katara Cultural Village",
-        "description": "Katara is hosting Ramadan events ranging from lectures to sports tournaments, traditional drummers & more!",
-        "date": "11 March 2024 - 10 April 2024",
-        "time": "12:00 am - 12:00 am",
-        "category": "Community"
     },
     {
         "name": "Throwback Food Festival at Old Doha Port",
@@ -468,15 +288,6 @@
         "category": "Entertainment"
     },
     {
-        "name": "Sustainable Zero-Waste Community Iftar at Education City",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/sustainable-zero-waste-community-iftar-2024-doha/_680x450_clip_center-center_100_none/sustainable-zero-waste-community-iftar-2024-qatar.jpg",
-        "location": "Minaretein Center (EC Mosque)",
-        "description": "1,000-2,000 daily Iftar meals will be provided, focusing on minimal environmental impact through zero waste practices.",
-        "date": "11 March 2024 - 10 April 2024",
-        "time": "05:45 pm - 07:00 pm",
-        "category": "Community"
-    },
-    {
         "name": "“The Voyager is the Narrator” exhibition at Doha Fire Station",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/the-voyager-is-the-narrator-exhibition-doha-fire-station/_680x450_clip_center-center_100_none/the-voyager-is-the-narrator-exhibition-doha-fire-station.jpg",
         "location": "Gallery 3 & 4, Fire Station",
@@ -498,7 +309,7 @@
         "name": "First edition of LEGO® Shows Qatar this Eid Al Fitr 2024",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/lego-shows-2024-event-doha/_680x450_clip_center-center_100_none/First-edition-of-LEGO®-Shows-Qatar-2024.jpg",
         "location": "Hall 8 and 9, Qatar National Convention Center",
-        "description": "The attraction will offer family-friendly activities, life-size Minifigures, food options, hospitality, and 26 themed areas with engaging activities.",
+        "description": "The attraction will offer family-friendly activities, life-size minifigures, food options, hospitality, and 26 themed areas with engaging activities.",
         "date": "10 April 2024 - 25 April 2024",
         "time": "01:00 pm - 11:00 pm",
         "category": "Entertainment"
@@ -511,15 +322,6 @@
         "date": "23 February 2025 - 26 February 2025",
         "time": "12:00 am - 12:00 am",
         "category": "Other"
-    },
-    {
-        "name": "Films In Concert – The Lion King Live In Concert (Arabic)",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/films-in-concert-the-lion-king-live-arabic/_680x450_clip_center-center_100_none/films-in-concert-the-lion-king-live-arabic.jpg",
-        "location": "Al Mayassa Theater, Qatar National Convention Center",
-        "description": "The concert will be taking place on 12 April 2024, at the Al Mayassa Theater, Qatar National Convention Center.",
-        "date": "12 April 2024 - 12 April 2024",
-        "time": "06:00 pm - 09:00 pm",
-        "category": "Entertainment"
     },
     {
         "name": "TedXYouth@NIA",
@@ -547,15 +349,6 @@
         "date": "27 May 2024 - 30 May 2024",
         "time": "12:00 pm - 09:00 pm",
         "category": "Other"
-    },
-    {
-        "name": "Qatar-UAE Super Cup",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/qatar-uae-super-cup-2024/_680x450_clip_center-center_100_none/first-qatar-uae-super-cup-doha-april-2024.jpeg",
-        "location": "Al Thumama Stadium",
-        "description": "The inaugural match will witness Qatar's Amir Cup champions Al Arabi and UAE's President’s Cup winners Sharjah.",
-        "date": "12 April 2024 - 12 April 2024",
-        "time": "07:00 pm - 08:30 pm",
-        "category": "Sports"
     },
     {
         "name": "8th Edition of Mahaseel Festival 2024",
@@ -747,57 +540,12 @@
         "category": "Other"
     },
     {
-        "name": "EID MEHBIN 2024",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_EID_MEHBIN_BANNER133563488773165204.webp",
-        "location": "AL ARABI SPORTS CLUB INDOOR STADIUM - NEW SALATHA - DOHA, QATAR",
-        "description": "\"EID MEHBIN 2024: A Spectacular Musical Extravaganza\"",
-        "date": "12 April 2024",
-        "time": " 07:30 PM Onwards",
-        "category": "Other"
-    },
-    {
-        "name": "Sarah G x Bamboo Live in Doha",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Banner_Latest133554735660528506.webp",
-        "location": "QNCC Exhibition Hall 3 & 4",
-        "description": "",
-        "date": "11 April 2024",
-        "time": " 08:00 PM Onwards",
-        "category": "Other"
-    },
-    {
-        "name": "QAR 159 DESERT SAFARI",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_EDEN_Banner_2133563485527812149.webp",
-        "location": "Doha, Ad Dawhah",
-        "description": "",
-        "date": "11 April 2024",
-        "time": " 07:00 AM Onwards",
-        "category": "Other"
-    },
-    {
-        "name": "EID - VENTURE PADDLING AT MIA PARK",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_EDEN_Banner133563485697881863.webp",
-        "location": "MIA PARK",
-        "description": "",
-        "date": "13 April 2024",
-        "time": " 09:00 AM Onwards",
-        "category": "Other"
-    },
-    {
         "name": "Aashir Wajahat",
         "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_AASHIR_WAJAHAT_BANNER133564325108116969.webp",
         "location": "La Cigale Hotel Doha , Ox Club",
         "description": "Aashir Wajahat, famous for his song ‘Sadqay’, is all geared up to captivate the audience with his debut performance at Ox Club in Doha on the 15th of April.",
         "date": "15 April 2024",
         "time": " 10:30 PM Onwards",
-        "category": "Other"
-    },
-    {
-        "name": "EDEN - THE HIDDEN PARADISE",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_1920x700133569492888289559.webp",
-        "location": "The Backyard, DOHA GOLF CLUB، Doha",
-        "description": "",
-        "date": "12 April 2024",
-        "time": " 03:00 PM Onwards",
         "category": "Other"
     },
     {
@@ -815,15 +563,6 @@
         "location": "Al MAYASSA THEATRE at QNCC",
         "description": "",
         "date": "13 April 2024",
-        "time": " 06:00 PM Onwards",
-        "category": "Other"
-    },
-    {
-        "name": "FILMS IN CONCERT - THE LION KING LIVE IN CONCERT (ARABIC)",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_1920x700_webp133529852522373287.webp",
-        "location": "Al MAYASSA THEATRE at QNCC",
-        "description": "The Lion King (show is in Arabic):",
-        "date": "12 April 2024",
         "time": " 06:00 PM Onwards",
         "category": "Other"
     },
@@ -888,15 +627,6 @@
         "description": "MAIN GRANDSTAND \nTicket inclusions:",
         "date": "29 November 2024 - 1 December 2024",
         "time": "  Onwards",
-        "category": "Other"
-    },
-    {
-        "name": "Salwa Beach Fest",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Web_banner133554802897633124.webp",
-        "location": "Hilton Salwa Beach Resort and Villas",
-        "description": "Salwa Beach Fest is Back!",
-        "date": "12 April 2024",
-        "time": " 10:00 AM Onwards",
         "category": "Other"
     },
     {
