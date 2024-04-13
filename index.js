@@ -756,7 +756,6 @@ wss.on('connection', async (ws) => {
                 const prompts = JSON.parse(fileData);
                 
                 prompts[0]["content"] += promptEngineering
-                console.log(prompts[0])
                 prompts[prompts.length -1]['content'] = prompt;
 
                 // Stream chat completions using the combined prompts
