@@ -24,7 +24,7 @@ const moment = require('moment');
 const UserModel = require('./models/Users')
 const EventModel = require('./models/Events')
 const CommentsModel = require("./models/Comments")
-
+const ThreadModal = require("./models/Threads")
 dotenv.config()
 
 const wss = new WebSocket.Server({ port: 3002 }); // Choose a suitable port
@@ -163,9 +163,9 @@ const updateEvents = (scrapedEvents) => {
         startDate.setDate(startDate.getDate() + 1);
         let eD = dates.length > 1 ? moment(dates[1], "DD MMMM YYYY").toDate() : null;
         let endDate;
-        if (eD != null){
-            eD.setDate(eD.getDate() +1);
-            endDate =  eD.getTime() === startDate.getTime()? null: eD;// Parse the end date if it exists
+        if (eD != null) {
+            eD.setDate(eD.getDate() + 1);
+            endDate = eD.getTime() === startDate.getTime() ? null : eD;// Parse the end date if it exists
 
         }
         else {
@@ -201,11 +201,11 @@ const getCurrentWeekandTime = () => {
     const today = new Date();
     const todayDate = today.toDateString()
     const currentDayOfWeek = today.getDay(); // 0 for Sunday, 1 for Monday, ..., 6 for Saturday
-  
+
     // Calculate the start date (Sunday) of the current week
     const startDate = new Date(today);
     startDate.setDate(today.getDate() - currentDayOfWeek);
-  
+
     // Calculate the end date (Saturday) of the current week
     const endDate = new Date(today);
     endDate.setDate(today.getDate() + (6 - currentDayOfWeek));
@@ -215,8 +215,8 @@ const getCurrentWeekandTime = () => {
 
     const currentTime = today.toLocaleTimeString()
 
-    return {startD, endD, currentTime, todayDate};
-  }
+    return { startD, endD, currentTime, todayDate };
+}
 
 // Dashboard
 app.get('/dashboard', verifyUser, (req, res) => {
@@ -266,24 +266,24 @@ app.post('/comments', async (req, res) => {
         const name = user.Name;
 
         CommentsModel.findOneAndUpdate(
-            { Eventid: eventID }, 
+            { Eventid: eventID },
             {
                 $push: {
-                    Comments: { 
+                    Comments: {
                         user: email,
                         name: name,
                         comment: newComment
                     }
                 }
             },
-            { upsert: true, new: true } 
+            { upsert: true, new: true }
         ).then(updatedEvent => {
             console.log('Comment added successfully');
         })
-        .catch(error => {
-            console.error('Error adding comment:', error);
-        });
-        
+            .catch(error => {
+                console.error('Error adding comment:', error);
+            });
+
     } catch (error) {
         console.error('Error adding comment:', error);
         res.status(500).json({ error: 'Internal server error' });
@@ -294,7 +294,7 @@ app.post('/Register', (req, res) => {
     const { Name, Email, Password } = req.body;
     bcrypt.hash(Password, 10)
         .then(hash => {
-            UserModel.create({ Name: Name, Email: Email, Password: hash, Skip:'false' })
+            UserModel.create({ Name: Name, Email: Email, Password: hash, Skip: 'false' })
                 .then(user => res.json("Success"))
                 .catch(err => res.json(err))
         }).catch(err => res.json(err))
@@ -316,12 +316,12 @@ app.get('/profile', verifyUser, (req, res) => {
                 DOB = user.DOB;
                 preferences = user.Preferences;
                 username = user.Name
-                res.json({ username : username, preferences: preferences, DOB: DOB, ProfilePicture: ProfilePicture, Email : userEmail });
+                res.json({ username: username, preferences: preferences, DOB: DOB, ProfilePicture: ProfilePicture, Email: userEmail });
             }
         }).catch(err => {
-        console.error("Error fetching profile:", err);
-        res.status(500).json(err);
-    });
+            console.error("Error fetching profile:", err);
+            res.status(500).json(err);
+        });
 })
 
 app.post('/profile', uploadPic.single('ProfilePicture'), async (req, res) => {
@@ -367,7 +367,7 @@ app.post('/skip', async (req, res) => {
     const token = req.cookies.token
     const decoded = jwt.verify(token, "jwt-secret-key");
     const userEmail = decoded.Email;
-    const { skip} = req.body;
+    const { skip } = req.body;
     if (userEmail) {
         const update = await UserModel.findOneAndUpdate(
             { Email: userEmail },
@@ -438,62 +438,91 @@ app.get("/api/thread/like", (req, res) => {
     return res.json({ userEmail })
 })
 
-app.post("/api/thread/like", (req, res) => {
+app.post("/api/thread/like", async (req, res) => {
     const { threadId, email } = req.body;
-
-    const result = threadList.filter((thread) => thread.id === threadId);
-
-    const threadLikes = result[0].likes;
-
-    const authenticateReaction = threadLikes.filter((user) => user === email);
-
-    if (authenticateReaction.length === 0) {
-        threadLikes.push(email);
-        return res.json({
-            message: "You've reacted to the post!",
-        });
+    console.log(threadId)
+    try {
+        const thread = await ThreadModal.findOne({ id: threadId });
+        console.log(thread)
+        if (!thread) {
+            return res.status(404).json({ error_message: "Thread not found" });
+        }  
+        const threadLikes = thread.likes;
+        const liked = thread.likes.some((like) => like.email === email);
+        //const liked = threadLikes.includes(email);
+        console.log(threadLikes)
+        console.log(liked)
+        if (!liked) {
+            thread.likes.unshift({
+                email: email,
+            });
+            await thread.save();
+            return res.json({ message: "You've reacted to the post!" });
+        }
+        res.json({ error_message: "You can only react once!" });
+    } catch (error) {
+        console.error("Error liking thread:", error);
+        res.status(500).json({ error_message: "Internal server error" });
     }
-    res.json({
-        error_message: "You can only react once!",
-    });
 });
 
-app.post("/api/thread/replies", (req, res) => {
+app.post("/api/thread/replies", async(req, res) => {
     const { id } = req.body;
-
-    const result = threadList.filter((thread) => thread.id === id);
-
-    res.json({
-        replies: result[0].replies,
-        title: result[0].title,
-    });
+    try {
+        // Find the thread by its ID
+        const thread = await ThreadModal.findOne({ id });
+        if (!thread) {
+            return res.status(404).json({ message: "Thread not found" });
+        }
+        res.json({
+            replies: thread.replies,
+            title: thread.title,
+        });
+    } catch (error) {
+        console.error("Error fetching thread replies:", error);
+        res.status(500).json({ message: "Internal server error" });
+    }
 });
 
 app.get("/api/create/reply", async (req, res) => {
     const token = req.cookies.token
     const decoded = jwt.verify(token, "jwt-secret-key");
     const userEmail = decoded.Email;
-    const user = await UserModel.findOne({ Email: userEmail });
-    const name = user.Name;
-    return res.json({ name })
+
+    return res.json({ userEmail })
 })
 
 app.post("/api/create/reply", async (req, res) => {
     const { id, email, reply } = req.body;
-
-    const result = threadList.filter((thread) => thread.id === id);
-
-    // const user = users.filter((user) => user.id === email);
-
-    result[0].replies.unshift({
-        email: email,
-        // name: user[0].username,
-        text: reply,
-    });
-
-    res.json({
-        message: "Response added successfully!",
-    });
+    let name = ""
+    console.log(email)
+    try {
+        const thread = await ThreadModal.findOne({ id });
+        if (!thread) {
+            return res.status(404).json({ message: "Thread not found" });
+        }
+        const user = await UserModel.findOne({ Email: email });
+        console.log(user.Name)
+        if(user.Name == null){
+            name = email
+        }else{
+            name = user.Name
+        }
+        
+        thread.replies.unshift({
+            email: email,
+            text: reply,
+            name: user.Name,
+        });
+        await thread.save();
+        res.json({
+            message: "Response added successfully!",
+            thread: thread 
+        });
+    } catch (error) {
+        console.error("Error adding reply:", error);
+        res.status(500).json({ message: "Internal server error" });
+    }
 });
 
 const generateID = () => Math.random().toString(36).substring(2, 10);
@@ -512,27 +541,40 @@ app.get("/api/create/thread", verifyUser, async (req, res) => {
 const threadList = [];
 
 app.post("/api/create/thread", async (req, res) => {
-    const { thread, email } = req.body;
-    const threadId = generateID();
+    const { thread, description, email } = req.body;
+    const today = new Date();
+    const day = today.getDate();
+    const month = today.getMonth() + 1;
+    const year = today.getFullYear();
 
-    threadList.unshift({
-        id: threadId,
-        title: thread,
-        email,
-        replies: [],
-        likes: [],
-    });
+    const formattedDate = `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day}`;
+    try {
+        const newThread = await ThreadModal.create({
+            id:generateID(),
+            title: thread,
+            email: email,
+            date: formattedDate,
+            description: description,
+            replies: [],
+            likes: [],
+        });
 
-    res.json({
-        message: "Thread created successfully!",
-        threads: threadList,
-    });
-    //console.log({ thread, email, threadId });
+        const threads = await ThreadModal.find();
+
+        res.json({
+            message: "Thread created successfully!",
+            threads: threads, // Return all threads
+        });
+    } catch (error) {
+        console.error("Error creating thread:", error);
+        res.status(500).json({ error: "Internal server error" });
+    }
 });
 
-app.get("/api/all/threads", (req, res) => {
+app.get("/api/all/threads", async (req, res) => {
+    const threads = await ThreadModal.find();
     res.json({
-        threads: threadList,
+        threads: threads,
     });
 });
 
@@ -597,7 +639,7 @@ app.get('/comments/:eventId', async (req, res) => {
 app.get('/:category', (req, res) => {
     const category = req.params.category;
     try {
-        EventModel.find({category : category }).then((result) => {
+        EventModel.find({ category: category }).then((result) => {
             res.json(result);
         }).catch((err) => {
             res.send(err)
@@ -608,7 +650,7 @@ app.get('/:category', (req, res) => {
     }
     // const filteredEvents = events.filter(event => event.category === category);
     // res.json(filteredEvents);
-  });
+});
 
 app.get('/events/this-week/:dateRange', async (req, res) => {
     const dateRange = req.params.dateRange.split(' - '); // Split date range into start and end dates
@@ -622,8 +664,8 @@ app.get('/events/this-week/:dateRange', async (req, res) => {
                 { endDate: { $gte: new Date(startDate), $lte: new Date(endDate) } }
             ]
         });
-        
-    res.json(filteredEvents);
+
+        res.json(filteredEvents);
     } catch (err) {
         console.error(err.message);
         res.status(500).send('Internal Server Error');
@@ -653,12 +695,12 @@ wss.on('connection', async (ws) => {
         let mess;
         try {
             mess = JSON.parse(message);
-            
+
         } catch (error) {
             console.error('Error parsing message:', error);
             return;
         }
-        
+
         //Check the type of the file
         if (mess.type === 'file') {
             // Here you have the file's content in Base64, its mimeType, and fileName
@@ -691,14 +733,14 @@ wss.on('connection', async (ws) => {
             }
 
             //If the file is of the type image:
-            if (mimeType.startsWith('image/')){
+            if (mimeType.startsWith('image/')) {
                 console.log("Uploaded file is an image")
                 const imageData = fs.readFileSync(filePath);
-                
+
                 // Upload the image to imgur
                 var data = new FormData();
                 data.append('image', imageData, { filename: fileName1 });
-                
+
                 const imgurClientId = '1cdfeb66ec6c452';
                 const imgurResponse = await axios.post('https://api.imgur.com/3/image', data, {
                     headers: {
@@ -706,13 +748,13 @@ wss.on('connection', async (ws) => {
                         Authorization: `Client-ID ${imgurClientId}`
                     }
                 });
-                
+
                 const imgUrl = imgurResponse.data.data.link;
                 console.log(imgUrl)
 
                 //Vision API Call
                 console.log("Start image analysis")
-                
+
                 const client2 = new OpenAIClient(endpoint, new AzureKeyCredential(azureApiKey));
                 const result = await client2.streamChatCompletions(visionDeploymentName, [
                     { role: "system", content: "You are a helpful assistant. Identify the location of the place the image is taken in" },
@@ -724,20 +766,20 @@ wss.on('connection', async (ws) => {
                         ]
                     }
                 ],
-                {
-                    temperature: 1,
-                    max_tokens: 256, 
-                    top_p: 1 
-                });
+                    {
+                        temperature: 1,
+                        max_tokens: 256,
+                        top_p: 1
+                    });
 
                 for await (const res of result) {
-                    for (const choice of res.choices){
-                        if (choice.delta && choice.delta.content){
+                    for (const choice of res.choices) {
+                        if (choice.delta && choice.delta.content) {
                             ws.send(choice.delta.content);
                             await new Promise(resolve => setTimeout(resolve, 100));
                         }
                     }
-                } 
+                }
 
                 const endOfConversationMessage = { type: 'endConversation' };
                 sendMessage(ws, endOfConversationMessage);
@@ -759,16 +801,16 @@ wss.on('connection', async (ws) => {
         } else {
             prompt = mess['content'];
         }
-    
+
         try {
-            if (mess.mimeType?.startsWith('audio/') || mess.type === 'text'){
+            if (mess.mimeType?.startsWith('audio/') || mess.type === 'text') {
                 //Read prompts from the JSON file and append them
                 const jsonFile = "./prompts.json";
                 const fileData = await readFile(jsonFile, 'utf8');
                 const prompts = JSON.parse(fileData);
-                
+
                 prompts[0]["content"] += promptEngineering
-                prompts[prompts.length -1]['content'] = prompt;
+                prompts[prompts.length - 1]['content'] = prompt;
 
                 // Stream chat completions using the combined prompts
                 const client = new OpenAIClient(endpoint, new AzureKeyCredential(azureApiKey));
