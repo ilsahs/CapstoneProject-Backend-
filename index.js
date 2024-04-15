@@ -292,6 +292,12 @@ app.post('/comments', async (req, res) => {
 //Register
 app.post('/Register', (req, res) => {
     const { Name, Email, Password } = req.body;
+    UserModel.findOne({ Email: Email })
+    .then(user => {
+        if (user) {
+            var err = "User with this account exists, please register with a different email or login instead.";
+            res.json(err);
+        }})
     bcrypt.hash(Password, 10)
         .then(hash => {
             UserModel.create({ Name: Name, Email: Email, Password: hash, Skip: 'false' })
