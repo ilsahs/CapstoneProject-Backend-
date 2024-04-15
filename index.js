@@ -763,11 +763,11 @@ wss.on('connection', async (ws) => {
 
                 const client2 = new OpenAIClient(endpoint, new AzureKeyCredential(azureApiKey));
                 const result = await client2.streamChatCompletions(visionDeploymentName, [
-                    { role: "system", content: "You are a helpful assistant. Identify the location of the place the image is taken in" },
+                    { role: "system", content: promptEngineering + "You are a helpful assistant. Identify the location of the place the image is taken in and if any, do suggest events taking place near this place" },
                     {
                         role: "user",
                         content: [
-                            { type: "text", text: "Identify the location in a concise manner. Mention any important landmarks visible in the image:" },
+                            { type: "text", text: "Identify the location in a concise manner. Mention any important landmarks visible in the image and if any events occuring nearby, do suggest:" },
                             { type: "image_url", image_url: { url: imgUrl } }
                         ]
                     }
