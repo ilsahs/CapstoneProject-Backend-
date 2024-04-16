@@ -26,7 +26,6 @@ def format_date(date_str):
         date_obj = datetime.strptime(date_str, "%d-%m-%Y")
         # Format the datetime object to the desired format
         formatted_date = date_obj.strftime("%d %B %Y")
-        print(formatted_date)
 
     else:  
         # Split the date string into start and end dates
@@ -45,8 +44,6 @@ def format_date(date_str):
         formatted_end_date = f"{int(end_day)} {month_names[end_month]} {end_year}"
         # Construct the final date string
         formatted_date = f"{formatted_start_date} - {formatted_end_date}"
-        print(formatted_date)
-
     
     return formatted_date
 
@@ -75,9 +72,6 @@ def scrape_events_page(page_url):
             location = page.find("div", class_="mve-cat").find('ul').find_all('li')[2].text.strip()
             date_str = page.find("div", class_="mve-cat").find('ul').find_all('li')[0].text.replace("to", "-")
             date_str = date_str.strip()
-
-            # Format date string
-            print(date_str)
             date = format_date(date_str)
             time = page.find("div", class_="mve-cat").find('ul').find_all('li')[1].text
             image = events[i].find("div", class_="mve-sec1-img").find('img')['src']
@@ -93,7 +87,7 @@ def scrape_events_page(page_url):
             }) 
                    
     except Exception as e:
-        print(e)    
+        print("here" ,e)    
     
     return events_data
 
