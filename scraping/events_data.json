@@ -1,5 +1,14 @@
 [
     {
+        "name": "QAWS 20th Anniversary Shelter Open Day",
+        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/qatar-animal-welfare-society-qaws-20th-anniversary-shelter-open-day/_680x450_clip_center-center_100_none/qatar-animal-welfare-society-qaws-20th-anniversary-shelter-open-day.jpg",
+        "location": "Qatar Animal Welfare Society",
+        "description": "Join the Qatar Animal Welfare Society as they celebrate 20 years of animal rescue! Enjoy fun activities and meet rescue cats, dogs, and farm animals.",
+        "date": "4 May 2024 - 4 May 2024",
+        "time": "02:00 pm - 07:00 pm",
+        "category": "Social Responsibility"
+    },
+    {
         "name": "Palestinian Cultural Heritage Festival 2024",
         "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/palestinian-cultural-heritage-festival-2024-doha/_680x450_clip_center-center_100_none/palestinian-cultural-heritage-festival-2024-doha-cover-image_2024-04-15-104200_wtqt.jpeg",
         "location": "Katara Cultural Village - The Southern Side",
@@ -87,24 +96,6 @@
         "description": "The Wailers, will perform the LEGEND ALBUM in full for one night only as part of their 40th-anniversary tour on 2 May 2024",
         "date": "2 May 2024 - 2 May 2024",
         "time": "07:00 pm - 11:59 pm",
-        "category": "Entertainment"
-    },
-    {
-        "name": "Eid Al Fitr 2024 celebrations at Meryal Waterpark",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/eid-al-fitr-2024-celebration-meryal-waterpark/_680x450_clip_center-center_100_none/meryal-eid-al-fitr-2024-events.jpeg",
-        "location": "Meryal Waterpark, Qetaifan Island North, Lusail",
-        "description": "Explore adventurous rides and activities like ﻿traditional tents, falconry displays, henna stations & more!",
-        "date": "10 April 2024 - 16 April 2024",
-        "time": "10:00 am - 05:00 pm",
-        "category": "Entertainment"
-    },
-    {
-        "name": "Eid Al Fitr 2024 celebrations at Msheireb Downtown Doha",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/eid-al-fitr-2024-celebrations-msheireb-downtown-doha/_680x450_clip_center-center_100_none/eid-al-fitr-2024-celebrations-msheireb-downtown-doha.jpg",
-        "location": "Across Msheireb Downtown Doha",
-        "description": "The many festivities include carnival games, music performances, roaming performers an immersive LED room & more!",
-        "date": "10 April 2024 - 15 April 2024",
-        "time": "03:30 pm - 11:30 pm",
         "category": "Entertainment"
     },
     {
@@ -268,15 +259,6 @@
         "date": "13 May 2024 - 16 May 2024",
         "time": "10:00 am - 10:00 pm",
         "category": "Other"
-    },
-    {
-        "name": "Throwback Food Festival at Old Doha Port",
-        "image": "https://d12eu00glpdtk2.cloudfront.net/public/images/events/throwback-food-festival-old-doha-port/_680x450_clip_center-center_100_none/682514/throwback-food-festival-ramadan-2024-qatar.jpg",
-        "location": "Mina Park, Old Doha Port (Opposite Container Yard)",
-        "description": "Qatar Tourism has extended the festival to run through Eid Al Fitr 2024, to allow more visitors to enjoy the culinary & crafts experience for longer.",
-        "date": "10 March 2024 - 15 April 2024",
-        "time": "05:00 pm - 11:59 pm",
-        "category": "Entertainment"
     },
     {
         "name": "Jewels of Ramadan at Minaretein Auditorium",
@@ -504,6 +486,15 @@
         "category": "Education"
     },
     {
+        "name": "Adrenaline Kick boxing",
+        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_ADRENALINE_KICK_BOX_BANNER133576393726237229.webp",
+        "location": "Katara Cultural Village /Katara Beach",
+        "description": "",
+        "date": "18 April 2024",
+        "time": " 05:00 PM Onwards",
+        "category": "Other"
+    },
+    {
         "name": "IRISH VILLAGE",
         "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Irish_Banner_Latest133570276480095167.webp",
         "location": "SHERATON GRAND DOHA RESORT & CONVENTION HOTEL - Garden",
@@ -516,7 +507,7 @@
         "name": "Tamil new year Celebration 2024 / Chitthirai Thirunal Kondattam 2024",
         "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_Event_Tickets_Web-01133570348740820991.webp",
         "location": "QNCC - Al MAYASSA THEATRE",
-        "description": "Join us for an unforgettable celebration of Tamil New Year 2024, presented by Qatar Tamizhar Sangam. Our program promises a dynamic blend of cultural richness and entertainment. Immerse yourself in the rhythms of live music, be captivated by hilarious stand-up comedy, and experience the vibrancy of cultural performances showcasing the essence of Tamil tradition. From soul-stirring melodies to side-splitting laughter, there's something for everyone. Don't miss the opportunity to participate in public functions that foster community spirit and pride. Come together with friends and family to ring in the event with joy and camaraderie. Mark your calendars and join us for an evening of celebration and cultural immersion!",
+        "description": "",
         "date": "25 April 2024",
         "time": " 06:30 PM Onwards",
         "category": "Other"
@@ -546,15 +537,6 @@
         "description": "",
         "date": "23 May 2024",
         "time": " 07:30 PM Onwards",
-        "category": "Other"
-    },
-    {
-        "name": "Aashir Wajahat",
-        "image": "https://admine.q-tickets.com/Uploads/MediaSEO/450x216_AASHIR_WAJAHAT_BANNER133564325108116969.webp",
-        "location": "La Cigale Hotel Doha , Ox Club",
-        "description": "Aashir Wajahat, famous for his song ‘Sadqay’, is all geared up to captivate the audience with his debut performance at Ox Club in Doha on the 15th of April.",
-        "date": "15 April 2024",
-        "time": " 10:30 PM Onwards",
         "category": "Other"
     },
     {

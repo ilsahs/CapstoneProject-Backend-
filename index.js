@@ -102,8 +102,6 @@ const picstorage = multer.diskStorage({
 
 const uploadPic = multer({ storage: picstorage });
 
-
-
 app.use('/ProfilePictures', express.static('ProfilePictures'));
 const verifyUser = (req, res, next) => {
     const token = req.cookies.token;
@@ -155,6 +153,33 @@ cron.schedule('0 * * * *', async () => {
         timezone: 'Asia/Qatar'
     });
 
+const setCategory = async(eventName, eventDescription) => {
+
+    const categories = [ "Arts & Culture", "Community", "Entertainment", "Education", "Sports", "Leisure", "Tourism", "Professional", "Business", "Health", "Fitness", "Food", "Environmental", "Outdoor", "Special Events", "Other"
+    ];
+    
+    const prompt = [
+        {
+            role: "system",
+            content: `You are a knowledgeable assistant. Given the event name and, if available, a brief description, choose the most appropriate category from this list: ${categories.join(", ")}. If the description is insufficient or not provided, categorize as "Other". Respond with only the category name.`
+        },
+        {
+            role: "user",
+            content: `Event Name: ${eventName}${eventDescription ? "\nDescription: " + eventDescription : ""}`
+        }
+    ];
+
+    try {
+        const client = new OpenAIClient(endpoint, new AzureKeyCredential(azureApiKey));
+        const result = await client.getChatCompletions(deploymentName, prompt, { maxTokens: 60 });
+        for (const choice of result.choices) {
+            return choice.message.content;
+        }
+    } catch (err) {
+        console.error("Error in getting completions:", err);
+    }
+}
+
 const updateEvents = (scrapedEvents) => {
     console.log(`Total Events: ${scrapedEvents.length}`)
     scrapedEvents.forEach(async e => {
@@ -179,7 +204,7 @@ const updateEvents = (scrapedEvents) => {
             endDate: endDate,
             time: e.time,
             location: e.location,
-            category: e.category,
+            category: e.category == "Other"? await setCategory(e.name, e.description):e.category,
             description: e.description,
             image: e.image
         };
@@ -217,6 +242,38 @@ const getCurrentWeekandTime = () => {
 
     return { startD, endD, currentTime, todayDate };
 }
+
+app.get('/user/preferences/', (req, res) => {
+    const token = req.cookies.token;
+
+    // Check if token is available
+    if (!token) {
+        return res.status(401).send({ message: 'Unauthorized' });
+    }
+
+    try {
+        const decoded = jwt.verify(token, "jwt-secret-key");
+        const userEmail = decoded.Email;
+
+        UserModel.findOne({ Email: userEmail }, 'Preferences')
+            .then((result) => {
+                if (result) {
+                    res.send(result);
+                } else {
+                    res.status(404).send({ message: "User not found" });
+                }
+            })
+            .catch((err) => {
+                console.error("Error fetching user preferences:", err);
+                res.status(500).send({ message: "Internal server error" });
+            });
+    } catch (error) {
+        // Handle token verification error
+        console.error("Error decoding token:", error);
+        res.status(401).send({ message: "Unauthorized" });
+    }
+});
+
 
 // Dashboard
 app.get('/dashboard', verifyUser, (req, res) => {
